@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Landing extends CI_Controller {
+class Colegio extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,11 +19,7 @@ class Landing extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model("colegio_model","uum");
-		$dato['usuarios']= $this->uum->get_usuarios();
-		$dato['colegios']= $this->uum->get_colegios();
-		$this->load->view('landing/index',$dato);
-
+		$this->load->view('colegio/show');
 	}
 }
 
