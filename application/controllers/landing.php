@@ -19,7 +19,9 @@ class Landing extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('landing/index');
+		$this->load->model("colegio_model","uum");
+		$dato['usuarios']= $this->uum->get_usuario();
+		$this->load->view('landing/index',$dato);
 	}
 }
 

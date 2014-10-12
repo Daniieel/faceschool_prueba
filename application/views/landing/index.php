@@ -31,10 +31,10 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Faceschool</h1>
+						<h3><?= $usuarios->nombre ?></h3>
 						<p>El Buscador de Colegios</p>
 						<nav>
 							<ul>
-								
 								<li><a href="http://localhost/faceschool/menus/mapa.html" class="icon fa-map-marker"><span class="label">map-marker</span></a></li>
 								<li><a href="http://localhost/faceschool/menus/index.html" class="icon fa-book"><span class="label">book</span></a></li>
 								<li><a href="https://www.facebook.com/pages/Faceschool/1454526578163013" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
