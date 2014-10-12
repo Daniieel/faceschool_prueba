@@ -32,6 +32,18 @@
 					<header id="header">
 						<h1>Faceschool</h1>
 						<h3><?= $usuarios->nombre ?></h3>
+						<!-- formulario de busqueda -->
+						<form action= "<?= base_url();  ?>colegio/show">  
+						<select style="color:black">
+							<?php foreach ($colegios as $colegio) {
+							?>
+							<option value="<?= $colegio->id_colegio ?>"><?= $colegio->nombre ?></option>	
+							<?php }
+
+							 ?>
+						</select>
+						<input style="color:black" type="submit" value="Buscar">
+						</form>	
 						<p>El Buscador de Colegios</p>
 						<nav>
 							<ul>
