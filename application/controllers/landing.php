@@ -19,8 +19,8 @@ class Landing extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model("colegio_model","uum");
-		$dato['usuarios']= $this->uum->get_usuarios();
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		$dato['usuarios']= $this->uum->get_usuarios(); //carago una consulta
 		$dato['colegios']= $this->uum->get_colegios();
 		$this->load->view('landing/index',$dato);
 

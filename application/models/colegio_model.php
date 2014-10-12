@@ -9,5 +9,10 @@ class Colegio_model extends CI_Model {
 		$query = $this->db->query("SELECT * FROM colegio");
 		return $query->result();
 	}
+
+	function get_colegio($colegio_id){ //para traer un colegio
+		$query = $this->db->query("SELECT * FROM colegio WHERE id_colegio='$colegio_id' LIMIT 1");
+		return $query->row();
+	}
  }
 ?>

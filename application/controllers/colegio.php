@@ -17,10 +17,15 @@ class Colegio extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function show()
 	{
 		$this->load->helper('url');
-		$this->load->view('colegio/show');
+		$colegio_id = $this->input->get("colegio"); 
+		
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		$dato['colegio']= $this->uum->get_colegio($colegio_id); 
+
+		$this->load->view('colegio/show', $dato);
 	}
 }
 
