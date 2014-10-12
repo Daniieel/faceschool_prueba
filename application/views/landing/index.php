@@ -33,7 +33,7 @@
 						<h1>Faceschool</h1>
 						<h3><?= $usuarios->nombre ?></h3>
 						<!-- formulario de busqueda -->
-						<form action= "<?= base_url();  ?>colegio/show">  
+						<form action= "<?= base_url('colegio'); ?>">  
 						<select style="color:black">
 							<?php foreach ($colegios as $colegio) {
 							?>

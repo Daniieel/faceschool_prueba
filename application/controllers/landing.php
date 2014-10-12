@@ -21,10 +21,7 @@ class Landing extends CI_Controller {
 	{
 		$this->load->model("colegio_model","uum");
 		$dato['usuarios']= $this->uum->get_usuarios();
-<<<<<<< HEAD
-=======
 		$dato['colegios']= $this->uum->get_colegios();
->>>>>>> 61ac868e0ce817bcf49c41377ffabd8c0dc2ef07
 		$this->load->view('landing/index',$dato);
 
 	}
