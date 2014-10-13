@@ -20,7 +20,7 @@
 		<div class="main row">
 			<div class="col-md-3 images_1_of_4 text-center">
 				<span class="bg"><i class="fa fa-globe"></i></span>
-				<h4><a href="#">Sed Porta Dolor</a></h4>
+				<h4><a href="#">Te amo mi amor!</a></h4>
 				<p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 1500s.</p>
 				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
 			</div>

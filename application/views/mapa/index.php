@@ -300,36 +300,44 @@ function procesaClick() {
 
 </script>
 </head>
-
 <body>
-
  <form>
-
-
-      <header>
-         <h2></h2>
-          </header>
-          <p>Aca podras encontrar todos los colegios
-          <br />
-          cercanos a tu <strong>ubicacion</strong>.
-          <br />
-          
-         <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"-->  
-                   <input  type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-default btn-lg" >
-           <select  name="address" class="btn btn-primary btn-lg" >
+   <header>
+      </header>
+      <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"--> 
+      <br></br><select style="margin-left:5em;" name="address" class="btn btn-primary btn-lg" >
               <?php foreach ($colegios as $colegio) {
               ?>
               <option value="<?= $colegio->latitud ?>,<?= $colegio->longitud ?>"><?= $colegio->nombre ?></option>  
               <?php }
 
                ?> 
-           </select>
-         
+           </select> 
+        <br></br><input style="margin-left:5em;"  type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-default btn-lg">
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
 </div>
-<form action="Colegios" method="get">
+<div id="mapa" style="position:absolute; width:737px; height:470px; left:520px; top:210px; border: 2px solid black;  position: center; overflow: hidden"></div>
+
 </form>
-</form>
-<div id="mapa" style="position:absolute; width:800px; height:470px; left:520px; top:200px"  ></div>
+
 </body>
 
 </html>
