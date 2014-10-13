@@ -25,7 +25,9 @@ class Colegio extends CI_Controller {
 		$this->load->model("colegio_model","uum"); //cargo la base de datos
 		$dato['colegio']= $this->uum->get_colegio($colegio_id); 
 
+		$this->load->view("layouts/header");
 		$this->load->view('colegio/show', $dato);
+		$this->load->view("layouts/footer");
 	}
 }
 
