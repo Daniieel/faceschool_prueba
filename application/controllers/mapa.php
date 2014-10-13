@@ -19,7 +19,12 @@ class Mapa extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('mapa/index');
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		//$dato['usuarios']= $this->uum->get_usuarios(); //carago una consulta
+		$dato['colegios']= $this->uum->get_colegios();// carga los colegios
+		$this->load->view('mapa/index',$dato);
+
+
 	}
 }
 

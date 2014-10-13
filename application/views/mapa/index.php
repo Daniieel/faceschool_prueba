@@ -6,18 +6,18 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-    <script src="<?=base_url(); ?>template2/js/jquery.min.js"></script>
-    <script src="<?=base_url(); ?>template2/js/jquery.dropotron.min.js"></script>
-    <script src="<?=base_url(); ?>template2/js/jquery.scrolly.min.js"></script>
-    <script src="<?=base_url(); ?>template2/js/jquery.scrollgress.min.js"></script>
-    <script src="<?=base_url(); ?>template2/js/skel.min.js"></script>
-    <script src="<?=base_url(); ?>template2/js/skel-layers.min.js"></script>
-    <script src="<?=base_url(); ?>template2/js/init.js"></script>
+    <script src="<?= base_url(); ?>template2/js/skel.min.js"></script>
+    <script src="<?= base_url(); ?>template2/js/jquery.dropotron.min.js"></script>
+    <script src="<?= base_url(); ?>template2/js/jquery.scrolly.min.js"></script>
+    <script src="<?= base_url(); ?>template2/js/jquery.scrollgress.min.js"></script>
+    <script src="<?= base_url(); ?>template2/js/skel.min.js"></script>
+    <script src="<?= base_url(); ?>template2/js/skel-layers.min.js"></script>
+    <script src="<?= base_url(); ?>template2/js/init.js"></script>
     <noscript>
-      <link rel="stylesheet" href="<?=base_url(); ?>css/skel.css" />
-      <link rel="stylesheet" href="<?=base_url(); ?>css/style.css" />
-      <link rel="stylesheet" href="<?=base_url(); ?>css/style-wide.css" />
-      <link rel="stylesheet" href="<?=base_url(); ?>css/style-noscript.css" />
+      <link rel="stylesheet" href="<?= base_url(); ?>css/skel.css" />
+      <link rel="stylesheet" href="<?= base_url(); ?>css/style.css" />
+      <link rel="stylesheet" href="<?= base_url(); ?>css/style-wide.css" />
+      <link rel="stylesheet" href="<?= base_url(); ?>css/style-noscript.css" />
     </noscript>
     <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
@@ -75,34 +75,6 @@ var marker1 = new google.maps.Marker({
 infowindow.open(map,marker1);
 });*/
 //-----------
-var contentString = '<font color="black"><div id="content">'+
-      '<div id="siteNotice">'+
-      '</div>'+
-      '<h1 id="firstHeading" class="firstHeading"><b>Colegio Capellan Pascal</b></h1>'+
-      '<div id="bodyContent">'+
-      '<p><b>Dependencia</b>: Particular Pagado '+
-      '<p><b>Region</b>: Valparaiso '+
-      '<p><b>Provincia</b>: Valparaiso '+
-      '<p><b>Comuna</b>: Viña del Mar '+
-      '<p><b>Direccion</b>: Guardiamarina Riquelme s/n Población Allard Las Salinas Viña del Mar '+
-      '<p><b>Telefono</b>: (56-32) 2546500 '+
-      '<p><b>Promedio PSU</b>: 605,0'+
-      '<p><b>Grupo socioeconómico del establecimiento (GSE)</b>: Alto'+
-      '<p><b>Promedio Simce 2013 4º Basico Comprension de Lectura</b>: 297 '+
-      '<p><b>Promedio Simce 2013 4º Basico Matematicas</b>: 308 '+
-      '<p><b>Promedio Simce 2013 4º Basico Ciencias Naturales</b>: 284 '+
-      '<p><b>Promedio Simce 2013  IIº Medio Comprension de Lectura</b>: 268'+
-      '<p><b>Promedio Simce 2013 IIº Medio Matematicas</b>: 333'+
-      '<P><b>Religion</b>: Catolica '+
-      '<p><b>Idioma</b>: Ingles </p>'+
-      '<p><b>Pagina del colegio</b>: <a href="http://www.colegiocapellanpascal.cl/CapellanPascal/">'+
-      'http://www.colegiocapellanpascal.cl/CapellanPascal/</a> '+
-      '</p>'+
-      '</div>'+
-      '</div>';
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-          });
 var place2 = new google.maps.LatLng(-32.994575, -71.544635);
 var marker2 = new google.maps.Marker({
         position: place2
@@ -387,29 +359,21 @@ function procesaClick() {
           <br />
           cercanos a tu <strong>ubicacion</strong>.
           <br />
-          <input type="button" value="Como llegar!" onclick="travelToAddress();">
+          
+         <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"-->  
+          
+         <input type="button" value="Como llegar!" onclick="travelToAddress();">
            <select  name="address" >
-      <option value="-32.879306, -71.255000">Colegio Francisco Miranda</option>
-      <option value="-33.038964, -71.526258">Colegio Aleman</option>
-      <option value="-32.994575, -71.544635">Colegio Capellan Pascal</option> 
-      <option value="-12.143893,-76.999268">COLEGIO CHAMPAGNAT</option>
-      <option value="-33.049749,-71.442179">COLEGIO COEDUCACIONAL PART. QUILPUE</option>
-      <option value="-33.603186,-70.579792">COLEGIO CORDILLERA</option>
-      <option value="-33.027378,-71.552759">COLEGIO ESPAÑOL DE VIÑA DEL MAR</option>
-      <option value="-33.40012,-70.564258">COLEGIO LEONARDO DA VINCI</option>
-      <option value="-33.030768,-71.564592">COLEGIO PATMOS </option>
-      <option value="-32.953305,-71.537315">COLEGIO SAGRADA FAMILIA</option>
-      <option value="-33.4943226,-70.6653437">ESCUELA JOSÉ DOMINGO SAAVEDRA</option>
-      <option value="-33.0496318,-71.6132892">LICEO EDUARDO DE LA BARRA</option>
-      <option value="-33.013066,-71.5491853">LICEO VIÑA DEL MAR</option>
-      <option value="-33.029743,-71.533045">PAN AMERICAN COLLEGE VIñA DEL MAR</option>
-      <option value="-33.02241,-71.566881">SAINT PETER'S SCHOOL</option>
-      <option value="-33.047137,-71.615274">SCUOLA ITALIANA ARTURO DELL'ORO</option>
-      <option value="-32.972578,-71.535036">THE MACKAY SCHOOL</option>  
-      <option value="-33.054471,-71.601976">SEMINARIO SAN RAFAEL</option>  
-      <option value="-33.0349594,-71.5316521">Seminario san rafael viña del mar</option>     
-    </select>
-           </ul>
+              <?php foreach ($colegios as $colegio) {
+              ?>
+              <option value="<?= $colegio->latitud ?>,<?= $colegio->longitud ?>"><?= $colegio->nombre ?></option>  
+              <?php }
+
+               ?> 
+           </select>
+           
+           
+           
           </footer>
          </div>
         </section>
