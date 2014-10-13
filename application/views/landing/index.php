@@ -2,24 +2,15 @@
 	<div class="container">
 		<div id="da-slider" class="da-slider text-center">
 			<div class="da-slide">
-				<h2>education portal</h2>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span class="hide_text"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></p>
-				<h3 class="da-link"><a href="single-page.html" class="fa-btn btn-1 btn-1e">view more</a></h3>
-			</div>
-			<div class="da-slide">
-				<h2>online educations</h2>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span class="hide_text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></p>
-				<h3 class="da-link"><a href="single-page.html" class="fa-btn btn-1 btn-1e">view more</a></h3>
-			</div>
-			<div class="da-slide">
-				<h2>education portal</h2>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span class="hide_text"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></p>
-				<h3 class="da-link"><a href="single-page.html" class="fa-btn btn-1 btn-1e">view more</a></h3>
-			</div>
-			<div class="da-slide">
-				<h2>online educations</h2>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span class="hide_text"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></p>
-				<h3 class="da-link"><a href="single-page.html" class="fa-btn btn-1 btn-1e">view more</a></h3>
+				<h2>FaceSchool</h2>
+				<p>Busca tu colegio perferido.</p>
+				<h3 class="da-link">
+					<div class="col-md-10 h_search">
+						<form>
+							<input type="text" class="text" value="Enter text here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter text here';}">
+							<input type="submit" value="search">
+						</form>
+					</div>
 			</div>
 	   </div>
 	</div>
@@ -37,7 +28,6 @@
 				<span class="bg"><i class="fa fa-laptop"></i></span>
 				<h4><a href="#">Lorem Ipsum is</a></h4>
 				<p class="para">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
 			</div>
 			<div class="col-md-3 images_1_of_4 bg1 text-center">
 				<span class="bg"><i class="fa fa-cog"></i></span>

@@ -63,12 +63,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="logo navbar-left">
 			<h1><a href="index.html">Learner </a></h1>
 		</div>
-		<div class="h_search navbar-right">
-			<form>
-				<input type="text" class="text" value="Enter text here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter text here';}">
-				<input type="submit" value="search">
-			</form>
-		</div>
 		<div class="clearfix"></div>
 	</div>
 </div>
