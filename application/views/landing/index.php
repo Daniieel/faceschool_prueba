@@ -3,7 +3,7 @@
 		<div id="da-slider" class="da-slider text-center">
 			<div class="da-slide">
 				<h2>FaceSchool</h2>
-				<p>Busca tu colegio perferido.</p>
+				<p><strong>Busca tu colegio preferido.</strong></p>
 				<h3 class="da-link">
 					<div class="col-md-10 h_search">
 						<form>
