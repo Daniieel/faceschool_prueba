@@ -7,8 +7,8 @@
 				<h3 class="da-link">
 					<div class="col-md-10 h_search">
 						<form>
-							<input type="text" class="text" value="Enter text here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter text here';}">
-							<input type="submit" value="search">
+							<input type="text" class="text" value="Escribe aqui" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter text here';}">
+							<input type="submit" value="Buscar">
 						</form>
 					</div>
 			</div>
@@ -56,7 +56,7 @@
 				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
 			</div>
 		</div>
-				<!----start-img-cursual---->
+				<!--start-img-cursual-->
 					<div id="owl-demo" class="owl-carousel text-center">
 						<div class="item">
 							<div class="cau_left">

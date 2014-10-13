@@ -61,7 +61,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="container">
 	<div class="row header">
 		<div class="logo navbar-left">
-			<h1><a href="index.html">Learner </a></h1>
+			<h1><a href="index.html">faceschool </a></h1>
 		</div>
 		<div class="clearfix"></div>
 	</div>
@@ -82,19 +82,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="index.html">Home</a></li>
-		        <li><a href="technology.html">Technologies</a></li>
-		        <li><a href="about.html">About</a></li>
-		        <li><a href="blog.html">Blog</a></li>
-		        <li><a href="contact.html">Contact</a></li>
+		        <li class="active"><a href="<?= base_url() ?>">Inicio</a></li>
+		        <li><a href="<?= base_url() ?>mapa">Mapa</a></li>
+		        <li><a href="<?= base_url() ?>informacion">Informacion</a></li>
+		        <li><a href="blog.html">Prueba</a></li>
+		        <li><a href="contact.html">Contacto</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		    <!-- start soc_icons -->
 		</nav>
 		<div class="soc_icons navbar-right">
 			<ul class="list-unstyled text-center">
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="https://twitter.com/faceschool_"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="https://www.facebook.com/pages/Faceschool/1454526578163013"><i class="fa fa-facebook"></i></a></li>
 				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 				<li><a href="#"><i class="fa fa-youtube"></i></a></li>
 				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>

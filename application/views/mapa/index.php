@@ -2,31 +2,9 @@
 <head>
 
 <title>Faceschool</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-    <script src="<?= base_url(); ?>template2/js/skel.min.js"></script>
-    <script src="<?= base_url(); ?>template2/js/jquery.dropotron.min.js"></script>
-    <script src="<?= base_url(); ?>template2/js/jquery.scrolly.min.js"></script>
-    <script src="<?= base_url(); ?>template2/js/jquery.scrollgress.min.js"></script>
-    <script src="<?= base_url(); ?>template2/js/skel.min.js"></script>
-    <script src="<?= base_url(); ?>template2/js/skel-layers.min.js"></script>
-    <script src="<?= base_url(); ?>template2/js/init.js"></script>
-    <noscript>
-      <link rel="stylesheet" href="<?= base_url(); ?>css/skel.css" />
-      <link rel="stylesheet" href="<?= base_url(); ?>css/style.css" />
-      <link rel="stylesheet" href="<?= base_url(); ?>css/style-wide.css" />
-      <link rel="stylesheet" href="<?= base_url(); ?>css/style-noscript.css" />
-    </noscript>
-    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 <script src="http://j.maxmind.com/app/geoip.js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" >
-
-
-
 
 var map;
 var myPos;
@@ -321,39 +299,15 @@ function procesaClick() {
 }
 
 </script>
-
-<link rel="shortcut icon" href="http://localhost/faceschool/inicio/favicon.ico" type="image/x-icon">
-<link rel="icon" href="http://localhost/faceschool/inicio/favicon.ico" type="image/x-icon">
-
-<!-- Header -->
-      <header id="header" class="alt">
-       <h1 id="logo"><a href="http://localhost/faceschool/inicio/index.html"class="icon fa-home fa-3x"><span class="label"></span></a></h1>
-        <nav id="nav">
-          <ul>
-            <li class="current"><a href="index.html">Nosotros</a></li>
-            <li class="submenu">
-              <a href="">Opciones</a>
-              <ul>
-                <li><a href="http://localhost/faceschool/menus/mapa_colegios_prueba.html">Colegios v2</a></li>
-                <li><a href="#">Opcion 2</a></li>
-                <li><a href="#">Opcion 3</a></li>
-                
-              </ul>
-            </li>
-            
-          </ul>
-        </nav>
-      </header>
- <section id="banner">
 </head>
 
 <body>
 
  <form>
-<section id="banner">
-  <div class="4u skel-cell-important">
+
+
       <header>
-         <h2>FaceSchool</h2>
+         <h2></h2>
           </header>
           <p>Aca podras encontrar todos los colegios
           <br />
@@ -361,9 +315,8 @@ function procesaClick() {
           <br />
           
          <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"-->  
-          
-         <input type="button" value="Como llegar!" onclick="travelToAddress();">
-           <select  name="address" >
+                   <input  type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-default btn-lg" >
+           <select  name="address" class="btn btn-primary btn-lg" >
               <?php foreach ($colegios as $colegio) {
               ?>
               <option value="<?= $colegio->latitud ?>,<?= $colegio->longitud ?>"><?= $colegio->nombre ?></option>  
@@ -371,17 +324,12 @@ function procesaClick() {
 
                ?> 
            </select>
-           
-           
-           
-          </footer>
-         </div>
-        </section>
+         
 </div>
 <form action="Colegios" method="get">
 </form>
 </form>
-<div id="mapa" style="position:absolute; width:800px; height:600px; left:500px; top:90px"  ></div>
+<div id="mapa" style="position:absolute; width:800px; height:470px; left:520px; top:200px"  ></div>
 </body>
 
 </html>
