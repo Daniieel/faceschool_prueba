@@ -22,7 +22,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
-	public function home()
+	public function home() //como crear una funcion
 	{
 		$dato["colegio"] = "colegio 1";
 		$this->load->view('home', $dato);

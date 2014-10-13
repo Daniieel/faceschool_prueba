@@ -6,7 +6,7 @@ class Colegio_model extends CI_Model {
 	}
 
 	function get_colegios(){ //funcion para traer colegios
-		$query = $this->db->query("SELECT * FROM colegio");
+		$query = $this->db->query("SELECT id_colegio, nombre, direccion, telefono, pagina_web, replace(latitud,',','.') as latitud, replace(longitud,',','.') as longitud FROM colegio");
 		return $query->result();
 	}
 
@@ -14,5 +14,7 @@ class Colegio_model extends CI_Model {
 		$query = $this->db->query("SELECT * FROM colegio WHERE id_colegio='$colegio_id' LIMIT 1");
 		return $query->row();
 	}
+
+	
  }
 ?>
