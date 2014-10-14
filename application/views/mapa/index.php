@@ -26,32 +26,7 @@ showMap(position.coords.latitude, position.coords.longitude);
         var infowindow = new google.maps.InfoWindow({
           content: contentString
           });*/
-        
-var place = new google.maps.LatLng(-32.879306, -71.255000);
-var marker = new google.maps.Marker({
-        position: place
-        , title: 'Colegio Francisco Miranda'
-        ,icon: 'http://i.imgur.com/Vw20Fx3.png'
-        , map: map
-        , });
-/*google.maps.event.addListener(marker, 'click', function() {
-infowindow.open(map,marker);
-});*/
-//------------
-/*var contentString = '<h1><font color="black">Colegio Aleman</h1>';
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-          });*/
-var place1 = new google.maps.LatLng(-33.038964, -71.526258);
-var marker1 = new google.maps.Marker({
-        position: place1
-        , title: 'Colegio Aleman'
-        ,icon: 'http://i.imgur.com/Vw20Fx3.png'
-        , map: map
-        , });
-/*google.maps.event.addListener(marker1, 'click', function() {
-infowindow.open(map,marker1);
-});*/
+       
 //-----------
 var place2 = new google.maps.LatLng(-32.994575, -71.544635);
 var marker2 = new google.maps.Marker({
@@ -64,13 +39,7 @@ google.maps.event.addListener(marker2, 'click', function() {
 infowindow.open(map,marker2);
 });
 //--------
-var place3 = new google.maps.LatLng(-32.9606411, -71.5413962);
-var marker3 = new google.maps.Marker({
-        position: place3
-        , title: 'Alliance Francaise de Valparaiso'
-        ,icon: 'http://i.imgur.com/Vw20Fx3.png'
-        , map: map
-        , });
+
 //------
 var place4 = new google.maps.LatLng(-12.143893,-76.999268);
 var marker4 = new google.maps.Marker({
@@ -207,14 +176,22 @@ var marker17 = new google.maps.Marker({
         , });
 //----------
 //------
-var place18 = new google.maps.LatLng(-33.0349594,-71.5316521);
-var marke18 = new google.maps.Marker({
-        position: place18
-        , title: 'Seminario san rafael viña del mar'
-        ,icon: 'http://i.imgur.com/Vw20Fx3.png'
+//----
+
+
+/*
+<?php foreach ($colegios as $colegio) {
+              ?>
+var place = new google.maps.LatLng(<?= $colegio->latitud ?>,<?= $colegio->longitud ?>)
+var marke = new google.maps.Marker({
+          position: place
+        , title: <?= $colegio->id_colegio ?>
+        , icon: 'http://i.imgur.com/Vw20Fx3.png'
         , map: map
         , });
-//----------
+<?php }
+
+?> */
 
 }
 
@@ -303,6 +280,11 @@ function procesaClick() {
 <body>
  <form>
    <header>
+    <br></br>
+    
+    <h1 style="margin-left:3em;" class="read">Aca podras <strong>encontrar</strong></h1>  
+    <h1 style="margin-left:3em;"class="read">todos los <strong>colegios</strong></h1>
+    <h1 style="margin-left:3em;"class="read">cercanos a tu <strong>ubicacion.</strong></h1>
       </header>
       <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"--> 
       <br></br><select style="margin-left:5em;" name="address" class="btn btn-primary btn-lg" >
@@ -321,18 +303,9 @@ function procesaClick() {
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      
+      
+      
 </div>
 <div id="mapa" style="position:absolute; width:737px; height:470px; left:520px; top:210px; border: 2px solid black;  position: center; overflow: hidden"></div>
 

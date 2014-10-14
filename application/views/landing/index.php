@@ -1,5 +1,5 @@
 <div class="slider_bg"><!-- start slider -->
-	<div class="container">
+		<div class="container">
 		<div id="da-slider" class="da-slider text-center">
 			<div class="da-slide">
 				<h2>FaceSchool</h2>
@@ -15,31 +15,33 @@
 	   </div>
 	</div>
 </div><!-- end slider -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <div class="main_bg"><!-- start main -->
 	<div class="container">
 		<div class="main row">
 			<div class="col-md-3 images_1_of_4 text-center">
 				<span class="bg"><i class="fa fa-globe"></i></span>
-				<h4><a href="#">Te amo mi amor!</a></h4>
-				<p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 1500s.</p>
-				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
+				<h4><a>Procesos Actuales</a></h4>
+				<p class="para">Pudimos determinar que los procesos actuales para poder matricular a nuestros hijos llegan a ser bastante engorroso. 	</p>
+				<!--<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>-->
 			</div>
 			<div class="col-md-3 images_1_of_4 bg1 text-center">
 				<span class="bg"><i class="fa fa-laptop"></i></span>
-				<h4><a href="#">Lorem Ipsum is</a></h4>
-				<p class="para">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+				<h4><a>FUENTES DE COMUNICACION.</a></h4>
+				<p class="para">La informacion que se encuentra en internet sobre algun establecimiento pocas veces es actualizada.</p>
+				<!--<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>-->
 			</div>
 			<div class="col-md-3 images_1_of_4 bg1 text-center">
-				<span class="bg"><i class="fa fa-cog"></i></span>
-				<h4><a href="#">Sed Porta Dolor</a></h4>
-				<p class="para">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32  by H. Rackham.</p>
-				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
+				<span class="bg"><i class="fa fa-clock-o"></i></span>
+				<h4><a>Tiempo</a></h4>
+				<p class="para">El tiempo es valioso, por lo tanto no tener una respuesta de forma inmediata puede llegar a ser lo peor, sobre todo si se trata del futuro de nuestros hijos.</p>
+				<!--<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>-->
 			</div>		
 			<div class="col-md-3 images_1_of_4 bg1 text-center">
-				<span class="bg"><i class="fa fa-shield"></i> </span>
-				<h4><a href="#">Contrary  belief</a></h4>
-				<p class="para">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
+				<span class="bg"><i class="fa fa-male"></i> </span>
+				<h4><a>Personas</a></h4>
+				<p class="para">Descubrimos que los tutores no saben el lugar e informacion de los colegios</p>
+				<!--<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>-->
 			</div>	
 		</div>
 	</div>
@@ -51,9 +53,13 @@
 				<img src="images/pic1.jpg" alt="" class="img-responsive">
 			</div>
 			<div class="col-md-6 content_right">
-				<h4>Lorem Ipsum is simply <span>dummy text of the ornare  </span> vulputate printing and  There are many variations of passages.</h4>
-				<p class="para">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words. </p>
-				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
+				<h4><span>Nuestro Alcance </span></h4>
+				<p class="para">Con el fin de cumplir el objetivo, este proyecto lograra brindar una mejor información sobre los colegios de la region a través de una pagina web.</p>
+				<p class="para">Esto <strong>Incluye</strong></p>
+				<p class="para">	- Mostrar al usuario la mayor cantidad de colegios de la zona que este se ubique.</p>
+				<p class="para">	- Proporcionar la información del colegio.</p>
+				<p class="para">	- Comparara la información de los colegios. </p>
+				<!--<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>-->
 			</div>
 		</div>
 				<!--start-img-cursual-->
@@ -63,9 +69,9 @@
 								<img class="lazyOwl" data-src="images/c1.jpg" alt="Lazy Owl Image">
 							</div>
 							<div class="cau_left">
-								<h4><a href="#">vehicula diam</a></h4>
+								<h4><a href="#">Fernado Figueroa</a></h4>
 								<p>
-									Lorem ipsum dolor amet,consectetur adipisicing elit, sed do eiusmod tempor incididunt dolore magna aliqua.
+									CEO.
 								</p>
 							</div>
 						</div>
@@ -74,122 +80,14 @@
 								<img class="lazyOwl" data-src="images/c2.jpg" alt="Lazy Owl Image">
 							</div>
 							<div class="cau_left">
-								<h4><a href="#">Morbi nunc</a></h4>
+								<h4><a href="#">Daniel Labra</a></h4>
 								<p>
-									Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+									<br>Desarrollador.</br>
+									
 								</p>
 							</div>
 						</div>
-						<div class="item">
-							<div class="cau_left">
-								<img class="lazyOwl" data-src="images/c3.jpg" alt="Lazy Owl Image">
-							</div>
-							<div class="cau_left">
-								<h4><a href="#">Lorem ipsum</a></h4>
-								<p>
-									On the other hand, we denounce with righteous indignation and dislike men who are so beguiled  pleasure of the moment,
-								</p>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cau_left">
-								<img class="lazyOwl" data-src="images/c4.jpg" alt="Lazy Owl Image">
-							</div>
-							<div class="cau_left">
-								<h4><a href="#">Sed faucibus</a></h4>
-								<p>
-									Lorem ipsum dolor amet,consectetur adipisicing elit, sed do eiusmod tempor incididunt dolore magna aliqua.
-								</p>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cau_left">
-								<img class="lazyOwl" data-src="images/c2.jpg" alt="Lazy Owl Image">
-							</div>
-							<div class="cau_left">
-								<h4><a href="#">Lorem ipsum</a></h4>
-								<p>
-									Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-								</p>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cau_left">
-								<img class="lazyOwl" data-src="images/c3.jpg" alt="Lazy Owl Image">
-							</div>
-							<div class="cau_left">
-								<h4><a href="#">Lorem ipsum</a></h4>
-								<p>
-									On the other hand, we denounce with righteous indignation and dislike men who are so beguiled  pleasure of the moment,
-								</p>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cau_left">
-								<img class="lazyOwl" data-src="images/c4.jpg" alt="Lazy Owl Image">
-							</div>
-							<div class="cau_left">
-								<h4><a href="#">vehicula diam</a></h4>
-								<p>
-									Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-								</p>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cau_left">
-								<img class="lazyOwl" data-src="images/c1.jpg" alt="Lazy Owl Image">
-							</div>
-							<div class="cau_left">
-								<h4><a href="#">Lorem ipsum</a></h4>
-								<p>
-									On the other hand, we denounce with righteous indignation and dislike men who are so beguiled  pleasure of the moment,
-								</p>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cau_left">
-								<img class="lazyOwl" data-src="images/c2.jpg" alt="Lazy Owl Image">
-							</div>
-							<div class="cau_left">
-								<h4><a href="#">Lorem ipsum</a></h4>
-								<p>
-									Lorem ipsum dolor amet,consectetur adipisicing elit, sed do eiusmod tempor incididunt dolore magna aliqua.
-								</p>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cau_left">
-								<img class="lazyOwl" data-src="images/c3.jpg" alt="Lazy Owl Image">
-							</div>
-							<div class="cau_left">
-								<h4><a href="#">vehicula diam</a></h4>
-								<p>
-									Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-								</p>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cau_left">
-								<img class="lazyOwl" data-src="images/c1.jpg" alt="Lazy Owl Image">
-							</div>
-							<div class="cau_left">
-								<h4><a href="#">Lorem ipsum</a></h4>
-								<p>
-									On the other hand, we denounce with righteous indignation and dislike men who are so beguiled  pleasure of the moment,
-								</p>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cau_left">
-								<img class="lazyOwl" data-src="images/c4.jpg" alt="Lazy Owl Image">
-							</div>
-							<div class="cau_left">
-								<h4><a href="#">Morbi nunc</a></h4>
-								<p>
-									Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-								</p>
-							</div>
-						</div>
+						
 					</div>
 					<!----//End-img-cursual---->
 	</div>
