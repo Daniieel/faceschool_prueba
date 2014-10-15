@@ -61,7 +61,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="container">
 	<div class="row header">
 		<div class="logo navbar-left">
-			<h1><a href="index.html">faceschool </a></h1>
+			<h1><a href="<?= base_url() ?>">faceschool </a></h1>
 		</div>
 		<div class="clearfix"></div>
 	</div>
@@ -85,8 +85,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		        <li class="active"><a href="<?= base_url() ?>">Inicio</a></li>
 		        <li><a href="<?= base_url() ?>mapa">Mapa</a></li>
 		        <li><a href="<?= base_url() ?>informacion">Informacion</a></li>
-		        <li><a href="blog.html">Prueba</a></li>
-		        <li><a href="contact.html">Contacto</a></li>
+		        <li><a href="blog.html">Ver que poner</a></li>
+		        <li><a href="contact.html">Ver que poner</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		    <!-- start soc_icons -->

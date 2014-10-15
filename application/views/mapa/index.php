@@ -288,14 +288,20 @@ function procesaClick() {
       </header>
       <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"--> 
       <br></br><select style="margin-left:5em;" name="address" class="btn btn-primary btn-lg" >
+
               <?php foreach ($colegios as $colegio) {
               ?>
-              <option value="<?= $colegio->latitud ?>,<?= $colegio->longitud ?>"><?= $colegio->nombre ?></option>  
+
+              <option value="<?= $colegio->latitud ?>,<?= $colegio->longitud ?>"><?= $colegio->nombre ?></option>
+             
               <?php }
 
                ?> 
            </select> 
-        <br></br><input style="margin-left:5em;"  type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-default btn-lg">
+        
+        <br></br>
+        <input style="margin-left:5em;"  type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-default btn-lg">
+        <input type="submit" value="Ver Informacion" class="btn btn-primary btn-lg" style="margin-left:1em">
       <br></br>
       <br></br>
       <br></br>
