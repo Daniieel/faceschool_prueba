@@ -278,7 +278,7 @@ function procesaClick() {
 </script>
 </head>
 <body>
- <form>
+ <form action= "<?= base_url('colegio/show'); ?>" method="get" target="_blank" >
    <header>
     <br></br>
     
@@ -298,7 +298,7 @@ function procesaClick() {
 
                ?> 
            </select> 
-        
+
         <br></br>
         <input style="margin-left:5em;"  type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-default btn-lg">
         <input type="submit" value="Ver Informacion" class="btn btn-primary btn-lg" style="margin-left:1em">
