@@ -176,7 +176,7 @@ var marker17 = new google.maps.Marker({
         , });
 //----------
 //------
-//----
+//---- */
 
 
 /*
@@ -293,7 +293,7 @@ function procesaClick() {
               ?>
 
               <option value="<?= $colegio->latitud ?>,<?= $colegio->longitud ?>"><?= $colegio->nombre ?></option>
-             
+
               <?php }
 
                ?> 

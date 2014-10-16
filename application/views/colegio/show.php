@@ -31,7 +31,7 @@
 <tr>
 <th><h5 style="margin-left:3em;">Pagina Web </h5></th>
 
-<td><a href="http://<?= $colegio->pagina_web ?>" class="fa-btn btn-1 btn-1e"><?= $colegio->pagina_web ?></a></td>
+<td><a target="_blank"  href="http://<?= $colegio->pagina_web ?>" class="fa-btn btn-1 btn-1e"><?= $colegio->pagina_web ?></a></td>
 </tr>
 
 </table>
