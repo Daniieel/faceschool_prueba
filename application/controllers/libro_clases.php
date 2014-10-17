@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Mapa extends CI_Controller {
+class Libro_clases extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,13 +20,13 @@ class Mapa extends CI_Controller {
 	public function index()
 	{
 		$this->load->model("colegio_model","uum"); //cargo la base de datos
-		//$dato['usuarios']= $this->uum->get_usuarios(); //cargo una consulta
-		$dato['colegios']= $this->uum->get_colegios();// carga los colegios
-		
-		$this->load->view('layouts/header');
-		$this->load->view('mapa/index',$dato);
-		$this->load->view('layouts/footer');
+		//carago una consulta
+		$dato['cursos']= $this->uum->get_cursos();
+		$dato['asignaturas']= $this->uum->get_asignaturas();
 
+		$this->load->view('layouts/header');
+		$this->load->view('libro_clases/index',$dato);
+		$this->load->view('layouts/footer');
 
 	}
 }

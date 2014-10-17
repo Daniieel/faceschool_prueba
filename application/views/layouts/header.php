@@ -85,7 +85,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		        <li class="active"><a href="<?= base_url() ?>">Inicio</a></li>
 		        <li><a href="<?= base_url() ?>mapa">Mapa</a></li>
 		        <li><a href="<?= base_url() ?>informacion">Informacion</a></li>
-		        <li><a href="blog.html">Ver que poner</a></li>
+		        <li><a href="<?= base_url() ?>libro_clases">Libro de Clases</a></li>
 		        <li><a href="contact.html">Ver que poner</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->

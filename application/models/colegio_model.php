@@ -15,6 +15,23 @@ class Colegio_model extends CI_Model {
 		return $query->row();
 	}
 
+
+
+
+
+
+	function get_cursos(){
+		$query = $this->db->query("SELECT * FROM curso");
+		return $query->result();
+
+	}
+
+	function get_asignaturas(){
+		$query = $this->db->query("SELECT * FROM asignatura");
+		return $query->result();
+
+	}
+
 	
  }
 ?>

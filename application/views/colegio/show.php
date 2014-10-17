@@ -37,7 +37,7 @@
 </table>
 
 <!-- la otra tabla-->
-<p><h1 style="margin-left:3em;">Resultados del colegio</h1></p>
+<p  class="para"><h2 style="margin-left:3em;">Resultado del Colegio</h2></p>
 <table width="200" border="5" class = "table" style="margin-left:5em;" >
 
 <tr>
