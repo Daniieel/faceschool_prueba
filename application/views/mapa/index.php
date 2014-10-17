@@ -3,6 +3,7 @@
 
 <title>Faceschool</title>
 <script src="http://j.maxmind.com/app/geoip.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" title="Geo" >
 
@@ -75,10 +76,23 @@ var marker = new google.maps.Marker({
     animation: google.maps.Animation.BOUNCE
 });
 
+
+
 marker.setMap(map);
+
+
+// Agregar circulo al mapa
+var circle = new google.maps.Circle({
+  map: map,
+  radius: 1000,    // 10 miles in metres
+  fillColor: '#819FF7',
+  strokeColor: '#2E9AFE'
+});
+circle.bindTo('center', marker, 'position');
 
 directionsRenderer = new google.maps.DirectionsRenderer();
 directionsRenderer.setMap(map);
+
 
 
 }
@@ -135,9 +149,9 @@ function procesaClick() {
    <header>
     <br></br>
     
-    <h1 style="margin-left:3em;" class="read">Aca podras <strong>encontrar</strong></h1>  
-    <h1 style="margin-left:3em;"class="read">todos los <strong>colegios</strong></h1>
-    <h1 style="margin-left:3em;"class="read">cercanos a tu <strong>ubicacion.</strong></h1>
+    <h1 style="margin-left:2.5em;" class="read">Aca podras <strong>encontrar</strong></h1>  
+    <h1 style="margin-left:2.5em;"class="read">todos los <strong>colegios</strong></h1>
+    <h1 style="margin-left:2.5em;"class="read">cercanos a tu <strong>ubicacion.</strong></h1>
       </header>
       <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"--> 
       <br></br><select style="margin-left:5em;" name="colegio" class="btn btn-primary btn-lg" >
@@ -153,9 +167,13 @@ function procesaClick() {
            </select> 
 
         <br></br>
-        <input style="margin-left:5em;"  type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-default btn-lg">
+        <input style="margin-left:5em;"  type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-primary btn-lg">
         <input type="submit" value="Ver Informacion" class="btn btn-primary btn-lg" style="margin-left:1em">
-      <br></br>
+      <br>
+      <br>
+      <h3 style="margin-left:4em;" class="read">Te invitamos a usar <strong>Street View</strong></h3>
+      <h5 style="margin-left:7em;" class="read">Arrastra el icono de la persona naranja,</h5>
+      <h5 style="margin-left:7em;" class="read">hacia el colegio que deseas ver.</h5>
       <br></br>
       <br></br>
       <br></br>
@@ -163,8 +181,7 @@ function procesaClick() {
       <br></br>
       <br></br>
       
-      
-      
+           
 </div>
 <div id="mapa" style="position:absolute; width:737px; height:470px; left:520px; top:210px; border: 2px solid black;  position: center; overflow: hidden"></div>
 

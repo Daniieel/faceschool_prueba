@@ -84,9 +84,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		      <ul class="nav navbar-nav">
 		        <li class="active"><a href="<?= base_url() ?>">Inicio</a></li>
 		        <li><a href="<?= base_url() ?>mapa">Mapa</a></li>
-		        <li><a href="<?= base_url() ?>informacion">Informacion</a></li>
+		        <!--<li><a href="<?= base_url() ?>informacion">Informacion</a></li>-->
 		        <li><a href="<?= base_url() ?>libro_clases">Libro de Clases</a></li>
-		        <li><a href="contact.html">Ver que poner</a></li>
+		        <li><a href="contact.html">Contactanos</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		    <!-- start soc_icons -->
@@ -95,9 +95,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<ul class="list-unstyled text-center">
 				<li><a href="https://twitter.com/faceschool_"><i class="fa fa-twitter"></i></a></li>
 				<li><a href="https://www.facebook.com/pages/Faceschool/1454526578163013"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				<li><a href="#"><i class="fa fa-youtube"></i></a></li>
-				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+				<!--<li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
+				<!--<li><a href="#"><i class="fa fa-youtube"></i></a></li>-->
+				<!--<li><a href="#"><i class="fa fa-linkedin"></i></a></li>-->
 			</ul>	
 		</div>
 	</div>
