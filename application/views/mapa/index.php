@@ -28,7 +28,7 @@ showMap(position.coords.latitude, position.coords.longitude);
 var place<?= $colegio->id_colegio ?> = new google.maps.LatLng(<?= $colegio->latitud ?>,<?= $colegio->longitud ?>);
 var marke<?= $colegio->id_colegio ?> = new google.maps.Marker({
           position: place<?= $colegio->id_colegio ?>
-        , title: '<?= $colegio->id_colegio ?> '
+        , title: "<?= $colegio->nombre ?>"
         , icon: 'http://i.imgur.com/Vw20Fx3.png'
         , map: map
         , });
