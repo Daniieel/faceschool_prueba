@@ -71,7 +71,7 @@
 							<div class="cau_left">
 								<h4><a href="#">Fernado Figueroa</a></h4>
 								<p>
-									CEO.
+									<!--CEO.-->
 								</p>
 							</div>
 						</div>
@@ -82,13 +82,13 @@
 							<div class="cau_left">
 								<h4><a href="#">Daniel Labra</a></h4>
 								<p>
-									<br>Desarrollador.</br>
+									<!--<br>Desarrollador.</br>-->
 									
 								</p>
 							</div>
 						</div>
 						
 					</div>
-					<!----//End-img-cursual---->
+					<!--//End-img-cursual-->
 	</div>
 </div>

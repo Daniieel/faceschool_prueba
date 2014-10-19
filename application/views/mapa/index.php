@@ -55,7 +55,7 @@ error('No sabemos que pasó pero ocurrio un error.');
 }
 }
 
-function showMap(lat, longi) {
+function showMap(lat, longi, radius) {
 
 myPos = new google.maps.LatLng(lat,longi);
 
@@ -148,7 +148,7 @@ function procesaClick() {
  <form action= "<?= base_url('colegio/show'); ?>" method="get" target="_blank" >
    <header>
     <br></br>
-    
+
     <h1 style="margin-left:2.5em;" class="read">Aca podras <strong>encontrar</strong></h1>  
     <h1 style="margin-left:2.5em;"class="read">todos los <strong>colegios</strong></h1>
     <h1 style="margin-left:2.5em;"class="read">cercanos a tu <strong>ubicacion.</strong></h1>
@@ -156,6 +156,7 @@ function procesaClick() {
       <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"--> 
       <br></br><select style="margin-left:5em;" name="colegio" class="btn btn-primary btn-lg" >
 
+              <option value=""></option>
               <?php foreach ($colegios as $colegio) {
               ?>
 
@@ -165,8 +166,9 @@ function procesaClick() {
 
                ?> 
            </select> 
-
+            
         <br></br>
+
         <input style="margin-left:5em;"  type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-primary btn-lg">
         <input type="submit" value="Ver Informacion" class="btn btn-primary btn-lg" style="margin-left:1em">
       <br>
@@ -180,10 +182,12 @@ function procesaClick() {
       <br></br>
       <br></br>
       <br></br>
+
+           
       
            
 </div>
-<div id="mapa" style="position:absolute; width:737px; height:470px; left:520px; top:210px; border: 2px solid black;  position: center; overflow: hidden"></div>
+<div id="mapa" style="position:absolute; width:737px; height:470px; left:520px; top:250px; border: 2px solid black;  position: center; overflow: hidden"></div>
 
 </form>
 
