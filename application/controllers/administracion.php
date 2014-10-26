@@ -33,10 +33,20 @@ class Administracion extends CI_Controller {
 		if ($validacion==FALSE) {
 			redirect(base_url('administracion/login'));
 		}else{
+			$newdata = array(
+			 'username' => $validacion->usuario,
+			 'logged_in' => TRUE
+			 );
+			$this->session->set_userdata($newdata);
+			
 			redirect(base_url('administracion/admin'));
 		}
 	}
-
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect(base_url('administracion/login'));
+	}
 
 	public function admin()
 	{

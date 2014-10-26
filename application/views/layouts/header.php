@@ -69,7 +69,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<div class="col-md-8">
 			<div class="pull-right">
-			<a class="btn btn-danger btn-sm" href="<?= base_url('administracion/login') ?>"><i class="fa fa-user"></i> Login Administración</a>
+			<?php if ($this->session->userdata('logged_in') == TRUE) { ?>
+				<h5><strong><a href="<?= base_url('administracion/admin') ?>">Hola <?= $this->session->userdata('username');?></a></strong> 
+				<a href="<?= base_url('administracion/logout') ?>">Salir</a>
+				</h5>
+				
+				</div>
+			<?php }else{ ?>
+				<a class="btn btn-danger btn-sm" href="<?= base_url('administracion/login') ?>"><i class="fa fa-user"></i> Login Administración</a>
+			<?php } ?>
 		</div>
 		</div>
 		<div class="clearfix"></div>
