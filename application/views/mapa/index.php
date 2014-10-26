@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12" style="margin-bottom:30px;">
       <title>Faceschool</title>
       <script src="http://j.maxmind.com/app/geoip.js"></script>
       <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
@@ -183,8 +183,8 @@
         });
       </script>
 
-      <h1 class= "read" align="center">Acá podrás <strong>encontrar</strong> todos los <strong>colegios</strong> cercanos a tu <strong>ubicación</strong></h1>
-      <div class="col-md-5">
+      <h1 class= "read" align="center" style="padding:30px">Acá podrás <strong>encontrar</strong> todos los <strong>colegios</strong> cercanos a tu <strong>ubicación</strong></h1>
+      <div class="col-md-5" style="background:rgb(79, 78, 78); color:white;">
       <div>
         <h3>Buscar</h3>
         <label>Selecciona comuna</label>
@@ -232,7 +232,7 @@
             <br></br>
             <br></br>
             <br></br>
-            <br></br>
+            
     
       
       </div>
