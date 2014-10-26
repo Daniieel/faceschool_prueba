@@ -147,16 +147,25 @@
       }
 
       </script>
+      <script type="text/javascript">
+        $( document ).ready(function() {
+          $('#comuna').change(function() {
+            var nombre_comuna = $('#comuna').val();
+            
+          });
+        });
+      </script>
+
       <h1 class= "read" align="center">Acá podrás <strong>encontrar</strong> todos los <strong>colegios</strong> cercanos a tu <strong>ubicación</strong></h1>
       <div class="col-md-5">
       <div>
         <label>Buscar</label>
-        <select name= "comuna" class= "form-control">
+        <select name= "comuna" class= "form-control" id="comuna">
           <option>Selecciona una comuna</option>
               <?php foreach ($colegios as $colegio) {
               ?>
 
-              <option value="<?= $colegio->id_colegio ?>"><?= $colegio->comuna ?></option>
+              <option value="<?= $colegio->comuna ?>"><?= $colegio->comuna ?></option>
 
               <?php }
 
@@ -167,7 +176,7 @@
          <div class="form-group">
            <label>Selecciona el colegio:</label>
            <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"--> 
-           <select name="colegio" class="form-control" >
+           <select name="colegio" class="form-control" id="colegio">
 
                  <option>Selecciona un colegio</option>
                  <?php foreach ($colegios as $colegio) {

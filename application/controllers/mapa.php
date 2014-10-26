@@ -29,6 +29,12 @@ class Mapa extends CI_Controller {
 
 
 	}
+	public function colegios_por_comuna()
+	{
+		$comuna =$this->input->get("comuna");
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		$dato['colegios']= $this->uum->get_colegios_por_comuna();// carga los colegios
+	}
 }
 
 /* End of file welcome.php */
