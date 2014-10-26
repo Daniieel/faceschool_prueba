@@ -11,6 +11,7 @@
       var myPos;
       var directionsRenderer;
       var directionsService = new google.maps.DirectionsService();
+      var markers = []
 
       if (navigator && navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(geoOK, geoKO);
@@ -27,19 +28,19 @@
       <?php foreach ($colegios as $colegio) {
                    ?> 
       var place<?= $colegio->id_colegio ?> = new google.maps.LatLng(<?= $colegio->latitud ?>,<?= $colegio->longitud ?>);
-      var marke<?= $colegio->id_colegio ?> = new google.maps.Marker({
+      var marke = new google.maps.Marker({
                 position: place<?= $colegio->id_colegio ?>
               , title: "<?= $colegio->nombre ?>"
               , icon: 'http://i.imgur.com/Vw20Fx3.png'
               , map: map
               , });
-
+       markers.push(marke);
       <?php }
 
       ?>
 
       }
-
+      
 
 
       function geoMaxmind() {
@@ -149,9 +150,35 @@
       </script>
       <script type="text/javascript">
         $( document ).ready(function() {
-          $('#comuna').change(function() {
-            var nombre_comuna = $('#comuna').val();
-            
+          
+          
+          $('#comuna').change(function() { //boton que cambia todo
+          console.log($("#comuna").val());
+          //borro todos los makers (los colegios en el mapa)
+           for (var i = 0; i < markers.length; i++) {
+                    markers[i].setMap(null);
+            }
+           
+           $.getJSON("<?= base_url('mapa/colegios_por_comuna') ?>", {comuna:$("#comuna").val()}, function(data) {
+              var colegio = $('#colegio') //combobox
+              $("option", colegio).remove(); //borro todos los elementos del colegio
+              var option = '';
+               $.each(data, function(index, op) {
+               
+                //agrego los nuevos makers
+               for (var i = 0; i < markers.length; i++) {
+                  if (op.nombre.localeCompare(markers[i].title) == 0) {
+                    markers[i].setMap(map);
+                    break;
+                  }
+                }
+                
+                //agrego los options del colegio
+               option += "<option value='"+op.id_colegio+"'>"+op.nombre+"</option>";
+               });
+              colegio.html(option);
+            });
+           
           });
         });
       </script>
@@ -159,14 +186,13 @@
       <h1 class= "read" align="center">Acá podrás <strong>encontrar</strong> todos los <strong>colegios</strong> cercanos a tu <strong>ubicación</strong></h1>
       <div class="col-md-5">
       <div>
-        <label>Buscar</label>
+        <h3>Buscar</h3>
+        <label>Selecciona comuna</label>
         <select name= "comuna" class= "form-control" id="comuna">
-          <option>Selecciona una comuna</option>
-              <?php foreach ($colegios as $colegio) {
+          <option value="Todos">Todos</option>
+              <?php foreach ($comunas as $comuna) {
               ?>
-
-              <option value="<?= $colegio->comuna ?>"><?= $colegio->comuna ?></option>
-
+              <option value="<?= $comuna->comuna ?>"><?= $comuna->comuna ?></option>
               <?php }
 
                ?> 
@@ -178,7 +204,7 @@
            <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"--> 
            <select name="colegio" class="form-control" id="colegio">
 
-                 <option>Selecciona un colegio</option>
+                 <option value="">Selecciona un colegio</option>
                  <?php foreach ($colegios as $colegio) {
                  ?>
 

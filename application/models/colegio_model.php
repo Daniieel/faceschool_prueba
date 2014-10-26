@@ -15,5 +15,13 @@ class Colegio_model extends CI_Model {
 		return $query->row();
 	}
 
+	function get_comunas(){
+		$query = $this->db->query("SELECT * FROM comuna");
+		return $query->result();
+	}
+	function get_colegios_por_comuna($nombre_comuna){ //sacar los colegios filtrados por comuna
+		$query = $this->db->query("SELECT * FROM colegio WHERE comuna='$nombre_comuna' ");
+		return $query->result();
+	}
 }
 ?>
