@@ -23,5 +23,14 @@ class Colegio_model extends CI_Model {
 		$query = $this->db->query("SELECT * FROM colegio WHERE comuna='$nombre_comuna' ");
 		return $query->result();
 	}
+
+	function get_administracion_login($usuario, $contraseña){
+		$query = $this->db->->query("SELECT * FROM admin WHERE usuario ='$usuario' and contraseña = '$contraseña' LIMIT 1");
+		if ($query->num_rows==1) {
+			return $query->row();
+		}else{
+			return FALSE;
+		}
+	}
 }
 ?>

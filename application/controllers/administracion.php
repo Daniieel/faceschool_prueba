@@ -19,10 +19,51 @@ class Administracion extends CI_Controller {
 	 */
 	public function login()
 	{
-		
-
 		$this->load->view("layouts/header");
 		$this->load->view('administracion/login');
+		$this->load->view("layouts/footer");
+	}
+	public function login_action()
+	{
+		$usuario=$this->input->post("usuario");
+		$contraseña=$this->input->post("contraseña");
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		$validacion=$this->uum->administracion_login($usuario, $contraseña);
+
+		if ($validacion==FALSE) {
+			redirect(base_url('administracion/login'));
+		}else{
+			redirect(base_url('administracion/admin'));
+		}
+	}
+
+
+	public function admin()
+	{
+		$this->load->view("layouts/header");
+		$this->load->view('administracion/admin');
+		$this->load->view("layouts/footer");
+	}
+
+	public function seleccionar_colegio_mod()
+	{
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		$dato['colegios']= $this->uum->get_colegios();// carga los colegios
+		$dato['comunas']= $this->uum->get_comunas();
+
+		$this->load->view("layouts/header");
+		$this->load->view('administracion/seleccionar_colegio_mod', $dato);
+		$this->load->view("layouts/footer");
+	}
+
+	public function modificar_colegio()
+	{
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		$dato['colegios']= $this->uum->get_colegios();// carga los colegios
+		$dato['comunas']= $this->uum->get_comunas();
+
+		$this->load->view("layouts/header");
+		$this->load->view('administracion/modificar_colegio', $dato);
 		$this->load->view("layouts/footer");
 	}
 }
