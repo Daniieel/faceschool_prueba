@@ -5,12 +5,12 @@
 			<p></p>
 
 			<table width="200" border="5" class = "table table-striped" >
-
 			<tr>
 			<th><h5 style="margin-left:3em margin-right:3em;">Nombre</h5></th>
 			<td><h5><?= $colegio->nombre ?></h5></td>
 
 			</tr>
+
 
 			<tr>
 			<th><h5 >Direccion</h5></th>
@@ -46,8 +46,8 @@
 			<th><h5 >Promedio PSU</h5></th>
 			<td><h5><?= $colegio->promedio_psu ?></h5></td>
 
-
 			</tr>
+
 
 			<tr>
 			<th><h5 >Grupo Socioeconomico</h5></th>

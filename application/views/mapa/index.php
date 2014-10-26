@@ -30,11 +30,14 @@ var marke<?= $colegio->id_colegio ?> = new google.maps.Marker({
         , icon: 'http://i.imgur.com/Vw20Fx3.png'
         , map: map
         , });
+
 <?php }
 
 ?>
 
 }
+
+
 
 function geoMaxmind() {
 showMap(geoip_latitude(), geoip_longitude());
@@ -70,6 +73,7 @@ var marker = new google.maps.Marker({
     position: myPos,
     title:"Tu Ubicacion",
     draggable:true,
+    icon: 'https://dl.dropboxusercontent.com/u/20056281/Iconos/male-2.png',
     animation: google.maps.Animation.BOUNCE
 });
 
