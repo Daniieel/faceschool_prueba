@@ -1,6 +1,3 @@
-<html>
-<head>
-
 <title>Faceschool</title>
 <script src="http://j.maxmind.com/app/geoip.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
@@ -143,8 +140,7 @@ function procesaClick() {
 }
 
 </script>
-</head>
-<body>
+
  <form action= "<?= base_url('colegio/show'); ?>" method="get" target="_blank" >
    <header>
     <br></br>
@@ -182,15 +178,8 @@ function procesaClick() {
       <br></br>
       <br></br>
       <br></br>
-
-           
-      
-           
-</div>
+<!-- MAPA -->
 <div id="mapa" style="position:absolute; width:737px; height:470px; left:520px; top:250px; border: 2px solid black;  position: center; overflow: hidden"></div>
 
 </form>
 
-</body>
-
-</html>
