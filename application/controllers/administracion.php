@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Landing extends CI_Controller {
+class Administracion extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -17,16 +17,13 @@ class Landing extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function login()
 	{
-		#$this->load->model("colegio_model","uum"); //cargo la base de datos
-		#$dato['usuarios']= $this->uum->get_usuarios(); //carago una consulta
-		#$dato['colegios']= $this->uum->get_colegios();
+		
 
-		$this->load->view('layouts/header');
-		$this->load->view('landing/index');
-		$this->load->view('layouts/footer');
-
+		$this->load->view("layouts/header");
+		$this->load->view('administracion/login');
+		$this->load->view("layouts/footer");
 	}
 }
 

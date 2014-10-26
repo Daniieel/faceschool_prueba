@@ -62,10 +62,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="header_bg">
 <div class="container">
 	<div class="row header">
-		<div class="logo navbar-left">
+		<div class="col-md-4">
+			<div class="logo navbar-left">
 			<h1><a href="<?= base_url() ?>">faceschool </a></h1>
 		</div>
+		</div>
+		<div class="col-md-8">
+			<div class="pull-right">
+			<a class="btn btn-danger btn-sm" href="<?= base_url('administracion/login') ?>"><i class="fa fa-user"></i> Login Administración</a>
+		</div>
+		</div>
 		<div class="clearfix"></div>
+		
 	</div>
 </div>
 </div>
