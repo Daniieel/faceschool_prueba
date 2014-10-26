@@ -11,7 +11,7 @@
 				  </div>
 				  <div class="form-group">
 				    <label for="exampleInputPassword1">Contraseña</label>
-				    <input name="contraseña" type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+				    <input name="contrasena" type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
 				  </div>
 				  <button type="submit" class="btn btn-default">Entrar</button>
 				</form>

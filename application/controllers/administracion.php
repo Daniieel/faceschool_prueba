@@ -26,9 +26,9 @@ class Administracion extends CI_Controller {
 	public function login_action()
 	{
 		$usuario=$this->input->post("usuario");
-		$contraseña=$this->input->post("contraseña");
+		$contraseña=$this->input->post("contrasena");
 		$this->load->model("colegio_model","uum"); //cargo la base de datos
-		$validacion=$this->uum->administracion_login($usuario, $contraseña);
+		$validacion=$this->uum->get_administracion_login($usuario, $contraseña);
 
 		if ($validacion==FALSE) {
 			redirect(base_url('administracion/login'));
