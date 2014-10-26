@@ -8,10 +8,10 @@
 <p  class="para"><h2 style="margin-left:3em;">Informacion del Colegio</h2></p>
 <p></p>
 
-<table width="200" border="5" class = "table" style="margin-left:5em;" >
+<table width="200" border="5" class = "table" style="margin-left:5em" >
 
 <tr>
-<th><h5 style="margin-left:3em margin-right:3em;">Nombre</h5></th>
+<th><h5 style="margin-left:3em">Nombre</h5></th>
 <td><h5><?= $colegio->nombre ?></h5></td>
 
 </tr>
@@ -47,15 +47,15 @@
 </tr>
 
 <tr>
-<th><h5 style="margin-left:3em;">Promedio PSU</h5></th>
-<td><h5><?= $colegio->promedio_psu ?></h5></td>
-
+<th><h5 style="margin-left:3em;">Grupo Socioeconomico</h5></th>
+ <td><h5><?= $colegio->grupo_socioeco ?></h5></td>
 
 </tr>
 
 <tr>
-<th><h5 style="margin-left:3em;">Grupo Socioeconomico</h5></th>
- <td><h5><?= $colegio->grupo_socioeco ?></h5></td>
+<th><h5 style="margin-left:3em;">Promedio PSU</h5></th>
+<td><h5><?= $colegio->promedio_psu ?></h5></td>
+
 
 </tr>
 
