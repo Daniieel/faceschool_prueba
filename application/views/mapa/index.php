@@ -151,9 +151,18 @@
       <script type="text/javascript">
         $( document ).ready(function() {
           
-          
-          $('#comuna').change(function() { //boton que cambia todo
-          console.log($("#comuna").val());
+         
+        $("#informacion").attr("disabled", "disabled");
+        $('#colegio').change(function() { //boton que cambia todo
+          if ($('#colegio').val()== "" || $('#colegio').val() == null) {
+              $("#informacion").attr("disabled", "disabled");
+          }else{
+             $("#informacion").removeAttr("disabled");
+          }
+        });
+        $('#comuna').change(function() { //boton que cambia todo
+            
+
           //borro todos los makers (los colegios en el mapa)
            for (var i = 0; i < markers.length; i++) {
                     markers[i].setMap(null);
@@ -177,27 +186,29 @@
                option += "<option value='"+op.id_colegio+"'>"+op.nombre+"</option>";
                });
               colegio.html(option);
+              $("#informacion").removeAttr("disabled");
             });
            
           });
         });
       </script>
 
-      <h1 class= "read" align="center" style="padding:30px">Acá podrás <strong>encontrar</strong> todos los <strong>colegios</strong> cercanos a tu <strong>ubicación</strong></h1>
+      <h1 class= "read" align="" style="margin-top:60px; margin-bottom:30px;"><strong>Encuentra</strong> todos los <strong>colegios</strong> cercanos a tu <strong>ubicación</strong></h1>
       <div class="col-md-5" style="background:rgb(79, 78, 78); color:white;">
-      <div>
+     
         <h3>Buscar</h3>
-        <label>Selecciona comuna</label>
-        <select name= "comuna" class= "form-control" id="comuna">
-          <option value="Todos">Todos</option>
-              <?php foreach ($comunas as $comuna) {
-              ?>
-              <option value="<?= $comuna->comuna ?>"><?= $comuna->comuna ?></option>
-              <?php }
+         <div class="form-group">
+          <label>Selecciona comuna:</label>
+          <select name= "comuna" class= "form-control" id="comuna">
+            <option value="Todos">Todos</option>
+                <?php foreach ($comunas as $comuna) {
+                ?>
+                <option value="<?= $comuna->comuna ?>"><?= $comuna->comuna ?></option>
+                <?php }
 
-               ?> 
-        </select>
-      </div>
+                 ?> 
+          </select>
+       </div>
        <form action= "<?= base_url('colegio/show'); ?>" method="get" target="_blank" >
          <div class="form-group">
            <label>Selecciona el colegio:</label>
@@ -217,8 +228,8 @@
          </div>
             
           <div class="form-group">
-            <input type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-primary">
-            <input type="submit" value="Ver Informacion" class="btn btn-primary">
+            <input type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-danger">
+            <input type="submit" value="Ver Informacion" class="btn btn-danger" id="informacion">
           </div>
 
         </form>
@@ -231,7 +242,7 @@
             <br></br>
             <br></br>
             <br></br>
-            <br></br>
+            
             
     
       
