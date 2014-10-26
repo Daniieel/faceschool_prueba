@@ -6,7 +6,7 @@ class Colegio_model extends CI_Model {
 	}
 
 	function get_colegios(){ //funcion para traer colegios
-		$query = $this->db->query("SELECT id_colegio, nombre, direccion, telefono, pagina_web, dependencia,promedio_psu, grupo_socioeco, prom_simce_4bas_leng, prom_simce_4bas_mate, prom_simce_4bas_cienc, prom_simce_2med_leng, prom_simce_2med_mate, religion, idioma, replace(latitud,',','.') as latitud, replace(longitud,',','.') as longitud FROM colegio");
+		$query = $this->db->query("SELECT id_colegio, nombre, provincia, region, comuna, direccion, telefono, pagina_web, dependencia,promedio_psu, grupo_socioeco, prom_simce_4bas_leng, prom_simce_4bas_mate, prom_simce_4bas_cienc, prom_simce_2med_leng, prom_simce_2med_mate, religion, idioma, replace(latitud,',','.') as latitud, replace(longitud,',','.') as longitud FROM colegio");
 		return $query->result();
 	}
 
@@ -15,23 +15,5 @@ class Colegio_model extends CI_Model {
 		return $query->row();
 	}
 
-
-
-
-
-
-	function get_cursos(){
-		$query = $this->db->query("SELECT * FROM curso");
-		return $query->result();
-
-	}
-
-	function get_asignaturas(){
-		$query = $this->db->query("SELECT * FROM asignatura");
-		return $query->result();
-
-	}
-
-	
- }
+}
 ?>
