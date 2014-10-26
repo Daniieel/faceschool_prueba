@@ -50,6 +50,7 @@ class Administracion extends CI_Controller {
 
 	public function admin()
 	{
+		$this->autorizar();
 		$this->load->view("layouts/header");
 		$this->load->view('administracion/admin');
 		$this->load->view("layouts/footer");
@@ -57,6 +58,7 @@ class Administracion extends CI_Controller {
 
 	public function seleccionar_colegio_mod()
 	{
+		$this->autorizar();
 		$this->load->model("colegio_model","uum"); //cargo la base de datos
 		$dato['colegios']= $this->uum->get_colegios();// carga los colegios
 		$dato['comunas']= $this->uum->get_comunas();
@@ -68,6 +70,7 @@ class Administracion extends CI_Controller {
 
 	public function modificar_colegio()
 	{
+		$this->autorizar();
 		$this->load->model("colegio_model","uum"); //cargo la base de datos
 		$dato['colegios']= $this->uum->get_colegios();// carga los colegios
 		$dato['comunas']= $this->uum->get_comunas();
@@ -75,6 +78,14 @@ class Administracion extends CI_Controller {
 		$this->load->view("layouts/header");
 		$this->load->view('administracion/modificar_colegio', $dato);
 		$this->load->view("layouts/footer");
+	}
+
+
+	
+	private function autorizar(){
+		if ($this->session->userdata('logged_in') != TRUE) {
+			redirect(base_url('administracion/login'));
+		}
 	}
 }
 
