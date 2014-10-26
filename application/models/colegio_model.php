@@ -15,5 +15,10 @@ class Colegio_model extends CI_Model {
 		return $query->row();
 	}
 
+	function get_comunas(){
+		$query = $this->db->query("SELECT * FROM comuna");
+		return $query->result();
+	}
+
 }
 ?>

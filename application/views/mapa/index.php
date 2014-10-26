@@ -153,10 +153,10 @@
         <label>Buscar</label>
         <select name= "comuna" class= "form-control">
           <option>Selecciona una comuna</option>
-              <?php foreach ($colegios as $colegio) {
+              <?php foreach ($comunas as $comuna) {
               ?>
 
-              <option value="<?= $colegio->id_colegio ?>"><?= $colegio->comuna ?></option>
+              <option value="<?= $comuna->id_comuna ?>"><?= $comuna->comuna ?></option>
 
               <?php }
 
