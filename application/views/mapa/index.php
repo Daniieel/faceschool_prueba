@@ -76,7 +76,7 @@
       var marker = new google.maps.Marker({
           position: myPos,
           title:"Tu Ubicacion",
-          draggable:true,
+          draggable:false,
           icon: 'https://dl.dropboxusercontent.com/u/20056281/Iconos/male-2.png',
           animation: google.maps.Animation.BOUNCE
       });
@@ -193,6 +193,55 @@
         });
       </script>
 
+<!-- -->
+      <script type="text/javascript">
+        $( document ).ready(function() {
+          
+         
+        $("#informacion").attr("disabled", "disabled");
+        $('#colegio').change(function() { //boton que cambia todo
+          if ($('#colegio').val()== "" || $('#colegio').val() == null) {
+              $("#informacion").attr("disabled", "disabled");
+          }else{
+             $("#informacion").removeAttr("disabled");
+          }
+        });
+        $('#religion').change(function() { //boton que cambia todo
+            
+
+          //borro todos los makers (los colegios en el mapa)
+           for (var i = 0; i < markers.length; i++) {
+                    markers[i].setMap(null);
+            }
+           
+           $.getJSON("<?= base_url('mapa/colegios_por_religion') ?>", {religion:$("#religion").val()}, function(data) {
+              var colegio = $('#colegio') //combobox
+              $("option", colegio).remove(); //borro todos los elementos del colegio
+              var option = '';
+               $.each(data, function(index, op) {
+               
+                //agrego los nuevos makers
+               for (var i = 0; i < markers.length; i++) {
+                  if (op.nombre.localeCompare(markers[i].title) == 0) {
+                    markers[i].setMap(map);
+                    break;
+                  }
+                }
+                
+                //agrego los options del colegio
+               option += "<option value='"+op.id_colegio+"'>"+op.nombre+"</option>";
+               });
+              colegio.html(option);
+              $("#informacion").removeAttr("disabled");
+            });
+           
+          });
+        });
+      </script>
+<!-- -->
+
+
+
       <h1 class= "read" align="" style="margin-top:60px; margin-bottom:30px;"><strong>Encuentra</strong> todos los <strong>colegios</strong> cercanos a tu <strong>ubicación</strong></h1>
       <div class="col-md-5" style="background:rgb(79, 78, 78); color:white;">
      
@@ -209,6 +258,33 @@
                  ?> 
           </select>
        </div>
+
+         <div class="form-group">
+          <label>Selecciona religion:</label>
+          <select name= "religion" class= "form-control" id="religion">
+            <option value="Todos">Todos</option>
+                <?php foreach ($religiones as $religion) {
+                ?>
+                <option value="<?= $religion->religion ?>"><?= $religion->religion ?></option>
+                <?php }
+
+                 ?> 
+          </select>
+       </div>
+
+         <div class="form-group">
+          <label>Selecciona idioma:</label>
+          <select name= "idioma" class= "form-control" id="idioma">
+            <option value="Todos">Todos</option>
+                <?php foreach ($idiomas as $idioma) {
+                ?>
+                <option value="<?= $idioma->idioma ?>"><?= $idioma->idioma ?></option>
+                <?php }
+
+                 ?> 
+          </select>
+       </div>
+
        <form action= "<?= base_url('colegio/show'); ?>" method="get" target="_blank" >
          <div class="form-group">
            <label>Selecciona el colegio:</label>

@@ -32,5 +32,25 @@ class Colegio_model extends CI_Model {
 			return FALSE;
 		}
 	}
+
+	function get_religiones(){
+		$query = $this->db->query("SELECT * FROM religion");
+		return $query->result();
+	}
+
+	function get_colegios_por_religion($nombre_religion){ //sacar los colegios filtrados por comuna
+		$query = $this->db->query("SELECT * FROM colegio WHERE religion='$nombre_religion' ");
+		return $query->result();
+	}
+
+	function get_idiomas(){
+		$query = $this->db->query("SELECT * FROM idioma");
+		return $query->result();
+	}
+
+	function get_colegios_por_idioma($nombre_idioma){ //sacar los colegios filtrados por comuna
+		$query = $this->db->query("SELECT * FROM colegio WHERE idioma='$nombre_idioma' ");
+		return $query->result();
+	}
 }
 ?>

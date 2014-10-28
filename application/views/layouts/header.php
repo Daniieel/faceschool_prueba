@@ -100,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="<?= base_url() ?>">Inicio</a></li>
+		        <li><a href="<?= base_url() ?>">Inicio</a></li>
 		        <li><a href="<?= base_url() ?>mapa">Mapa</a></li>
 		        <!--<li><a href="<?= base_url() ?>informacion">Informacion</a></li>-->
 		        <!--<li><a href="<?= base_url() ?>libro_clases">Libro de Clases</a></li>-->
