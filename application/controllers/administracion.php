@@ -56,6 +56,20 @@ class Administracion extends CI_Controller {
 		$this->load->view("layouts/footer");
 	}
 
+	public function agregar_colegio()
+	{
+		$this->autorizar();
+
+		//guardo en un array todos los datos que insertaron en el formulario anterior
+		$colegio = array(
+			'nombre' => $this->input->post('nombre'), //con el name de cada input obtengo los valores de cada uno
+			);
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		$this->uum->agregar_colegio($colegio); //agrego el colegio asignado 
+		
+		//redirect(base_url('administracion/admin'));
+
+	}
 	public function seleccionar_colegio_mod()
 	{
 		$this->autorizar();

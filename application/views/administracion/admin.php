@@ -12,74 +12,74 @@
 
 		<div class = "col-md-9">
 
-			<form class="form-horizontal" role="form">
+			<form class="form-horizontal" role="form" action="<?= base_url('administracion/agregar_colegio')  ?>" method="post">
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Nombre colegio</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="inputEmail3">
+			      <input type="text" name="nombre" class="form-control" id="inputEmail3">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputPassword3" class="col-sm-2 control-label">Provincia</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="inputPassword3">
+			      <input type="text" name="provincia" class="form-control" id="inputPassword3">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Region</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="inputEmail3">
+			      <input type="text" name="region" class="form-control" id="inputEmail3">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Comuna</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="inputEmail3">
+			      <input type="text" name="comuna" class="form-control" id="inputEmail3">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Direccion</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="inputEmail3">
+			      <input type="text" name="direccion" class="form-control" id="inputEmail3">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Telefono</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="inputEmail3">
+			      <input type="text" name="telefono" class="form-control" id="inputEmail3">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Pagina Web</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="inputEmail3">
+			      <input type="text" name="pagina_web" class="form-control" id="inputEmail3">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Dependencia</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="inputEmail3">
+			      <input type="text" name="dependencia" class="form-control" id="inputEmail3">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Promedio PSU</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="inputEmail3">
+			      <input type="text" name="promedio_psu" class="form-control" id="inputEmail3">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Grupo Socioeconomico</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="inputEmail3">
+			      <input type="text" name="grupo_socioeconomico" class="form-control" id="inputEmail3">
 			    </div>
 			  </div>
 
