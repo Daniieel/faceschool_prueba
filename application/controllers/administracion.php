@@ -63,11 +63,30 @@ class Administracion extends CI_Controller {
 		//guardo en un array todos los datos que insertaron en el formulario anterior
 		$colegio = array(
 			'nombre' => $this->input->post('nombre'), //con el name de cada input obtengo los valores de cada uno
+			'region' => $this->input->post('region'),
+			'provincia' => $this->input->post('provincia'),
+			'comuna' => $this->input->post('comuna'),
+			'direccion' => $this->input->post('direccion'),
+			'telefono' => $this->input->post('telefono'),
+			'pagina_web' => $this->input->post('pagina_web'),
+			'dependencia' => $this->input->post('dependencia'),
+			'promedio_psu' => $this->input->post('promedio_psu'),
+			'grupo_socioeco' => $this->input->post('grupo_socioeco'),
+			'prom_simce_4bas_leng' => $this->input->post('prom_simce_4bas_leng'),
+			'prom_simce_4bas_mate' => $this->input->post('prom_simce_4bas_mate'),
+			'prom_simce_4bas_cienc' => $this->input->post('prom_simce_4bas_cienc'),
+			'prom_simce_2med_leng' => $this->input->post('prom_simce_2med_leng'),
+			'prom_simce_2med_mate' => $this->input->post('prom_simce_2med_mate'),
+			'religion' => $this->input->post('religion'),
+			'idioma' => $this->input->post('idioma'),
+			'latitud' => $this->input->post('latitud'),
+			'longitud' => $this->input->post('longitud'),
+			
 			);
 		$this->load->model("colegio_model","uum"); //cargo la base de datos
 		$this->uum->agregar_colegio($colegio); //agrego el colegio asignado 
 		
-		//redirect(base_url('administracion/admin'));
+		redirect(base_url('administracion/admin'));
 
 	}
 	public function seleccionar_colegio_mod()
