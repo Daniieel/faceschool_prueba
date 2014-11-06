@@ -15,121 +15,122 @@
 		<form class="form-horizontal" role="form" action="<?= base_url('administracion/nose')  ?>" method="post">
 			
 		<div class="form-group">
+				<input type="hidden" name="id_colegio" value="<?= $colegio->id_colegio?>">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Nombre colegio</label>
 			    <div class="col-sm-10">
-			       <input type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->nombre ?>">
+			       <input type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->nombre ?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputPassword3" class="col-sm-2 control-label">Provincia</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputPassword3" placeholder ="<?= $colegio->provincia?>">
+			      <input  type="text" class="form-control" id="inputPassword3" value ="<?= $colegio->provincia?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Region</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->region?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->region?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Comuna</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->comuna?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->comuna?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Direccion</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->direccion?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->direccion?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Telefono</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->telefono?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->telefono?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Pagina Web</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->pagina_web?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->pagina_web?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Dependencia</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->dependencia?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->dependencia?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Promedio PSU</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->promedio_psu?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->promedio_psu?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Grupo Socioeconomico</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->grupo_socioeco?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->grupo_socioeco?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Promedio Simce 4Basico Lenguaje</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->prom_simce_4bas_leng?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->prom_simce_4bas_leng?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Promedio Simce 4Basico Matematicas</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->prom_simce_4bas_mate?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->prom_simce_4bas_mate?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Promedio Simce 4Basico Ciencias</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->prom_simce_4bas_cienc?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->prom_simce_4bas_cienc?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Promedio Simce 2Medio Lenguaje</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->prom_simce_2med_leng?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->prom_simce_2med_leng?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Promedio Simce 2Medio Matematicas</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->prom_simce_2med_mate?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->prom_simce_2med_mate?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Religion</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->religion?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->religion?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Idioma</label>
 			    <div class="col-sm-10">
-			      <input  type="text" class="form-control" id="inputEmail3" placeholder ="<?= $colegio->idioma?>">
+			      <input  type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->idioma?>">
 			    </div>
 			  </div>
 
