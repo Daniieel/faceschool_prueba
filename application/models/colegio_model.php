@@ -36,6 +36,11 @@ class Colegio_model extends CI_Model {
 		  $this->db->insert('Colegio',$colegio);
 	}
 
+	function modificar_colegio($colegio){
+		$this->db->update('Colegio', $colegio, "id = $colegio_id");
+	}
+
+
 	function get_religiones(){
 		$query = $this->db->query("SELECT * FROM religion");
 		return $query->result();

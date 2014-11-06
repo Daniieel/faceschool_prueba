@@ -83,9 +83,12 @@ class Administracion extends CI_Controller {
 			'longitud' => $this->input->post('longitud'),
 			
 			);
+	
+
 		$this->load->model("colegio_model","uum"); //cargo la base de datos
 		$this->uum->agregar_colegio($colegio); //agrego el colegio asignado 
-		
+
+
 		redirect(base_url('administracion/admin'));
 
 	}
@@ -113,6 +116,64 @@ class Administracion extends CI_Controller {
 		$this->load->view("layouts/footer");
 	}
 
+	public function nose(){
+		$this->autorizar();
+		$colegio = array(
+			'nombre' => $this->input->post('nombre'), //con el name de cada input obtengo los valores de cada uno
+			'region' => $this->input->post('region'),
+			'provincia' => $this->input->post('provincia'),
+			'comuna' => $this->input->post('comuna'),
+			'direccion' => $this->input->post('direccion'),
+			'telefono' => $this->input->post('telefono'),
+			'pagina_web' => $this->input->post('pagina_web'),
+			'dependencia' => $this->input->post('dependencia'),
+			'promedio_psu' => $this->input->post('promedio_psu'),
+			'grupo_socioeco' => $this->input->post('grupo_socioeco'),
+			'prom_simce_4bas_leng' => $this->input->post('prom_simce_4bas_leng'),
+			'prom_simce_4bas_mate' => $this->input->post('prom_simce_4bas_mate'),
+			'prom_simce_4bas_cienc' => $this->input->post('prom_simce_4bas_cienc'),
+			'prom_simce_2med_leng' => $this->input->post('prom_simce_2med_leng'),
+			'prom_simce_2med_mate' => $this->input->post('prom_simce_2med_mate'),
+			'religion' => $this->input->post('religion'),
+			'idioma' => $this->input->post('idioma'),
+			'latitud' => $this->input->post('latitud'),
+			'longitud' => $this->input->post('longitud'),
+			
+			);
+	
+
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		$this->uum->modificar_colegio($colegio); //agrego el colegio asignado 
+
+
+		redirect(base_url('administracion/modificar_show'));
+	}
+
+	public function index()  //para modificar colegio (intento)
+	{
+		$this->autorizar();
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		//carago una consulta
+		$dato['colegios']= $this->uum->get_colegios();
+
+		$this->load->view('layouts/header');
+		$this->load->view('administracion/index',$dato);
+		$this->load->view('layouts/footer');
+	}
+
+	public function modificar_show() //intento
+	{
+		$this->load->helper('url');
+		$colegio_id = $this->input->get("colegio"); 
+		
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		$dato['colegio']= $this->uum->get_colegio($colegio_id); 
+
+		$this->load->view("layouts/header");
+		$this->load->view('administracion/modificar_show', $dato);
+		$this->load->view("layouts/footer");
+	}
+
 
 	
 	private function autorizar(){
@@ -122,5 +183,3 @@ class Administracion extends CI_Controller {
 	}
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
