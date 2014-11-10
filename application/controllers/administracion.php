@@ -55,12 +55,30 @@ class Administracion extends CI_Controller {
 			$this->session->set_userdata($newdata);
 			
 			redirect(base_url('administracion/admin?sus=1'));
+
 		}
 	}
 	public function logout()
 	{
 		$this->session->sess_destroy();
 		redirect(base_url('administracion/login'));
+	}
+
+	public function inicio()
+	{
+		if ($this->input->get('ad')== "1") {
+			$this->dato['alert']= array(
+			'alert' => "success",
+			'mensaje' => "Colegio agregado corectamente"
+			);
+		}
+		$this->autorizar();
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		$dato['colegios']= $this->uum->get_colegios();
+
+		$this->load->view("layouts/header",$this->dato);
+		$this->load->view('administracion/inicio', $dato);
+		$this->load->view("layouts/footer");
 	}
 
 	public function admin()
@@ -110,7 +128,7 @@ class Administracion extends CI_Controller {
 		$this->uum->agregar_colegio($colegio); //agrego el colegio asignado 
 
 
-		redirect(base_url('administracion/admin'));
+		redirect(base_url('administracion/inicio?ad=1'));
 
 	}
 	public function seleccionar_colegio_mod()
@@ -137,7 +155,7 @@ class Administracion extends CI_Controller {
 		$this->load->view("layouts/footer");
 	}
 
-	public function nose(){
+	public function modificar_colegio_action(){
 		$this->autorizar();
 		$colegio = array(
 			'nombre' => $this->input->post('nombre'), //con el name de cada input obtengo los valores de cada uno
@@ -168,6 +186,15 @@ class Administracion extends CI_Controller {
 
 
 		redirect(base_url('administracion/seleccionar_colegio_mod'));
+	}
+
+	public function eliminar_colegio()
+	{
+		$this->autorizar();	
+		$this->load->model("colegio_model","uum");
+		$this->uum->eliminar_colegio($this->input->get('colegio'));
+		//var_dump($this->input->get('colegio'));
+		redirect(base_url('administracion/inicio'));
 	}
 
 	public function index()  //para modificar colegio (intento)

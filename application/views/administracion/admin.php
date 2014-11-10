@@ -3,9 +3,8 @@
 		<div class="col-md-3">
 
 		<ul class="nav nav-pills nav-stacked">
-		  <li class="active"><a href="#">Agregar Colegio</a></li>
-		  <li><a href="<?= base_url(''); ?>administracion/seleccionar_colegio_mod">Modificar Colegio</a></li>
-		  <li><a href="#">Eliminar Colegio</a></li>
+		  <li class="active"><a href="<?= base_url(''); ?>administracion/inicio">Inicio</a></li>
+		  
 		</ul>
 
 		</div>	
