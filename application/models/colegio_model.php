@@ -41,6 +41,10 @@ class Colegio_model extends CI_Model {
 		return $this->db->update('Colegio', $colegio);
 	}
 
+	function eliminar_colegio($id){
+		$this->db->where('id_colegio',$id);
+        return $this->db->delete('colegio');
+	}
 
 	function get_religiones(){
 		$query = $this->db->query("SELECT * FROM religion");
