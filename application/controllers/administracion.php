@@ -141,12 +141,12 @@ class Administracion extends CI_Controller {
 			
 			);
 	
+		echo (string)$colegio;
+		//$this->load->model("colegio_model","uum"); //cargo la base de datos
+		//$this->uum->modificar_colegio($colegio, $this->input->post('id_colegio')); //agrego el colegio asignado 
 
-		$this->load->model("colegio_model","uum"); //cargo la base de datos
-		$this->uum->modificar_colegio($colegio, $this->input->post('id_colegio')); //agrego el colegio asignado 
 
-
-		redirect(base_url('administracion/seleccionar_colegio_mod'));
+		//redirect(base_url('administracion/seleccionar_colegio_mod'));
 	}
 
 	public function index()  //para modificar colegio (intento)

@@ -36,7 +36,7 @@ class Colegio_model extends CI_Model {
 		  $this->db->insert('Colegio',$colegio);
 	}
 
-	function modificar_colegio($colegio){
+	function modificar_colegio($colegio,$id){
 		$this->db->where('id_colegio', $id);
 		return $this->db->update('Colegio', $colegio);
 	}

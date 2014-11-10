@@ -11,34 +11,31 @@
 		</div>
 
 		<div class = "col-md-9">
+			<form action= "<?= base_url('administracion/modificar_show'); ?>" method="get" >
+			  <div class="form-group">
+			    <label>Selecciona el colegio:</label>
+			    <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"--> 
+			    <select name="colegio" class="form-control" id="colegio">
 
-		<form class="form-horizontal" role="form">
-				
-				<form action= "<?= base_url('administracion/index_colegio'); ?>" method="get" target="_blank" >
-				  <div class="form-group">
-				    <label>Selecciona el colegio:</label>
-				    <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"--> 
-				    <select name="colegio" class="form-control" id="colegio">
+			          <option value="">Selecciona un colegio</option>
+			          <?php foreach ($colegios as $colegio) {
+			          ?>
 
-				          <option value="">Selecciona un colegio</option>
-				          <?php foreach ($colegios as $colegio) {
-				          ?>
+			          <option value="<?= $colegio->id_colegio ?>"><?= $colegio->nombre ?></option>
 
-				          <option value="<?= $colegio->id_colegio ?>"><?= $colegio->nombre ?></option>
+			          <?php }
 
-				          <?php }
+			           ?> 
+			       </select> 
+			  </div>
+			     
+			   <div class="form-group">
+			     <input type="submit" value="Modificar" class="btn btn-danger" id="informacion">
+			   </div>
 
-				           ?> 
-				       </select> 
-				  </div>
-				     
-				   <div class="form-group">
-				     <input type="submit" value="Modificar" class="btn btn-danger" id="informacion">
-				   </div>
-
-				 </form>
+			 </form>
 			  
-		</form>
+		
 			
 		</div>
 	</div>
