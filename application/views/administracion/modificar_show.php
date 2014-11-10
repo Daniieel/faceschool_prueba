@@ -18,7 +18,7 @@
 				<input type="hidden" name="id_colegio" value="<?= $colegio->id_colegio?>">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Nombre colegio</label>
 			    <div class="col-sm-10">
-			       <input type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->nombre ?>">
+			       <input type="text" name="nombre" class="form-control" id="inputEmail3" value ="<?= $colegio->nombre ?>">
 			    </div>
 			  </div>
 
