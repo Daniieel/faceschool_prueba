@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-3">
 		<ul class="nav nav-pills nav-stacked">
-		  <li class="active"><a href="#"><i class="fa fa-home"></i> Inicio</a></li>
+		  <li class="active"><a href="<?= base_url('administracion/inicio')  ?>"><i class="fa fa-home"></i> Inicio</a></li>
 		</ul>
 
 		</div>	

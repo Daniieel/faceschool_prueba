@@ -65,5 +65,28 @@ class Colegio_model extends CI_Model {
 		$query = $this->db->query("SELECT * FROM colegio WHERE idioma='$nombre_idioma' ");
 		return $query->result();
 	}
+
+	function filtro($comuna, $religion){
+		$query = "SELECT * FROM colegio ";
+		$band = false;
+		//comuna
+		if ($comuna!= "Todos" and $band== false) {
+			$query = $query."WHERE comuna='$comuna' ";
+			$band = true;
+		}elseif($comuna!= "Todos" and $band== true){
+			$query = $query."and comuna='$comuna' ";
+		}
+
+		//religion
+		if ($religion!= "Todos" and $band== false) {
+			$query = $query."WHERE religion='$religion' ";
+			$band = true;
+		}elseif($religion!= "Todos" and $band== true){
+			$query = $query."and religion='$religion' ";
+		}
+
+		$consulta = $this->db->query($query);
+		return $consulta->result();
+	}
 }
 ?>

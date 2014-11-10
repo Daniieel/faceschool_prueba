@@ -12,7 +12,7 @@
       var directionsRenderer;
       var directionsService = new google.maps.DirectionsService();
       var markers = []
-
+      var circle = "";
       if (navigator && navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(geoOK, geoKO);
       } else {
@@ -87,7 +87,7 @@
 
 
       // Agregar circulo al mapa
-      var circle = new google.maps.Circle({
+      circle = new google.maps.Circle({
         map: map,
         radius: 1000,    // 10 miles in metres
         fillColor: '#819FF7',
@@ -160,7 +160,7 @@
              $("#informacion").removeAttr("disabled");
           }
         });
-        $('#comuna').change(function() { //boton que cambia todo
+        $('#comuna, #religion').change(function() { //boton que cambia todo
             
 
           //borro todos los makers (los colegios en el mapa)
@@ -168,12 +168,13 @@
                     markers[i].setMap(null);
             }
            
-           $.getJSON("<?= base_url('mapa/colegios_por_comuna') ?>", {comuna:$("#comuna").val()}, function(data) {
+           $.getJSON("<?= base_url('mapa/filtro') ?>", {comuna:$("#comuna").val(), religion:$("#religion").val()}, function(data) {
               var colegio = $('#colegio') //combobox
               $("option", colegio).remove(); //borro todos los elementos del colegio
               var option = '';
+             
                $.each(data, function(index, op) {
-               
+                
                 //agrego los nuevos makers
                for (var i = 0; i < markers.length; i++) {
                   if (op.nombre.localeCompare(markers[i].title) == 0) {
@@ -193,52 +194,8 @@
         });
       </script>
 
-<!-- -->
-      <script type="text/javascript">
-        $( document ).ready(function() {
-          
-         
-        $("#informacion").attr("disabled", "disabled");
-        $('#colegio').change(function() { //boton que cambia todo
-          if ($('#colegio').val()== "" || $('#colegio').val() == null) {
-              $("#informacion").attr("disabled", "disabled");
-          }else{
-             $("#informacion").removeAttr("disabled");
-          }
-        });
-        $('#religion').change(function() { //boton que cambia todo
-            
 
-          //borro todos los makers (los colegios en el mapa)
-           for (var i = 0; i < markers.length; i++) {
-                    markers[i].setMap(null);
-            }
-           
-           $.getJSON("<?= base_url('mapa/colegios_por_religion') ?>", {religion:$("#religion").val()}, function(data) {
-              var colegio = $('#colegio') //combobox
-              $("option", colegio).remove(); //borro todos los elementos del colegio
-              var option = '';
-               $.each(data, function(index, op) {
-               
-                //agrego los nuevos makers
-               for (var i = 0; i < markers.length; i++) {
-                  if (op.nombre.localeCompare(markers[i].title) == 0) {
-                    markers[i].setMap(map);
-                    break;
-                  }
-                }
-                
-                //agrego los options del colegio
-               option += "<option value='"+op.id_colegio+"'>"+op.nombre+"</option>";
-               });
-              colegio.html(option);
-              $("#informacion").removeAttr("disabled");
-            });
-           
-          });
-        });
-      </script>
-<!-- -->
+
 
 
 

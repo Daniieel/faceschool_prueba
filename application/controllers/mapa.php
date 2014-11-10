@@ -24,15 +24,12 @@ class Mapa extends CI_Controller {
 
 	}
 
-	public function colegios_por_comuna()
+	public function filtro()
 	{
 		$comuna =$this->input->get("comuna");
+		$religion =$this->input->get("religion");
 		$this->load->model("colegio_model","uum"); //cargo la base de datos
-		if ($comuna == "Todos") {
-			$colegios = $this->uum->get_colegios();
-		}else{
-			$colegios= $this->uum->get_colegios_por_comuna($comuna);// carga los colegios
-		}
+		$colegios= $this->uum->filtro($comuna, $religion);
 		echo json_encode($colegios);
 	}
 
