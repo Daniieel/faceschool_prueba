@@ -119,4 +119,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</ul>	
 		</div>
 	</div>
+	<?php if ($alert != "" ) { ?>
+	 	<div class="col-md-12">
+	 		<h5 align="center">
+	 			<div class="alert alert-<?= $alert['alert'] ?>" role="alert"><?= $alert['mensaje']  ?></div>
+	 		</h5>
+	 	</div>	
+	<?php } ?>
+	
 </div>

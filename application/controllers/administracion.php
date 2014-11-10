@@ -17,11 +17,26 @@ class Administracion extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+	
+	public function __construct()
+	     {
+	          parent::__construct();
+	          $this->dato['alert']="";
+	          // Your own constructor code
+	     }
 	public function login()
 	{
-		$this->load->view("layouts/header");
+		if ($this->input->get('err')== "1") {
+			$this->dato['alert']= array(
+			'alert' => "danger",
+			'mensaje' => "Usuario y/o contraseña inválida"
+			);
+		}
+		// carga los colegios
+		$this->load->view("layouts/header",$this->dato);
 		$this->load->view('administracion/login');
 		$this->load->view("layouts/footer");
+
 	}
 	public function login_action()
 	{
@@ -31,7 +46,7 @@ class Administracion extends CI_Controller {
 		$validacion=$this->uum->get_administracion_login($usuario, $contraseña);
 
 		if ($validacion==FALSE) {
-			redirect(base_url('administracion/login'));
+			redirect(base_url('administracion/login?err=1'));
 		}else{
 			$newdata = array(
 			 'username' => $validacion->usuario,
@@ -39,7 +54,7 @@ class Administracion extends CI_Controller {
 			 );
 			$this->session->set_userdata($newdata);
 			
-			redirect(base_url('administracion/admin'));
+			redirect(base_url('administracion/admin?sus=1'));
 		}
 	}
 	public function logout()
@@ -50,8 +65,14 @@ class Administracion extends CI_Controller {
 
 	public function admin()
 	{
+		if($this->input->get('sus')=="1"){
+			$this->dato['alert'] = array(
+			'alert' => "success",
+			'mensaje' => "Has iniciado sesión correctamente"
+			);
+		}
 		$this->autorizar();
-		$this->load->view("layouts/header");
+		$this->load->view("layouts/header",$this->dato);
 		$this->load->view('administracion/admin');
 		$this->load->view("layouts/footer");
 	}
@@ -99,7 +120,7 @@ class Administracion extends CI_Controller {
 		$dato['colegios']= $this->uum->get_colegios();// carga los colegios
 		$dato['comunas']= $this->uum->get_comunas();
 
-		$this->load->view("layouts/header");
+		$this->load->view("layouts/header",$this->dato);
 		$this->load->view('administracion/seleccionar_colegio_mod', $dato);
 		$this->load->view("layouts/footer");
 	}
@@ -111,7 +132,7 @@ class Administracion extends CI_Controller {
 		$dato['colegios']= $this->uum->get_colegios();// carga los colegios
 		$dato['comunas']= $this->uum->get_comunas();
 
-		$this->load->view("layouts/header");
+		$this->load->view("layouts/header",$this->dato);
 		$this->load->view('administracion/modificar_colegio', $dato);
 		$this->load->view("layouts/footer");
 	}
@@ -169,7 +190,7 @@ class Administracion extends CI_Controller {
 		$this->load->model("colegio_model","uum"); //cargo la base de datos
 		$dato['colegio']= $this->uum->get_colegio($colegio_id); 
 
-		$this->load->view("layouts/header");
+		$this->load->view("layouts/header",$this->dato);
 		$this->load->view('administracion/modificar_show', $dato);
 		$this->load->view("layouts/footer");
 	}
