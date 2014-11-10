@@ -11,6 +11,7 @@
       <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
       <link rel="stylesheet" href="/resources/demos/style.css">
       <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+      <script>
       var map;
       var myPos;
       var directionsRenderer;
@@ -198,21 +199,17 @@
         });
       </script>
 
-      <script>
-      $(function() {
-        $( "#slider-range" ).slider({
-          range: true,
-          min: 0,
-          max: 500,
-          values: [ 75, 300 ],
-          slide: function( event, ui ) {
-            $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-          }
-        });
-        $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-          " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+    <script>
+  $(function() {
+    $( "#amount").change(function() { 
+       var rango = parseInt($("#amount").val());
+       circle.setRadius(rango);
+    
       });
-      </script>
+  });
+
+
+  </script>
 
 
 
@@ -278,12 +275,11 @@
               </select> 
          </div>
         <div class="form-group">
-          <p>
-            <label for="amount">Rango de la weaita:</label>
-            <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-          </p>
-           
-          <div id="slider-range"></div>
+         <p>
+           <label for="amount"> Rango del culito:</label>
+           <input type="text" id="amount" class="form-control">
+         </p>
+        
         </div>
           <div class="form-group">
             <input type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-danger">
