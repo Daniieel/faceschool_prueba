@@ -1,13 +1,6 @@
 <div class="container" style="margin-top:30px; margin-bottom:60px;">
 	<div class="row">
-		<div class="col-md-3">
-		<ul class="nav nav-pills nav-stacked">
-		  <li class="active"><a href="<?= base_url('administracion/inicio')  ?>"><i class="fa fa-home"></i> Inicio</a></li>
-		</ul>
-
-		</div>	
-
-		<div class = "col-md-9">
+	  <div class = "col-md-12">
 		
 		<div class="pull-right" style="margin-bottom: 30px;">
 			<a  class="btn btn-info" href="<?= base_url('administracion/admin'); ?>"><i class="fa fa-plus-circle"></i> Agregar</a>

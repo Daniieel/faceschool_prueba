@@ -56,6 +56,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			});
 		</script>
 
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
    	<link rel="stylesheet" href="fonts/css/font-awesome.min.css">
 
 </head>
@@ -71,7 +80,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="col-md-8">
 			<div class="pull-right">
 			<?php if ($this->session->userdata('logged_in') == TRUE) { ?>
-				<h5><strong><a href="<?= base_url('administracion/admin') ?>">Hola <?= $this->session->userdata('username');?></a></strong> 
+				<h5><strong><a href="<?= base_url('administracion/inicio') ?>">Hola <?= $this->session->userdata('username');?></a></strong> 
 				<a href="<?= base_url('administracion/logout') ?>">Salir</a>
 				</h5>
 				
@@ -82,7 +91,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		</div>
 		<div class="clearfix"></div>
-		
+		<div class="fb-follow" data-href="https://www.facebook.com/pages/Faceschool/1454526578163013" data-colorscheme="light" data-layout="standard" data-show-faces="true"></div>
 	</div>
 </div>
 </div>

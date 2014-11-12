@@ -132,6 +132,20 @@
 			    </div>
 			  </div>
 
+			  <div class="form-group">
+			    <label for="inputEmail3" class="col-sm-2 control-label">Segundo Idioma</label>
+			    <div class="col-sm-10">
+			      <input name="idioma" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->idioma2?>">
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="inputEmail3" class="col-sm-2 control-label">Tercer Idioma</label>
+			    <div class="col-sm-10">
+			      <input name="idioma" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->idioma3?>">
+			    </div>
+			  </div>
+
 			 <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
 			      <button type="submit" class="btn btn-default">Modificar</button>

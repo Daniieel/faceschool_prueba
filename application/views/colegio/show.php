@@ -1,3 +1,34 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=1560917064126766&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<!-- recomendar -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 <div class="container">
 	<div class="row">
 		<div class="col-md-9 col-md-offset-1">
@@ -93,11 +124,19 @@
 
 			<tr>
 			<th><h5 >Idioma</h5></th>
-			 <td><h5><?= $colegio->idioma ?></h5></td>
+			 <td><h5><?= $colegio->idioma ?> <?= $colegio->idioma2 ?> <?= $colegio->idioma3 ?> </h5></td>
 
 			</tr>
 			</table>
+			<div class="fb-like" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio= <?= $colegio->id_colegio ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+			
+			<!--<div class="fb-like" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio= <?= $colegio->id_colegio ?>" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+			-->
+			<div class="fb-comments" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio= <?= $colegio->id_colegio ?>" data-numposts="5" data-colorscheme="light"></div>
+			
 		</div>
+
+		
 	</div>
 </div>
 

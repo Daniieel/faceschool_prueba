@@ -165,7 +165,7 @@
              $("#informacion").removeAttr("disabled");
           }
         });
-        $('#comuna, #religion').change(function() { //boton que cambia todo
+        $('#comuna, #religion, #dependencia, #idioma, #region').change(function() { //boton que cambia todo
             
 
           //borro todos los makers (los colegios en el mapa)
@@ -173,7 +173,7 @@
                     markers[i].setMap(null);
             }
            
-           $.getJSON("<?= base_url('mapa/filtro') ?>", {comuna:$("#comuna").val(), religion:$("#religion").val()}, function(data) {
+           $.getJSON("<?= base_url('mapa/filtro') ?>", {comuna:$("#comuna").val(), religion:$("#religion").val(), dependencia:$("#dependencia").val(), idioma:$("#idioma").val(), region:$("#region").val()}, function(data) {
               var colegio = $('#colegio') //combobox
               $("option", colegio).remove(); //borro todos los elementos del colegio
               var option = '';
@@ -214,12 +214,50 @@
 
 
 
+
+
       <h1 class= "read" align="" style="margin-top:60px; margin-bottom:30px;"><strong>Encuentra</strong> todos los <strong>colegios</strong> cercanos a tu <strong>ubicación</strong></h1>
       <div class="col-md-5" style="background:rgb(79, 78, 78); color:white;">
-     
+     <form action= "<?= base_url('colegio/show'); ?>" method="get" target="_blank" >
+       <div class="form-group">
+         <label><h4>Selecciona el colegio:</h4></label>
+         <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"--> 
+         <select name="colegio" class="form-control" id="colegio">
+
+               <option value="">Selecciona un colegio</option>
+               <?php foreach ($colegios as $colegio) {
+               ?>
+
+               <option value="<?= $colegio->id_colegio ?>"><?= $colegio->nombre ?></option>
+
+               <?php }
+
+                ?> 
+            </select> 
+       </div>
+      
+        <div class="form-group">
+          <input type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-danger">
+          <input type="submit" value="Ver Informacion" class="btn btn-danger" id="informacion">
+        </div>
+
+      </form>
         <h3>Buscar</h3>
-         <div class="form-group">
-          <label>Selecciona comuna:</label>
+           <div class="form-group">
+            <label><h5>Selecciona region:</h5></label>
+            <select name= "region" class= "form-control" id="region">
+              <option value="Todos">Todos</option>
+                  <?php foreach ($regiones as $region) {
+                  ?>
+                  <option value="<?= $region->region ?>"><?= $region->region ?></option>
+                  <?php }
+
+                   ?> 
+            </select>
+         </div>
+
+       <div class="form-group">
+          <label><h5>Selecciona comuna:</h5></label>
           <select name= "comuna" class= "form-control" id="comuna">
             <option value="Todos">Todos</option>
                 <?php foreach ($comunas as $comuna) {
@@ -232,7 +270,22 @@
        </div>
 
          <div class="form-group">
-          <label>Selecciona religion:</label>
+          <label><h5>Tipo dependencia:</h5></label>
+          <select name= "dependencia" class= "form-control" id="dependencia">
+            <option value="Todos">Todos</option>
+                <?php foreach ($dependencia as $dependencia) {
+                ?>
+                <option value="<?= $dependencia->dependencia ?>"><?= $dependencia->dependencia ?></option>
+                <?php }
+
+                 ?> 
+          </select>
+       </div>
+
+
+
+         <div class="form-group">
+          <label><h5>Selecciona religion:</h5></label>
           <select name= "religion" class= "form-control" id="religion">
             <option value="Todos">Todos</option>
                 <?php foreach ($religiones as $religion) {
@@ -244,8 +297,8 @@
           </select>
        </div>
 
-         <div class="form-group">
-          <label>Selecciona idioma:</label>
+      <div class="form-group">
+          <label><h5>Tipo idioma:</h5></label>
           <select name= "idioma" class= "form-control" id="idioma">
             <option value="Todos">Todos</option>
                 <?php foreach ($idiomas as $idioma) {
@@ -255,47 +308,27 @@
 
                  ?> 
           </select>
+      </div>
+
+       <div class="form-group">
+        <p>
+          <label for="amount"> <h5>Colegios a la redonda (Especifique en metros):</h5></label>
+          <input type="text" id="amount" class="form-control">
+        </p>
+       
        </div>
 
-       <form action= "<?= base_url('colegio/show'); ?>" method="get" target="_blank" >
-         <div class="form-group">
-           <label>Selecciona el colegio:</label>
-           <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"--> 
-           <select name="colegio" class="form-control" id="colegio">
 
-                 <option value="">Selecciona un colegio</option>
-                 <?php foreach ($colegios as $colegio) {
-                 ?>
+       
+        <br>
+        <br>
+        <h3 class="read">Te invitamos a usar <strong>Street View</strong></h3>
+        <h5 class="read">Arrastra el icono de la persona naranja, hacia el colegio que deseas ver</h5>
 
-                 <option value="<?= $colegio->id_colegio ?>"><?= $colegio->nombre ?></option>
-
-                 <?php }
-
-                  ?> 
-              </select> 
-         </div>
-        <div class="form-group">
-         <p>
-           <label for="amount"> Rango del culito:</label>
-           <input type="text" id="amount" class="form-control">
-         </p>
-        
-        </div>
-          <div class="form-group">
-            <input type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-danger">
-            <input type="submit" value="Ver Informacion" class="btn btn-danger" id="informacion">
-          </div>
-
-        </form>
-            <br>
-            <br>
-            <h3 class="read">Te invitamos a usar <strong>Street View</strong></h3>
-            <h5 class="read">Arrastra el icono de la persona naranja, hacia el colegio que deseas ver</h5>
-    
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
             
             
     
@@ -304,6 +337,7 @@
       <div class="col-md-7">
         <!-- MAPA -->
         <div id="mapa" style="width:100%; height:470px; border: 2px solid black;  position: center; overflow: hidden"></div>
+        
       </div>
     </div>
   </div>

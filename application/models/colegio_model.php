@@ -19,6 +19,15 @@ class Colegio_model extends CI_Model {
 		$query = $this->db->query("SELECT * FROM comuna");
 		return $query->result();
 	}
+
+	function get_regiones(){
+		$query = $this->db->query("SELECT * FROM region");
+		return $query->result();
+	}
+	function get_dependencias(){
+		$query = $this->db->query("SELECT * FROM dependencia");
+		return $query->result();
+	}
 	function get_colegios_por_comuna($nombre_comuna){ //sacar los colegios filtrados por comuna
 		$query = $this->db->query("SELECT * FROM colegio WHERE comuna='$nombre_comuna' ");
 		return $query->result();
@@ -66,7 +75,7 @@ class Colegio_model extends CI_Model {
 		return $query->result();
 	}
 
-	function filtro($comuna, $religion){
+	function filtro($comuna, $religion, $dependencia, $idioma, $region){
 		$query = "SELECT * FROM colegio ";
 		$band = false;
 		//comuna
@@ -83,6 +92,30 @@ class Colegio_model extends CI_Model {
 			$band = true;
 		}elseif($religion!= "Todos" and $band== true){
 			$query = $query."and religion='$religion' ";
+		}
+
+		//dependencia
+		if ($dependencia!= "Todos" and $band== false) {
+			$query = $query."WHERE dependencia='$dependencia' ";
+			$band = true;
+		}elseif($dependencia!= "Todos" and $band== true){
+			$query = $query."and dependencia='$dependencia' ";
+		}
+
+		//idioma
+		if ($idioma!= "Todos" and $band== false) {
+			$query = $query."WHERE idioma='$idioma' ";
+			$band = true;
+		}elseif($idioma!= "Todos" and $band== true){
+			$query = $query."and idioma='$idioma' ";
+		}
+
+		//region
+		if ($region!= "Todos" and $band== false) {
+			$query = $query."WHERE region='$region' ";
+			$band = true;
+		}elseif($region!= "Todos" and $band== true){
+			$query = $query."and region='$region' ";
 		}
 
 		$consulta = $this->db->query($query);
