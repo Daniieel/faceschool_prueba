@@ -61,17 +61,31 @@
 			<td><a target="_blank"  href="http://<?= $colegio->pagina_web ?>" class="fa-btn btn-1 btn-1e"><?= $colegio->pagina_web ?></a></td>
 			</tr>
 
+			<tr>
+			<th><h5 >Tipo de Dependencia</h5></th>
+			<td><h5><?= $colegio->dependencia ?></h5></td>
+
+			</tr>
+
+			<tr>
+			<th><h5 >Religion</h5></th>
+			 <td><h5><?= $colegio->religion ?></h5></td>
+
+			</tr>
+
+			<tr>
+			<th><h5 >Idioma</h5></th>
+			 <td><h5><?= $colegio->idioma ?> <?= $colegio->idioma2 ?> <?= $colegio->idioma3 ?> </h5></td>
+
+			</tr>
+
 			</table>
 
 			<!-- la otra tabla-->
 			<p  class="para"><h2 >Resultado del Colegio</h2></p>
 			<table width="200" border="5" class = "table" >
 
-			<tr>
-			<th><h5 >Tipo de Dependencia</h5></th>
-			<td><h5><?= $colegio->dependencia ?></h5></td>
-
-			</tr>
+			
 
 			<tr>
 			<th><h5 >Promedio PSU</h5></th>
@@ -116,17 +130,7 @@
 
 			</tr>
 
-			<tr>
-			<th><h5 >Religion</h5></th>
-			 <td><h5><?= $colegio->religion ?></h5></td>
-
-			</tr>
-
-			<tr>
-			<th><h5 >Idioma</h5></th>
-			 <td><h5><?= $colegio->idioma ?> <?= $colegio->idioma2 ?> <?= $colegio->idioma3 ?> </h5></td>
-
-			</tr>
+			
 			</table>
 			<div class="fb-like" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio= <?= $colegio->id_colegio ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 			
