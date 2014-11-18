@@ -242,8 +242,8 @@
         </div>
 
       </form>
-        <h3>Filtro</h3>
-           <div class="form-group">
+        <h3>Filtrar</h3>
+          <div class="form-group">
             <label><h5>Selecciona region:</h5></label>
             <select name= "region" class= "form-control" id="region">
               <option value="Todos">Todos</option>

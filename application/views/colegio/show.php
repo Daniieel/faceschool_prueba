@@ -1,12 +1,12 @@
 <div id="fb-root"></div>
+<div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=1560917064126766&version=v2.0";
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -18,15 +18,6 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 
-<!-- recomendar -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 
 <div class="container">
@@ -78,6 +69,16 @@
 			 <td><h5><?= $colegio->idioma ?> <?= $colegio->idioma2 ?> <?= $colegio->idioma3 ?> </h5></td>
 
 			</tr>
+			<th><h5 >Grupo Socioeconomico</h5></th>
+			 <td><h5><?= $colegio->grupo_socioeco ?></h5></td>
+
+			</tr>
+
+			</tr>
+			<th><h5 >Contacto</h5></th>
+			 <td><h5></h5></td>
+
+			</tr>
 
 			</table>
 
@@ -88,55 +89,80 @@
 			
 
 			<tr>
-			<th><h5 >Promedio PSU</h5></th>
-			<td><h5><?= $colegio->promedio_psu ?></h5></td>
+			
+		      <thead>
+		        <tr>
+		          <th><h5>Año</h5></th>
+		          <th><h5>2012</h5></th>
+		          <th><h5>2013</h5></th>
+		         
+		        </tr>
 
+		      </thead>
+		      <tbody>
+		      
+				        <tr>
+				          
+				          <td><h5>Promedio PSU</h5></td>
+				          <td><h5><?= $colegio->promedio_psu ?></h5></td>
+				          <td><h5><?= $colegio->promedio_psu ?></h5></td>
+
+				        </tr>
+				        <tr>
+				      
+
+				        <tr>
+				        <th><h5 >Promedio SIMCE 4Basico Lenguaje</h5></th>
+						<td><h5>	- </h5></td>
+				        <td><h5><?= $colegio->prom_simce_4bas_leng ?></h5></td>
+
+				        </tr>
+
+				        <tr>
+				        <th><h5 >Promedio SIMCE 4 Basico Matematicas</h5></th>
+				        <td><h5>	-</h5></td>
+				         <td><h5><?= $colegio->prom_simce_4bas_mate ?></h5></td>
+
+				        </tr>
+
+				        <tr>
+				        <th><h5 >Promedio SIMCE 4 Basico Ciencias</h5></th>
+				        <td><h5>	-</h5></td>
+				         <td><h5><?= $colegio->prom_simce_4bas_cienc ?></h5></td>
+
+				        </tr>
+
+				        <tr>
+				        <th><h5 >Promedio SIMCE 2 Medio Lenguaje</h5></th>
+				        <td><h5>	-</h5></td>
+				         <td><h5><?= $colegio->prom_simce_2med_leng ?></h5></td>
+
+				        </tr>
+
+				        <tr>
+				        <th><h5 >Promedio SIMCE 2 Medio Matematicas</h5></th>
+				        <td><h5>	-</h5></td>
+				         <td><h5><?= $colegio->prom_simce_2med_mate ?></h5></td>
+
+				        </tr>
+				        
+				
+		      </tbody>
+		    
 			</tr>
 
 
-			<tr>
-			<th><h5 >Grupo Socioeconomico</h5></th>
-			 <td><h5><?= $colegio->grupo_socioeco ?></h5></td>
+			
 
-			</tr>
-
-			<tr>
-			<th><h5 >Promedio SIMCE 4Basico Lenguaje</h5></th>
-			 <td><h5><?= $colegio->prom_simce_4bas_leng ?></h5></td>
-
-			</tr>
-
-			<tr>
-			<th><h5 >Promedio SIMCE 4 Basico Matematicas</h5></th>
-			 <td><h5><?= $colegio->prom_simce_4bas_mate ?></h5></td>
-
-			</tr>
-
-			<tr>
-			<th><h5 >Promedio SIMCE 4 Basico Ciencias</h5></th>
-			 <td><h5><?= $colegio->prom_simce_4bas_cienc ?></h5></td>
-
-			</tr>
-
-			<tr>
-			<th><h5 >Promedio SIMCE 2 Medio Lenguaje</h5></th>
-			 <td><h5><?= $colegio->prom_simce_2med_leng ?></h5></td>
-
-			</tr>
-
-			<tr>
-			<th><h5 >Promedio SIMCE 2 Medio Matematicas</h5></th>
-			 <td><h5><?= $colegio->prom_simce_2med_mate ?></h5></td>
-
-			</tr>
+			
 
 			
 			</table>
-			<div class="fb-like" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio= <?= $colegio->id_colegio ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+			<div class="fb-like" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio=1" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 			
 			<!--<div class="fb-like" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio= <?= $colegio->id_colegio ?>" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
 			-->
-			<div class="fb-comments" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio= <?= $colegio->id_colegio ?>" data-numposts="5" data-colorscheme="light"></div>
+			<div class="fb-comments" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio=<?= $colegio->id_colegio ?>" data-numposts="5" data-colorscheme="light"></div>
 			
 		</div>
 
