@@ -17,6 +17,16 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<!-- recomendador -->
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
@@ -158,11 +168,28 @@
 
 			
 			</table>
-			<div class="fb-like" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio=1" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+			<form action="<?= base_url('colegio/agregar_me_gusta')  ?>" method="post">
+				<div class="form-group">
+			    	<div class="col-sm-10">
+			      		<input type="hidden" name="ip_usuario" class="form-control" id="inputEmail3" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
+			    	</div>
+			  	</div>
+			  	<div class="form-group">
+			    	<div class="col-sm-10">
+			      		<input type="hidden" name="id_colegio" class="form-control" id="inputEmail3" value="<?= $colegio->id_colegio ?>">
+			    	</div>
+			  	</div>
+
+				<button type="submit" class="btn btn-primary">Me Gusta</button>
+			</form>
 			
-			<!--<div class="fb-like" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio= <?= $colegio->id_colegio ?>" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+			
+			<!--<div class="fb-like" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio=<?= $colegio->id_colegio ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+			
+			<div class="fb-like" data-href="http://faceschool.cl/colegio/show?colegio=<?= $colegio->id_colegio ?>" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
 			-->
-			<div class="fb-comments" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio=<?= $colegio->id_colegio ?>" data-numposts="5" data-colorscheme="light"></div>
+			<div class="fb-comments" data-href="http://faceschool.cl/colegio/show?colegio=<?= $colegio->id_colegio ?>" data-numposts="5" data-colorscheme="light"></div>
 			
 		</div>
 

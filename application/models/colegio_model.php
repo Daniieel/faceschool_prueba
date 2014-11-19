@@ -121,5 +121,12 @@ class Colegio_model extends CI_Model {
 		$consulta = $this->db->query($query);
 		return $consulta->result();
 	}
+
+	function agregar_me_gusta($me_gusta){
+			
+		$this->db->insert('me_gusta',$me_gusta);
+		
+	  
+	}
 }
 ?>

@@ -211,6 +211,15 @@
 
   </script>
 
+<!-- recomendador -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
@@ -337,7 +346,7 @@
       <div class="col-md-7">
         <!-- MAPA -->
         <div id="mapa" style="width:100%; height:470px; border: 2px solid black;  position: center; overflow: hidden"></div>
-        
+        <div class="fb-recommendations" data-site="http://faceschool.cl/" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
       </div>
     </div>
   </div>
