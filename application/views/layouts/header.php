@@ -86,7 +86,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
 				</div>
 			<?php }else{ ?>
-				<a class="btn btn-danger btn-sm" href="<?= base_url('administracion/login') ?>"><i class="fa fa-user"></i> Login Administración</a>
+				<!--<a class="btn btn-danger btn-sm" href="<?= base_url('administracion/login') ?>"><i class="fa fa-user"></i> Login Administración</a>-->!
 			<?php } ?>
 		</div>
 		</div>
