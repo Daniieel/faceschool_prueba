@@ -188,7 +188,7 @@
 		<?php endif ?>
 		
 			<div class="fb-comments" data-href="http://faceschool.cl/colegio/show?colegio=<?= $colegio->id_colegio ?>" data-numposts="5" data-colorscheme="light"></div>
-			
+			<div class="fb-like" data-href="http://faceschool.cl/colegio/show?colegio=<?= $colegio->id_colegio ?>" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
 		</div>
 
 		
