@@ -37,8 +37,10 @@ class Colegio extends CI_Controller {
 		$this->load->model("colegio_model","uum"); //cargo la base de datos
 		$this->uum->agregar_me_gusta($me_gusta); //agrego el colegio asignado 
 
-
-		//	redirect(base_url('colegio/show?colegio='));
+		
+		redirect(base_url('colegio/show?colegio='.$me_gusta['id_colegio']));
+		
+		
 
 	}
 

@@ -184,15 +184,9 @@
 				<button type="submit" class="btn btn-primary">Me Gusta</button>
 			</form>
 		<?php else:?>
-			<h5>Ya le has hecho me gusta	</h5>
+			<h5 class="lead text-info">Ya le has hecho me gusta	</h5>
 		<?php endif ?>
 		
-			
-			
-			<!--<div class="fb-like" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio=<?= $colegio->id_colegio ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-			
-			<div class="fb-like" data-href="http://faceschool.cl/colegio/show?colegio=<?= $colegio->id_colegio ?>" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
-			-->
 			<div class="fb-comments" data-href="http://faceschool.cl/colegio/show?colegio=<?= $colegio->id_colegio ?>" data-numposts="5" data-colorscheme="light"></div>
 			
 		</div>
