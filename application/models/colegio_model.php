@@ -128,5 +128,16 @@ class Colegio_model extends CI_Model {
 		
 	  
 	}
+
+	function like_colegio($id_colegio, $ip_usuario){
+		$query =$this->db->query("SELECT * from me_gusta WHERE id_colegio='$id_colegio' AND 
+			ip_usuario='$ip_usuario'");
+		if ($query->num_rows() > 0 ){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
 }
 ?>

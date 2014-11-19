@@ -12,10 +12,10 @@ class Colegio extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$colegio_id = $this->input->get("colegio"); 
-		
 		$this->load->model("colegio_model","uum"); //cargo la base de datos
 		$dato['colegio']= $this->uum->get_colegio($colegio_id); 
 
+		$dato['like'] = $this->uum->like_colegio($colegio_id,$this->getClientIP());
 		$this->load->view("layouts/header",$this->dato);
 		$this->load->view('colegio/show', $dato);
 		$this->load->view("layouts/footer");
@@ -62,7 +62,7 @@ class Colegio extends CI_Controller {
         return getenv('HTTP_CLIENT_IP');
 
     return getenv('REMOTE_ADDR');
-}
+	}
 }
 
 /* End of file welcome.php */

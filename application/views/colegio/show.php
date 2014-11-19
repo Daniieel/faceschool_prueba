@@ -168,8 +168,8 @@
 
 			
 			</table>
-
-			<form action="<?= base_url('colegio/agregar_me_gusta')  ?>" method="post">
+		<?php if ($like == FALSE): ?>
+				<form action="<?= base_url('colegio/agregar_me_gusta')  ?>" method="post">
 				<div class="form-group">
 			    	<div class="col-sm-10">
 			      		<input type="hidden" name="ip_usuario" class="form-control" id="inputEmail3" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
@@ -183,6 +183,10 @@
 
 				<button type="submit" class="btn btn-primary">Me Gusta</button>
 			</form>
+		<?php else:?>
+			<h5>Ya le has hecho me gusta	</h5>
+		<?php endif ?>
+		
 			
 			
 			<!--<div class="fb-like" data-href="http://han.ing.unab.cl/faceschool/colegio/show?colegio=<?= $colegio->id_colegio ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
