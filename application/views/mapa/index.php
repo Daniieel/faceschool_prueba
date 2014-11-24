@@ -337,6 +337,31 @@
       <div class="col-md-7">
         <!-- MAPA -->
         <div id="mapa" style="width:100%; height:470px; border: 2px solid black;  position: center; overflow: hidden"></div>
+        <table class="table table-striped" style="font-size:12px">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>A cuantos les gusta este colegio!</th>
+                  
+                </tr>
+
+              </thead>
+              <tbody>
+                <?php foreach ($me_gusta as $me_gusta) {
+                ?>
+              
+                    <tr>
+                      
+                      <td><?= $me_gusta->nombre ?></td>
+                      <td><?= $me_gusta->total_megusta ?></td>
+                      
+                     </tr>
+                  <?php }
+
+                  ?> 
+              
+              </tbody>
+            </table>
         <div class="fb-recommendations" data-site="http://faceschool.cl/" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
       </div>
     </div>

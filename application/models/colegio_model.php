@@ -140,6 +140,20 @@ class Colegio_model extends CI_Model {
 			return FALSE;
 		}
 	}
+
+	function get_megusta()
+	{
+		$query = $this->db->query(
+			"SELECT a.id_colegio
+					, b.nombre
+					, COUNT(a.id_colegio) as total_megusta 
+					FROM me_gusta a
+					LEFT JOIN colegio b
+					ON a.id_colegio = b.id_colegio
+					GROUP BY id_colegio 
+					LIMIT 3 ");
+		return $query->result();
+	}
 	function agregar_colegio($colegio){
 		  $this->db->insert('colegio',$colegio);
 	}

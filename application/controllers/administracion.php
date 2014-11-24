@@ -161,7 +161,52 @@ class Administracion extends CI_Controller {
 
 	}
 
+	public function datos_psu_2013() //PAra saber el id_colegio del colegio que estoy agrefando
+	{
+		if($this->input->get('sus')=="1"){
+			$this->dato['alert'] = array(
+			'alert' => "success",
+			'mensaje' => "Se agregaron los datos PSU 2012. Ahora sigue con la PSU 2013"
+			);
+		}
+		
+		$this->autorizar();
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		$dato['colegio']= $this->uum->get_ultimo_colegio();
+		
+
+
+		$this->load->view("layouts/header",$this->dato);
+		$this->load->view('administracion/datos_psu_2013', $dato);
+		$this->load->view("layouts/footer");
+
+	}
+
+
 	public function datos_psu_action()
+	{
+		$this->autorizar();
+		$psu = array(
+			'anio' => $this->input->post('anio'),
+			'id_colegio' => $this->input->post('id_colegio'),
+			'lenguaje_promedio' => $this->input->post('lenguaje_promedio'),
+			'lenguaje_maximo' => $this->input->post('lenguaje_maximo'),
+			'lenguaje_minimo' => $this->input->post('lenguaje_minimo'),
+			'matematicas_promedio' => $this->input->post('matematicas_promedio'),
+			'matematicas_maximo' => $this->input->post('matematicas_maximo'),
+			'matematicas_minimo' => $this->input->post('matematicas_minimo'),
+			'lenguaje_mas_matematicas' => $this->input->post('lenguaje_mas_matematicas'),
+			);
+	
+
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		$this->uum->agregar_colegio_psu($psu); //agrego la psu del colegio asignado 
+
+
+		redirect(base_url('administracion/datos_psu_2013?sus=1'));
+	}
+
+	public function datos_psu_2013_action()
 	{
 		$this->autorizar();
 		$psu = array(

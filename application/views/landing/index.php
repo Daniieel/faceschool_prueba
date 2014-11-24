@@ -69,7 +69,7 @@
 								<img class="lazyOwl" data-src="images/c1.jpg" alt="Lazy Owl Image">
 							</div>
 							<div class="cau_left">
-								<h4><a href="#">Fernado Figueroa</a></h4>
+								<h4><a href="#">Fernando Figueroa</a></h4>
 								<p>
 									<!--CEO.-->
 								</p>

@@ -18,10 +18,30 @@ class Mapa extends CI_Controller {
 		$dato['idiomas']= $this->uum->get_idiomas();
 		$dato['regiones']=$this->uum->get_regiones();
 		$dato['dependencia']=$this->uum->get_dependencias();
+		$dato['me_gusta']=$this->uum->get_megusta();
 		
 
 		$this->load->view('layouts/header',$this->dato);
 		$this->load->view('mapa/index',$dato);
+		$this->load->view('layouts/footer');
+
+
+	}
+
+	public function intento()
+	{
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		//$dato['usuarios']= $this->uum->get_usuarios(); //cargo una consulta
+		$dato['colegios']= $this->uum->get_colegios();// carga los colegios
+		$dato['comunas']= $this->uum->get_comunas();
+		$dato['religiones']= $this->uum->get_religiones();
+		$dato['idiomas']= $this->uum->get_idiomas();
+		$dato['regiones']=$this->uum->get_regiones();
+		$dato['dependencia']=$this->uum->get_dependencias();
+		
+
+		$this->load->view('layouts/header',$this->dato);
+		$this->load->view('mapa/intento',$dato);
 		$this->load->view('layouts/footer');
 
 

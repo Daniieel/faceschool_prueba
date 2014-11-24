@@ -3,12 +3,12 @@
 			
 
 		<div class = "col-md-12">
-			<form class="form-horizontal" role="form" action="<?= base_url('administracion/datos_psu_action')  ?>" method="post">
+			<form class="form-horizontal" role="form" action="<?= base_url('administracion/datos_psu_2013_action')  ?>" method="post">
 				
 				<!-- 2012! -->
-			  	<p  class="para"><h2 >PSU 2012</h2></p>
+			  	<p  class="para"><h2 >PSU 2013</h2></p>
 				
-				<input type="hidden" name="anio" value="2012">
+				<input type="hidden" name="anio" value="2013">
 			  	
 			  	<input type="hidden" name="id_colegio" value="<?= $colegio->id_colegio?>">
 

@@ -24,14 +24,14 @@
 			  	<div class="form-group">
 			    	<label for="inputEmail3" class="col-sm-2 control-label">Matematicas</label>
 			    	<div class="col-sm-10">
-			      		<input type="text" name="Matematicas" class="form-control" id="inputEmail3">
+			      		<input type="text" name="matematicas" class="form-control" id="inputEmail3">
 			    	</div>
 			  	</div>
 
 			  	<div class="form-group">
 			    	<label for="inputEmail3" class="col-sm-2 control-label">Escritura</label>
 			    	<div class="col-sm-10">
-			      		<input type="text" name="Escritura" class="form-control" id="inputEmail3">
+			      		<input type="text" name="escritura" class="form-control" id="inputEmail3">
 			    	</div>
 			  	</div>			  			  	
 
