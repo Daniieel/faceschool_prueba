@@ -69,7 +69,7 @@
 			</tr>
 
 			<tr>
-			<th><h5 >Religion</h5></th>
+			<!--<th><h5 >Religion</h5></th>
 			 <td><h5><?= $colegio->religion ?></h5></td>
 
 			</tr>
@@ -78,7 +78,7 @@
 			<th><h5 >Idioma</h5></th>
 			 <td><h5><?= $colegio->idioma ?> <?= $colegio->idioma2 ?> <?= $colegio->idioma3 ?> </h5></td>
 
-			</tr>
+			</tr>-->
 			<th><h5 >Grupo Socioeconomico</h5></th>
 			 <td><h5><?= $colegio->grupo_socioeco ?></h5></td>
 
@@ -86,14 +86,14 @@
 
 			</tr>
 			<th><h5 >Contacto</h5></th>
-			 <td><h5></h5></td>
+			 <td><h5><?= $colegio->contacto ?></h5></td>
 
 			</tr>
 
 			</table>
 
 			<!-- la otra tabla-->
-			<p  class="para"><h2 >Resultado del Colegio</h2></p>
+			<p  class="para"><h2 >Resultados PSU del Colegio</h2></p>
 			<table width="200" border="5" class = "table" >
 
 			
@@ -113,48 +113,57 @@
 		      
 				        <tr>
 				          
-				          <td><h5>Promedio PSU</h5></td>
-				          <td><h5><?= $colegio->promedio_psu ?></h5></td>
-				          <td><h5><?= $colegio->promedio_psu ?></h5></td>
+				          <td><h5>Lenguaje promedio</h5></td>
+				          
+				          <td><h5><?= $colegio->lenguaje_promedio_2012 ?></h5></td>
+				          <td><h5><?= $colegio->lenguaje_promedio_2013 ?></h5></td>
+
 
 				        </tr>
 				        <tr>
 				      
 
 				        <tr>
-				        <th><h5 >Promedio SIMCE 4Basico Lenguaje</h5></th>
-						<td><h5>	- </h5></td>
-				        <td><h5><?= $colegio->prom_simce_4bas_leng ?></h5></td>
+				        <th><h5 >Lenguaje Maximo</h5></th>
+						<td><h5><?= $colegio->lenguaje_maximo_2012 ?></h5></td>
+				        <td><h5><?= $colegio->lenguaje_maximo_2013 ?></h5></td>
 
 				        </tr>
 
 				        <tr>
-				        <th><h5 >Promedio SIMCE 4 Basico Matematicas</h5></th>
-				        <td><h5>	-</h5></td>
-				         <td><h5><?= $colegio->prom_simce_4bas_mate ?></h5></td>
+				        <th><h5 >Lenguaje Minimo</h5></th>
+				        <td><h5><?= $colegio->lenguaje_minimo_2012 ?></h5></td>
+				        <td><h5><?= $colegio->lenguaje_minimo_2013 ?></h5></td>
 
 				        </tr>
 
 				        <tr>
-				        <th><h5 >Promedio SIMCE 4 Basico Ciencias</h5></th>
-				        <td><h5>	-</h5></td>
-				         <td><h5><?= $colegio->prom_simce_4bas_cienc ?></h5></td>
+				          
+				          <td><h5>matematicas promedio</h5></td>
+				          
+				          <td><h5><?= $colegio->matematicas_promedio_2012 ?></h5></td>
+				          <td><h5><?= $colegio->matematicas_promedio_2013 ?></h5></td>
+
+
+				        </tr>
+				        <tr>
+				      
+
+				        <tr>
+				        <th><h5 >matematicas Maximo</h5></th>
+						<td><h5><?= $colegio->matematicas_maximo_2012 ?></h5></td>
+				        <td><h5><?= $colegio->matematicas_maximo_2013 ?></h5></td>
 
 				        </tr>
 
 				        <tr>
-				        <th><h5 >Promedio SIMCE 2 Medio Lenguaje</h5></th>
-				        <td><h5>	-</h5></td>
-				         <td><h5><?= $colegio->prom_simce_2med_leng ?></h5></td>
+				        <th><h5 >matematicas Minimo</h5></th>
+				        <td><h5><?= $colegio->matematicas_minimo_2012 ?></h5></td>
+				        <td><h5><?= $colegio->matematicas_minimo_2013 ?></h5></td>
 
 				        </tr>
 
-				        <tr>
-				        <th><h5 >Promedio SIMCE 2 Medio Matematicas</h5></th>
-				        <td><h5>	-</h5></td>
-				         <td><h5><?= $colegio->prom_simce_2med_mate ?></h5></td>
-
-				        </tr>
+				        
 				        
 				
 		      </tbody>
@@ -168,6 +177,134 @@
 
 			
 			</table>
+
+			<!-- Otra otra tabla -->
+				<p  class="para"><h2 >Resultados Simce del Colegio</h2></p>
+				<table width="200" border="5" class = "table" >
+
+				
+
+				<tr>
+				
+			      <thead>
+			        <tr>
+			          <th><h5>Año</h5></th>
+			          <th><h5>2013</h5></th>
+			         
+			        </tr>
+
+			      </thead>
+			      <tbody>
+			      
+					        <tr>
+					          
+					          <td><h5>Simce 2 Basico Comprension Lectora</h5></td>
+					          
+					          
+					          <td><h5><?= $colegio->comprension_lectora_2bas_2013 ?></h5></td>
+
+
+					        </tr>
+					        <tr>
+					      
+
+					        <tr>
+					        <th><h5 >Simce 4 Basico Comprension Lectora</h5></th>
+							
+					        <td><h5><?= $colegio->comprension_lectora_4bas_2013 ?></h5></td>
+
+					        </tr>
+
+					        <tr>
+					        <th><h5 >Simce 4 Basico Matematicas</h5></th>
+					        
+					        <td><h5><?= $colegio->matematicas_4bas_2013 ?></h5></td>
+
+					        </tr>
+
+					        <tr>
+					          
+					          <td><h5>Simce 4 Basico Ciencias Naturales</h5></td>
+					          
+					          <td><h5><?= $colegio->ciencias_naturales_4bas_2013 ?></h5></td>
+
+
+					        </tr>
+					        <tr>
+					      
+
+					        <tr>
+					        <th><h5 >Simce 6 Basico Comprension Lectora</h5></th>
+							
+					        <td><h5><?= $colegio->compresion_lectora_6bas_2013 ?></h5></td>
+
+					        </tr>
+
+					        <tr>
+					        <th><h5 >Simce 6 Basico Matematicas</h5></th>
+					        
+					        <td><h5><?= $colegio->matematicas_6bas_2013 ?></h5></td>
+
+					        </tr>
+
+							<tr>
+					        <th><h5 >Simce 6 Basico Escritura</h5></th>
+					        
+					        <td><h5><?= $colegio->escritura_6bas_2013 ?></h5></td>
+
+					        </tr>
+
+					        <tr>
+					        <th><h5 >Simce 8 Basico Comprension Lectora</h5></th>
+							
+					        <td><h5><?= $colegio->comprension_lectora_8bas_2013 ?></h5></td>
+
+					        </tr>
+
+					        <tr>
+					        <th><h5 >Simce 8 Basico Matematicas</h5></th>
+					        
+					        <td><h5><?= $colegio->matematicas_8bas_2013 ?></h5></td>
+
+					        </tr>
+
+							<tr>
+					        <th><h5 >Simce 8 Basico Ciencias Naturales</h5></th>
+					        
+					        <td><h5><?= $colegio->ciencias_naturales_8bas_2013 ?></h5></td>
+
+					        </tr>
+
+					        <tr>
+					        <th><h5 >Simce 2 Medio Comprension Lectora</h5></th>
+							
+					        <td><h5><?= $colegio->comprension_lectora_2med_2013 ?></h5></td>
+
+					        </tr>
+
+					        <tr>
+					        <th><h5 >Simce 2 Medio Matematicas</h5></th>
+					        
+					        <td><h5><?= $colegio->matematicas_2med_2013 ?></h5></td>
+
+					        </tr>
+					        
+					        
+					
+			      </tbody>
+			    
+				</tr>
+
+
+				
+
+				
+
+				
+				</table>			
+
+
+			<!-- -->
 		<?php if ($like == FALSE): ?>
 				<form action="<?= base_url('colegio/agregar_me_gusta')  ?>" method="post">
 				<div class="form-group">

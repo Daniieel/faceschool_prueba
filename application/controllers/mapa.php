@@ -36,7 +36,7 @@ class Mapa extends CI_Controller {
 		$region =$this->input->get("region");
 
 		$this->load->model("colegio_model","uum"); //cargo la base de datos
-		$colegios= $this->uum->filtro($comuna, $religion, $dependencia, $idioma, $region);
+		$colegios= $this->uum->filtro($comuna);
 		echo json_encode($colegios);
 	}
 

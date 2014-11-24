@@ -1,43 +1,33 @@
 <div class="container" style="margin-top:30px; margin-bottom:60px;">
 	<div class="row">
-		<div class="col-md-3">
+		
 
-		<ul class="nav nav-pills nav-stacked">
-		  <li class="active"><a href="#">Inicio</a></li>
-		</ul>
-
-		</div>
-
-		<div class = "col-md-9">
+		<div class = "col-md-12">
 
 		<form class="form-horizontal" role="form" action="<?= base_url('administracion/modificar_colegio_action')  ?>" method="post">
 			
 		<div class="form-group">
+
 				<input type="hidden" name="id_colegio" value="<?= $colegio->id_colegio?>">
+
+				<div class="form-group">
+			    <label for="inputEmail3" class="col-sm-2 control-label">Comuna</label>
+			    <div class="col-sm-10">
+			      <select name= "id_comuna" class= "form-control" id="comuna">
+	                    <option value="<?= $colegio->id_comuna?>"><?= $colegio->comuna ?></option>
+	                        <?php foreach ($comunas as $comuna) {
+	                        ?>
+	                        <option value="<?= $comuna->id_comuna ?>"><?= $comuna->nombre ?></option>
+	                        <?php }
+
+	                         ?> 
+			       </select>
+			    </div>
+			  </div>
+
 			    <label for="inputEmail3" class="col-sm-2 control-label">Nombre colegio</label>
 			    <div class="col-sm-10">
 			       <input type="text" name="nombre" class="form-control" id="inputEmail3" value ="<?= $colegio->nombre ?>">
-			    </div>
-			  </div>
-
-			  <div class="form-group">
-			    <label for="inputPassword3" class="col-sm-2 control-label">Provincia</label>
-			    <div class="col-sm-10">
-			      <input name="provincia" type="text" class="form-control" id="inputPassword3" value ="<?= $colegio->provincia?>">
-			    </div>
-			  </div>
-
-			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Region</label>
-			    <div class="col-sm-10">
-			      <input name="region" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->region?>">
-			    </div>
-			  </div>
-
-			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Comuna</label>
-			    <div class="col-sm-10">
-			      <input name="comuna" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->comuna?>">
 			    </div>
 			  </div>
 
@@ -63,19 +53,43 @@
 			  </div>
 
 			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Dependencia</label>
+			    <label for="inputEmail3" class="col-sm-2 control-label">Contacto</label>
 			    <div class="col-sm-10">
-			      <input name="dependencia" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->dependencia?>">
+			      <input name="contacto" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->contacto?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Promedio PSU</label>
+			    <label for="inputEmail3" class="col-sm-2 control-label">Matricula</label>
 			    <div class="col-sm-10">
-			      <input name="promedio_psu" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->promedio_psu?>">
+			      <input name="matricula" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->matricula?>">
 			    </div>
 			  </div>
 
+			  <div class="form-group">
+			    <label for="inputEmail3" class="col-sm-2 control-label">Mensualidad</label>
+			    <div class="col-sm-10">
+			      <input name="mensualidad" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->mensualidad?>">
+			    </div>
+			  </div>
+
+			  
+			  <div class="form-group">
+			    <label for="inputEmail3" class="col-sm-2 control-label">Dependencia</label>
+			    <div class="col-sm-10">
+			      <select name= "id_dependencia" class= "form-control" id="dependencia">
+	                    <option value="<?= $colegio->id_dependencia?>"><?= $colegio->dependencia ?></option>
+	                        <?php foreach ($dependencia as $dependencia) {
+	                        ?>
+	                        <option value="<?= $dependencia->id_dependencia ?>"><?= $dependencia->dependencia ?></option>
+	                        <?php }
+
+	                         ?> 
+			       </select>
+			    </div>
+			  </div>
+
+			  
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Grupo Socioeconomico</label>
 			    <div class="col-sm-10">
@@ -84,68 +98,35 @@
 			  </div>
 
 			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Promedio Simce 4Basico Lenguaje</label>
-			    <div class="col-sm-10">
-			      <input name="prom_simce_4bas_leng" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->prom_simce_4bas_leng?>">
-			    </div>
-			  </div>
-
-			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Promedio Simce 4Basico Matematicas</label>
-			    <div class="col-sm-10">
-			      <input name="prom_simce_4bas_mate" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->prom_simce_4bas_mate?>">
-			    </div>
-			  </div>
-
-			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Promedio Simce 4Basico Ciencias</label>
-			    <div class="col-sm-10">
-			      <input name="prom_simce_4bas_cienc" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->prom_simce_4bas_cienc?>">
-			    </div>
-			  </div>
-
-			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Promedio Simce 2Medio Lenguaje</label>
-			    <div class="col-sm-10">
-			      <input name="prom_simce_2med_leng" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->prom_simce_2med_leng?>">
-			    </div>
-			  </div>
-
-			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Promedio Simce 2Medio Matematicas</label>
-			    <div class="col-sm-10">
-			      <input name="prom_simce_2med_mate" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->prom_simce_2med_mate?>">
-			    </div>
-			  </div>
-
-			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Religion</label>
 			    <div class="col-sm-10">
-			      <input name="religion" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->religion?>">
+			      <input name="id_religion" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->id_religion?>">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Idioma</label>
+			    <label for="inputEmail3" class="col-sm-2 control-label">Idiomas</label>
 			    <div class="col-sm-10">
-			      <input name="idioma" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->idioma?>">
+			      <input name="id_idioma" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->id_idioma?>">
 			    </div>
 			  </div>
+
+			  
 
 			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Segundo Idioma</label>
+			    <label for="inputEmail3" class="col-sm-2 control-label">Latitud</label>
 			    <div class="col-sm-10">
-			      <input name="idioma" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->idioma2?>">
+			      <input name="latitud" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->latitud?>">
 			    </div>
 			  </div>
 
-			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Tercer Idioma</label>
+			   <div class="form-group">
+			    <label for="inputEmail3" class="col-sm-2 control-label">Longitud</label>
 			    <div class="col-sm-10">
-			      <input name="idioma" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->idioma3?>">
+			      <input name="longitud" type="text" class="form-control" id="inputEmail3" value ="<?= $colegio->longitud?>">
 			    </div>
 			  </div>
-
+			  		  
 			 <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
 			      <button type="submit" class="btn btn-default">Modificar</button>

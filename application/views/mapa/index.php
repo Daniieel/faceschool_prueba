@@ -152,6 +152,8 @@
           alert("Marcador: " + this.title + ", ID: " + this.idColegio);
       }
 
+
+
       </script>
       <script type="text/javascript">
         $( document ).ready(function() {
@@ -165,7 +167,7 @@
              $("#informacion").removeAttr("disabled");
           }
         });
-        $('#comuna, #religion, #dependencia, #idioma, #region').change(function() { //boton que cambia todo
+        $('#comuna').change(function() { //boton que cambia todo
             
 
           //borro todos los makers (los colegios en el mapa)
@@ -173,7 +175,8 @@
                     markers[i].setMap(null);
             }
            
-           $.getJSON("<?= base_url('mapa/filtro') ?>", {comuna:$("#comuna").val(), religion:$("#religion").val(), dependencia:$("#dependencia").val(), idioma:$("#idioma").val(), region:$("#region").val()}, function(data) {
+           $.getJSON("<?= base_url('mapa/filtro') ?>", {comuna:$("#comuna").val()}, function(data) {
+              
               var colegio = $('#colegio') //combobox
               $("option", colegio).remove(); //borro todos los elementos del colegio
               var option = '';
@@ -252,26 +255,14 @@
 
       </form>
         <h3>Filtrar</h3>
-          <div class="form-group">
-            <label><h5>Selecciona region:</h5></label>
-            <select name= "region" class= "form-control" id="region">
-              <option value="Todos">Todos</option>
-                  <?php foreach ($regiones as $region) {
-                  ?>
-                  <option value="<?= $region->region ?>"><?= $region->region ?></option>
-                  <?php }
-
-                   ?> 
-            </select>
-         </div>
-
+          
        <div class="form-group">
           <label><h5>Selecciona comuna:</h5></label>
           <select name= "comuna" class= "form-control" id="comuna">
             <option value="Todos">Todos</option>
                 <?php foreach ($comunas as $comuna) {
                 ?>
-                <option value="<?= $comuna->comuna ?>"><?= $comuna->comuna ?></option>
+                <option value="<?= $comuna->id_comuna ?>"><?= $comuna->nombre ?></option>
                 <?php }
 
                  ?> 
@@ -284,7 +275,7 @@
             <option value="Todos">Todos</option>
                 <?php foreach ($dependencia as $dependencia) {
                 ?>
-                <option value="<?= $dependencia->dependencia ?>"><?= $dependencia->dependencia ?></option>
+                <option value="<?= $dependencia->id_dependencia ?>"><?= $dependencia->dependencia ?></option>
                 <?php }
 
                  ?> 
