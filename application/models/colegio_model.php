@@ -215,11 +215,16 @@ class Colegio_model extends CI_Model {
 		return $query->result();
 	}
 
-	function filtro($comuna){
+	function filtro($comuna, $dependencia, $religion, $idioma){
 		$query = "SELECT a.id_colegio, a.id_comuna, a.nombre, a.direccion, 
 			a.telefono, a.pagina_web, a.contacto, a.matricula, a.mensualidad, 
-			a.grupo_socioeco, a.id_religion, a.id_idioma, a.latitud, 
-			a.longitud FROM colegio a LEFT JOIN comuna b ON a.id_comuna = b.id_comuna ";
+			a.id_dependencia, a.grupo_socioeco, a.id_religion, a.id_idioma, a.latitud, 
+			a.longitud 
+			FROM colegio a 
+			LEFT JOIN comuna b ON a.id_comuna = b.id_comuna
+			LEFT JOIN dependencia c ON a.id_dependencia = c.id_dependencia
+			LEFT JOIN religion d on a.id_religion = d.id_religion
+			LEFT JOIN idioma e on a.id_idioma = e.id_idioma ";
 		$band = false;
 		//comuna
 		if ($comuna!= "Todos" and $band== false) {
@@ -229,29 +234,29 @@ class Colegio_model extends CI_Model {
 			$query = $query."and b.id_comuna='$comuna' ";
 		}
 
-		// //religion
-		// if ($religion!= "Todos" and $band== false) {
-		// 	$query = $query."WHERE religion='$religion' ";
-		// 	$band = true;
-		// }elseif($religion!= "Todos" and $band== true){
-		// 	$query = $query."and religion='$religion' ";
-		// }
+		//dependencia
+		 if ($dependencia!= "Todos" and $band== false) {
+			$query = $query."WHERE c.id_dependencia='$dependencia' ";
+		 	$band = true;
+		 }elseif($dependencia!= "Todos" and $band== true){
+		 	$query = $query."and c.id_dependencia='$dependencia' ";
+		 }
 
-		// //dependencia
-		// if ($dependencia!= "Todos" and $band== false) {
-		// 	$query = $query."WHERE dependencia='$dependencia' ";
-		// 	$band = true;
-		// }elseif($dependencia!= "Todos" and $band== true){
-		// 	$query = $query."and dependencia='$dependencia' ";
-		// }
+		//religion
+		if ($religion!= "Todos" and $band== false) {
+		 	$query = $query."WHERE d.id_religion='$religion' ";
+		 	$band = true;
+		 }elseif($religion!= "Todos" and $band== true){
+		 	$query = $query."and d.id_religion='$religion' ";
+		 }
 
-		// //idioma
-		// if ($idioma!= "Todos" and $band== false) {
-		// 	$query = $query."WHERE idioma='$idioma' ";
-		// 	$band = true;
-		// }elseif($idioma!= "Todos" and $band== true){
-		// 	$query = $query."and idioma='$idioma' ";
-		// }
+		//idioma
+		 if ($idioma!= "Todos" and $band== false) {
+		 	$query = $query."WHERE e.id_idioma='$idioma' ";
+		 	$band = true;
+		 }elseif($idioma!= "Todos" and $band== true){
+		 	$query = $query."and e.id_idioma='$idioma' ";
+		 }
 		$consulta = $this->db->query($query);
 		return $consulta->result();
 	}

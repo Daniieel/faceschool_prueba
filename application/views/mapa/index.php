@@ -167,7 +167,7 @@
              $("#informacion").removeAttr("disabled");
           }
         });
-        $('#comuna').change(function() { //boton que cambia todo
+        $('#comuna, #dependencia, #religion, #idioma').change(function() { //boton que cambia todo
             
 
           //borro todos los makers (los colegios en el mapa)
@@ -175,7 +175,7 @@
                     markers[i].setMap(null);
             }
            
-           $.getJSON("<?= base_url('mapa/filtro') ?>", {comuna:$("#comuna").val()}, function(data) {
+           $.getJSON("<?= base_url('mapa/filtro') ?>", {comuna:$("#comuna").val(), dependencia:$("#dependencia").val(), religion:$("#religion").val(), idioma:$("#idioma").val()}, function(data) {
               
               var colegio = $('#colegio') //combobox
               $("option", colegio).remove(); //borro todos los elementos del colegio
@@ -201,6 +201,8 @@
           });
         });
       </script>
+
+
 
   <script>
   $(function() {
@@ -290,7 +292,7 @@
             <option value="Todos">Todos</option>
                 <?php foreach ($religiones as $religion) {
                 ?>
-                <option value="<?= $religion->religion ?>"><?= $religion->religion ?></option>
+                <option value="<?= $religion->id_religion ?>"><?= $religion->religion ?></option>
                 <?php }
 
                  ?> 
@@ -303,7 +305,7 @@
             <option value="Todos">Todos</option>
                 <?php foreach ($idiomas as $idioma) {
                 ?>
-                <option value="<?= $idioma->idioma ?>"><?= $idioma->idioma ?></option>
+                <option value="<?= $idioma->id_idioma ?>"><?= $idioma->idioma ?></option>
                 <?php }
 
                  ?> 
@@ -337,10 +339,10 @@
       <div class="col-md-7">
         <!-- MAPA -->
         <div id="mapa" style="width:100%; height:470px; border: 2px solid black;  position: center; overflow: hidden"></div>
-        <table class="table table-striped" style="font-size:12px">
+        <table name ="recomendador" class="table table-striped" style="font-size:12px">
               <thead>
                 <tr>
-                  <th>Nombre</th>
+                  <th>Colegios que mas han gustado!</th>
                   <th>A cuantos les gusta este colegio!</th>
                   
                 </tr>
@@ -351,8 +353,7 @@
                 ?>
               
                     <tr>
-                      
-                      <td><?= $me_gusta->nombre ?></td>
+                      <td><a href="<?= base_url('colegio/show?colegio='.$me_gusta->id_colegio); ?>"  target="_blank" class="btn btn-primary btn-xs" role="button"><?= $me_gusta->nombre ?></a></td>
                       <td><?= $me_gusta->total_megusta ?></td>
                       
                      </tr>
