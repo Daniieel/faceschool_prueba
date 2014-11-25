@@ -151,7 +151,7 @@ class Colegio_model extends CI_Model {
 					LEFT JOIN colegio b
 					ON a.id_colegio = b.id_colegio
 					GROUP BY id_colegio 
-					LIMIT 3 ");
+					 ");
 		return $query->result();
 	}
 	function agregar_colegio($colegio){
