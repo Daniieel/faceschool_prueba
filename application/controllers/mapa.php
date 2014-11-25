@@ -50,10 +50,10 @@ class Mapa extends CI_Controller {
 	public function filtro()
 	{
 		$comuna =$this->input->get("comuna");
-		$religion =$this->input->get("religion");
-		$dependencia =$this->input->get("dependencia");
-		$idioma =$this->input->get("idioma");
-		$region =$this->input->get("region");
+		// $religion =$this->input->get("religion");
+		// $dependencia =$this->input->get("dependencia");
+		// $idioma =$this->input->get("idioma");
+		// $region =$this->input->get("region");
 
 		$this->load->model("colegio_model","uum"); //cargo la base de datos
 		$colegios= $this->uum->filtro($comuna);

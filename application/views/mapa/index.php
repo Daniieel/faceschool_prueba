@@ -5,7 +5,7 @@
       <script src="http://j.maxmind.com/app/geoip.js"></script>
       <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
       <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-      <script type="text/javascript" title="Geo" >
+      <script type="text/javascript" title="Geo" ></script>
       <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 
       <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
@@ -202,7 +202,7 @@
         });
       </script>
 
-    <script>
+  <script>
   $(function() {
     $( "#amount").change(function() { 
        var rango = parseInt($("#amount").val());
