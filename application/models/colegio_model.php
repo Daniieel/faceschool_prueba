@@ -263,17 +263,14 @@ class Colegio_model extends CI_Model {
 
 //-------------------
 	function get_me_gusta($comuna, $dependencia, $religion, $idioma){
-		$query = "SELECT a.id_colegio, a.nombre, f.total_megusta
-			FROM colegio a 
-			LEFT JOIN comuna b ON a.id_comuna = b.id_comuna
-			LEFT JOIN dependencia c ON a.id_dependencia = c.id_dependencia
-			LEFT JOIN religion d on a.id_religion = d.id_religion
-			LEFT JOIN idioma e on a.id_idioma = e.id_idioma
-			LEFT JOIN 
-				(
-				SELECT id_colegio, COUNT(id_colegio) as total_megusta FROM me_gusta
-					) f
-			ON a.id_colegio = f.id_colegio ";
+		$query = "SELECT a.id_colegio, f.nombre, COUNT(a.id_colegio) as total_megusta 
+			FROM me_gusta a 
+			LEFT JOIN colegio f ON a.id_colegio = f.id_colegio
+			LEFT JOIN comuna b ON f.id_comuna = b.id_comuna
+			LEFT JOIN dependencia c ON f.id_dependencia = c.id_dependencia
+			LEFT JOIN religion d ON f.id_religion = d.id_religion
+			LEFT JOIN idioma e ON f.id_idioma = e.id_idioma
+			 ";
 		$band = false;
 		//comuna
 		if ($comuna!= "Todos" and $band== false) {
@@ -306,6 +303,8 @@ class Colegio_model extends CI_Model {
 		 }elseif($idioma!= "Todos" and $band== true){
 		 	$query = $query."and e.id_idioma='$idioma' ";
 		 }
+
+		 $query = $query."GROUP BY a.id_colegio LIMIT 3";
 		$consulta = $this->db->query($query);
 		return $consulta->result();
 	}
