@@ -216,14 +216,17 @@
         });
 
         $('#comuna, #dependencia, #religion, #idioma').change(function() { //boton que cambia todo
-          $.getJSON("<?= base_url('mapa/filtro') ?>", {comuna:$("#comuna").val(), dependencia:$("#dependencia").val(), religion:$("#religion").val(), idioma:$("#idioma").val()}, function(data) {
+          $.getJSON("<?= base_url('mapa/recomendador') ?>", {comuna:$("#comuna").val(), dependencia:$("#dependencia").val(), religion:$("#religion").val(), idioma:$("#idioma").val()}, function(data) {
               
               var colegio = $('#recomendador') //combobox
               $("option", colegio).remove(); //borro todos los elementos del colegio
               var option = '';
+              
               $.each(data, function(index, op) {
                 //agrego los options del colegio
-                option += "<option value='"+op.id_colegio+"'>"+op.nombre+"</option>";
+              option += "<td><a href='<?= base_url('colegio/show?colegio='.'"+op.id_colegio+"'); ?>' target='_blank' class='btn btn-primary btn-xs' role='button'>"+op.nombre+" </a></td><br><td>"+op.total_megusta+"</td>" 
+              
+               // option += "<option value='"+op.id_colegio+"'>"+op.nombre+"</option>";
               });
               colegio.html(option);
             });
@@ -280,6 +283,7 @@
                <?php }
 
                 ?> 
+
             </select> 
        </div>
       
@@ -372,7 +376,7 @@
       <div class="col-md-7">
         <!-- MAPA -->
         <div id="mapa" style="width:100%; height:470px; border: 2px solid black;  position: center; overflow: hidden"></div>
-        <table name ="recomendador" class="table table-striped" style="font-size:12px"  id="recomendador">
+        <table name ="recomendador" class="table table-striped" style="font-size:12px" >
               <thead>
                 <tr>
                   <th>Colegios que mas han gustado!</th>
@@ -381,13 +385,14 @@
                 </tr>
 
               </thead>
-              <tbody >
+              <tbody id="recomendador" >
+
                 <?php foreach ($me_gusta as $me_gusta) {
                 ?>
               
                     <tr>
                       <td><a href="<?= base_url('colegio/show?colegio='.$me_gusta->id_colegio); ?>"  target="_blank" class="btn btn-primary btn-xs" role="button"><?= $me_gusta->nombre ?></a></td>
-                      <!--<td><?= $me_gusta->total_megusta ?></td>-->
+                      <td><?= $me_gusta->total_megusta ?></td>
                       
                      </tr>
                   <?php }

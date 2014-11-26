@@ -144,8 +144,8 @@ class Colegio_model extends CI_Model {
 	function get_megusta()
 	{
 		$query = $this->db->query(
-			"SELECT a.id_colegio
-					, b.nombre
+			"SELECT a.id_colegio as id_colegio
+					, b.nombre as nombre
 					, COUNT(a.id_colegio) as total_megusta 
 					FROM me_gusta a
 					LEFT JOIN colegio b
@@ -260,6 +260,58 @@ class Colegio_model extends CI_Model {
 		$consulta = $this->db->query($query);
 		return $consulta->result();
 	}
+
+//-------------------
+	function get_me_gusta($comuna, $dependencia, $religion, $idioma){
+		$query = "SELECT a.id_colegio, a.nombre, f.total_megusta
+			FROM colegio a 
+			LEFT JOIN comuna b ON a.id_comuna = b.id_comuna
+			LEFT JOIN dependencia c ON a.id_dependencia = c.id_dependencia
+			LEFT JOIN religion d on a.id_religion = d.id_religion
+			LEFT JOIN idioma e on a.id_idioma = e.id_idioma
+			LEFT JOIN 
+				(
+				SELECT id_colegio, COUNT(id_colegio) as total_megusta FROM me_gusta
+					) f
+			ON a.id_colegio = f.id_colegio ";
+		$band = false;
+		//comuna
+		if ($comuna!= "Todos" and $band== false) {
+			$query = $query."WHERE b.id_comuna='$comuna' ";
+			$band = true;
+		}elseif($comuna!= "Todos" and $band== true){
+			$query = $query."and b.id_comuna='$comuna' ";
+		}
+
+		//dependencia
+		 if ($dependencia!= "Todos" and $band== false) {
+			$query = $query."WHERE c.id_dependencia='$dependencia' ";
+		 	$band = true;
+		 }elseif($dependencia!= "Todos" and $band== true){
+		 	$query = $query."and c.id_dependencia='$dependencia' ";
+		 }
+
+		//religion
+		if ($religion!= "Todos" and $band== false) {
+		 	$query = $query."WHERE d.id_religion='$religion' ";
+		 	$band = true;
+		 }elseif($religion!= "Todos" and $band== true){
+		 	$query = $query."and d.id_religion='$religion' ";
+		 }
+
+		//idioma
+		 if ($idioma!= "Todos" and $band== false) {
+		 	$query = $query."WHERE e.id_idioma='$idioma' ";
+		 	$band = true;
+		 }elseif($idioma!= "Todos" and $band== true){
+		 	$query = $query."and e.id_idioma='$idioma' ";
+		 }
+		$consulta = $this->db->query($query);
+		return $consulta->result();
+	}
+//-----------------
+
+	
 
 	function agregar_me_gusta($me_gusta){
 			

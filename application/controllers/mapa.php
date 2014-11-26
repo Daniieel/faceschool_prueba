@@ -60,6 +60,19 @@ class Mapa extends CI_Controller {
 		echo json_encode($colegios);
 	}
 
+	public function recomendador()
+	{
+		$comuna =$this->input->get("comuna");
+		$dependencia =$this->input->get("dependencia");
+		$religion =$this->input->get("religion");
+		$idioma =$this->input->get("idioma");
+		// $region =$this->input->get("region");
+
+		$this->load->model("colegio_model","uum"); //cargo la base de datos
+		$colegios= $this->uum->get_me_gusta($comuna, $dependencia, $religion, $idioma);
+		echo json_encode($colegios);
+	}
+
 	public function colegios_por_religion()
 	{
 		$religion =$this->input->get("religion");
