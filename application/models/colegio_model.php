@@ -151,6 +151,8 @@ class Colegio_model extends CI_Model {
 					LEFT JOIN colegio b
 					ON a.id_colegio = b.id_colegio
 					GROUP BY id_colegio 
+					ORDER BY total_megusta DESC
+					LIMIT 3
 					 ");
 		return $query->result();
 	}
@@ -304,7 +306,7 @@ class Colegio_model extends CI_Model {
 		 	$query = $query."and e.id_idioma='$idioma' ";
 		 }
 
-		 $query = $query."GROUP BY a.id_colegio LIMIT 3";
+		 $query = $query."GROUP BY a.id_colegio ORDER BY total_megusta DESC LIMIT 3";
 		$consulta = $this->db->query($query);
 		return $consulta->result();
 	}

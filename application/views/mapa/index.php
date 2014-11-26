@@ -224,9 +224,9 @@
               
               $.each(data, function(index, op) {
                 //agrego los options del colegio
-              option += "<td><a href='<?= base_url('colegio/show?colegio='.'"+op.id_colegio+"'); ?>' target='_blank' class='btn btn-primary btn-xs' role='button'>"+op.nombre+" </a></td><br><td>"+op.total_megusta+"</td>" 
+              option += "<tr><td><a href='<?= base_url('colegio/show?colegio='.'"+op.id_colegio+"'); ?>' target='_blank' class='btn btn-primary btn-xs' role='button'>"+op.nombre+" </a></td><br><td>"+op.total_megusta+"</td></tr>" 
               
-               // option += "<option value='"+op.id_colegio+"'>"+op.nombre+"</option>";
+               
               });
               colegio.html(option);
             });
