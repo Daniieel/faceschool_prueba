@@ -43,8 +43,8 @@
           
         //las coordenadas para los kms y el recorrido (buscar como hacer que se cambien)
         var request = {
-          origin:"-32.9957772,-71.1887948",
-          destination:"-33.060564,-71.533673",
+          origin:"",
+          destination:"",
           travelMode: google.maps.TravelMode.DRIVING
         };
         
