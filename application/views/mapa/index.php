@@ -20,8 +20,11 @@
       var myPos;
       var directionsRenderer;
       var directionsService = new google.maps.DirectionsService();
-      var markers = []
+      var directionsDisplay = new google.maps.DirectionsRenderer();
+      var markers = [];
+      var colegios = [];
       var circle = "";
+      var myPos = null;
       var destination = "";
       if (navigator && navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(geoOK, geoKO);
@@ -40,15 +43,7 @@
         };
         
         map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
-          
-        //las coordenadas para los kms y el recorrido (buscar como hacer que se cambien)
-        var request = {
-          origin:"",
-          destination:"",
-          travelMode: google.maps.TravelMode.DRIVING
-        };
         
-        var directionsService = new google.maps.DirectionsService();
         var directionsDisplay = new google.maps.DirectionsRenderer();
         
         // Indicamos dónde esta el mapa para renderizarnos
@@ -56,18 +51,31 @@
         // Indicamos dónde esta el panel para mostrar el texto
         directionsDisplay.setPanel(document.getElementById("directionsPanel"));
         
-        directionsService.route(request, function(result, status) {
-            if (status == google.maps.DirectionsStatus.OK) {
-              directionsDisplay.setDirections(result);
-            }
-          });
-        
       } 
 
       google.maps.event.addDomListener(window, 'load', initialize);
 
       //---------------
-
+      function calcular_ruta(){
+      var end = "";
+      colegios.forEach(function(cole){
+        if (cole.id == parseInt($('#colegio').val())) {
+          end = cole.latitud+","+cole.longitud;
+        };
+      });
+       var start = myPos;
+         var request = {
+             origin:start,
+             destination:end,
+             travelMode: google.maps.TravelMode.DRIVING
+         };
+         directionsService.route(request, function(response, status) {
+           if (status == google.maps.DirectionsStatus.OK) {
+             directionsDisplay.setDirections(response);
+           }
+         });
+         directionsDisplay.setMap(map);
+      }
 
       function geoOK(position) {
       showMap(position.coords.latitude, position.coords.longitude);
@@ -83,15 +91,14 @@
               , icon: 'http://i.imgur.com/Vw20Fx3.png'
               , map: map
               , });
+      var cole = {id:<?= $colegio->id_colegio?> , latitud:"<?= $colegio->latitud ?>", longitud:"<?= $colegio->longitud?>"};
+      colegios.push(cole);
        markers.push(marke);
       <?php }
 
       ?>
 
       }
-      
-
-
       function geoMaxmind() {
       showMap(geoip_latitude(), geoip_longitude());
       }
@@ -206,11 +213,14 @@
           
          
         $("#informacion").attr("disabled", "disabled");
+        $("#como_llegar").attr("disabled", "disabled");
         $('#colegio').change(function() { //boton que cambia todo
           if ($('#colegio').val()== "" || $('#colegio').val() == null) {
               $("#informacion").attr("disabled", "disabled");
+              $("#como_llegar").attr("disabled", "disabled");
           }else{
              $("#informacion").removeAttr("disabled");
+             $("#como_llegar").removeAttr("disabled");
           }
         });
         $('#comuna, #dependencia, #religion, #idioma').change(function() { //boton que cambia todo
@@ -337,7 +347,7 @@
        </div>
       
         <div class="form-group">
-          <input type="button" value="Como llegar!" onclick="travelToAddress();" class="btn btn-danger">
+          <input type="button"value="Como llegar!" onclick="calcular_ruta();" class="btn btn-danger" id="como_llegar">
           <input type="submit" value="Ver Informacion" class="btn btn-danger" id="informacion">
         </div>
 
@@ -422,6 +432,7 @@
     
       
       </div>
+      
       <div class="col-md-8">
         <!-- MAPA -->
         <div id="mapa" style="width:100%; height:470px; border: 2px solid black;  position: center; overflow: hidden"></div>
