@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12" style="margin-bottom:30px;">
-      <title>Faceschool</title>
+
+      <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+      
       <script src="http://j.maxmind.com/app/geoip.js"></script>
       <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
       <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -11,6 +13,8 @@
       <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
       <link rel="stylesheet" href="/resources/demos/style.css">
       <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+      
       <script>
       var map;
       var myPos;
@@ -18,11 +22,51 @@
       var directionsService = new google.maps.DirectionsService();
       var markers = []
       var circle = "";
+      var destination = "";
       if (navigator && navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(geoOK, geoKO);
       } else {
          geoMaxmind();
       }
+
+      //-----------------
+
+
+      function initialize(){      
+        
+        var mapOptions = {
+          zoom: 12,   
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        
+        map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
+          
+        //las coordenadas para los kms y el recorrido (buscar como hacer que se cambien)
+        var request = {
+          origin:"-32.9957772,-71.1887948",
+          destination:"-33.060564,-71.533673",
+          travelMode: google.maps.TravelMode.DRIVING
+        };
+        
+        var directionsService = new google.maps.DirectionsService();
+        var directionsDisplay = new google.maps.DirectionsRenderer();
+        
+        // Indicamos dónde esta el mapa para renderizarnos
+        directionsDisplay.setMap(map);
+        // Indicamos dónde esta el panel para mostrar el texto
+        directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+        
+        directionsService.route(request, function(result, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+              directionsDisplay.setDirections(result);
+            }
+          });
+        
+      } 
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+      //---------------
 
 
       function geoOK(position) {
@@ -106,6 +150,7 @@
 
 
       }
+//---------------------------------------------------
 
       function travelToAddress(){
        var colegioActual = document.forms[0].colegio.value;
@@ -133,6 +178,7 @@
         directionsService.route(request,getRuta);
       }
 
+//--------------------------------------------------------
       function getRuta(result, status){
 
           if (status == google.maps.DirectionsStatus.OK) {
@@ -252,6 +298,9 @@
 
   </script>
 
+
+
+
 <!-- recomendador -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -267,7 +316,7 @@
 
 
       <h1 class= "read" align="" style="margin-top:60px; margin-bottom:30px;"><strong>Encuentra</strong> todos los <strong>colegios</strong> cercanos a tu <strong>ubicación</strong></h1>
-      <div class="col-md-5" style="background:rgb(79, 78, 78); color:white;">
+      <div class="col-md-4" style="background:rgb(79, 78, 78); color:white;">
      <form action= "<?= base_url('colegio/show'); ?>" method="get" target="_blank" >
        <div class="form-group">
          <label><h4>Selecciona el colegio:</h4></label>
@@ -357,7 +406,7 @@
        
        </div>
 
-
+      
        
         <br>
         <br>
@@ -373,7 +422,7 @@
     
       
       </div>
-      <div class="col-md-7">
+      <div class="col-md-8">
         <!-- MAPA -->
         <div id="mapa" style="width:100%; height:470px; border: 2px solid black;  position: center; overflow: hidden"></div>
         <table name ="recomendador" class="table table-striped" style="font-size:12px" >
@@ -401,7 +450,13 @@
               
               </tbody>
             </table>
-        <div class="fb-recommendations" data-site="http://faceschool.cl/" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
+        <div class="fb-recommendations" data-site="http://faceschool.cl/" data-action="likes, recommends" data-colorscheme="light" data-header="true" style="width: 100%;float:center;"></div>
+      </div>
+
+      <div class="col-md-12">
+        
+        <div id="directionsPanel" style="width: 100%;float:center;"></div>
+
       </div>
     </div>
   </div>

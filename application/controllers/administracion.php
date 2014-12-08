@@ -7,7 +7,7 @@ class Administracion extends CI_Controller {
 	     {
 	          parent::__construct();
 	          $this->dato['alert']="";
-	          // Your own constructor code
+	          
 	     }
 	public function login()
 	{
