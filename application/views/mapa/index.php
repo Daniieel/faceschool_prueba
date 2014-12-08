@@ -75,6 +75,7 @@
            }
          });
          directionsDisplay.setMap(map);
+         directionsDisplay.setPanel(document.getElementById("directionsPanel"));
       }
 
       function geoOK(position) {
@@ -464,7 +465,7 @@
         <div class="fb-recommendations" data-site="http://faceschool.cl/" data-action="likes, recommends" data-colorscheme="light" data-header="true" style="width: 100%;float:center;"></div>
       </div>
 
-      <div class="col-md-12">
+      <div class="col-md-3">
         
         <div id="directionsPanel" style="width: 100%;float:center;"></div>
 
