@@ -146,7 +146,7 @@
       // Agregar circulo al mapa
       circle = new google.maps.Circle({
         map: map,
-        radius: 1000,    // 10 miles in metres
+        radius: 0,    // 10 miles in metres
         fillColor: '#819FF7',
         strokeColor: '#2E9AFE'
       });
@@ -300,10 +300,11 @@
   <script>
   $(function() {
     $( "#amount").change(function() { 
-       var rango = parseInt($("#amount").val());
-       circle.setRadius(rango);
+      alert('hola');
+      
     
       });
+
   });
 
 
@@ -328,7 +329,191 @@
 
       <h1 class= "read" align="" style="margin-top:60px; margin-bottom:30px;"><strong>Encuentra</strong> todos los <strong>colegios</strong> cercanos a tu <strong>ubicación</strong></h1>
       <div class="col-md-4" style="background:rgb(79, 78, 78); color:white;">
-     <form action= "<?= base_url('colegio/show'); ?>" method="get" target="_blank" >
+    
+        <h3>Filtrar</h3>
+          
+       <!-- <div class="form-group">
+          <label><h5>Selecciona comuna:</h5></label>
+          <select name= "comuna" class= "form-control" id="comuna">
+            <option value="Todos">Todos</option>
+                <?php foreach ($comunas as $comuna) {
+                ?>
+                <option value="<?= $comuna->id_comuna ?>"><?= $comuna->nombre ?></option>
+                <?php }
+
+                 ?> 
+          </select>
+       </div> -->
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+         <div class="panel panel-default">
+           <div class="panel-heading" role="tab" id="headingOne">
+             <h4 class="panel-title">
+               <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                 Filtro:
+               </a>
+             </h4>
+           </div>
+           <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+             <div class="panel-body">
+                 <div class="form-group">
+                  <label><h5 style="color:black;">Tipo dependencia:</h5></label>
+                  <select name= "dependencia" class= "form-control" id="dependencia">
+                    <option value="Todos">Todos</option>
+                        <?php foreach ($dependencia as $dependencia) {
+                        ?>
+                        <option value="<?= $dependencia->id_dependencia ?>"><?= $dependencia->dependencia ?></option>
+                        <?php }
+
+                         ?> 
+                  </select>
+               </div>
+               <div class="form-group">
+                  <label><h5 style="color:black;">Mensualidad:</h5></label>
+                  <select name= "dependencia" class= "form-control" id="dependencia">
+                    <option value="Todos">Todos</option>
+                        <?php foreach ($dependencia as $dependencia) {
+                        ?>
+                        <option value="<?= $dependencia->id_dependencia ?>"><?= $dependencia->dependencia ?></option>
+                        <?php }
+
+                         ?> 
+                  </select>
+               </div>
+                <div class="form-group">
+                  <label><h5 style="color:black;">Metros construidos:</h5></label>
+                  <select name= "dependencia" class= "form-control" id="dependencia">
+                    <option value="Todos">Todos</option>
+                        <?php foreach ($dependencia as $dependencia) {
+                        ?>
+                        <option value="<?= $dependencia->id_dependencia ?>"><?= $dependencia->dependencia ?></option>
+                        <?php }
+
+                         ?> 
+                  </select>
+               </div>
+               <link rel="stylesheet" href="htt://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+                 <script src="htt://code.jquery.com/jquery-1.10.2.js"></script>
+                 <script src="htt://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+                
+                 <script>
+                 $(function() {
+                   $( "#slider" ).slider({
+                     value:0,
+                     min: 0,
+                     max: 10000,
+                     step: 100,
+                     slide: function( event, ui ) {
+                       $( "#amount" ).val( ui.value+ " m" );
+                        var rango = parseInt($("#amount").val());
+                        circle.setRadius(ui.value);
+                     }
+                   });
+                   $( "#amount" ).val($( "#slider" ).slider( "value" )+ " m" );
+                 });
+                 </script>
+               <div class="form-group">
+                 <p>
+                   <label for="amount"> <h5 style="color:black">Colegios a la redonda
+                   <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;"> 
+                    </h5></label>
+                 </p>
+                 
+                  <div id="slider"></div>
+                </div>
+             </div>
+           </div>
+         </div>
+         <div class="panel panel-default">
+           <div class="panel-heading" role="tab" id="headingTwo">
+             <h4 class="panel-title">
+               <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Filtros avanzados:
+               </a>
+             </h4>
+           </div>
+           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+             <div class="panel-body" style="color:black">
+               <div class="form-group">
+                  <label><h5>Tipo idioma:</h5></label>
+                  <select name= "idioma" class= "form-control" id="idioma">
+                    <option value="Todos">Todos</option>
+                        <?php foreach ($idiomas as $idioma) {
+                        ?>
+                        <option value="<?= $idioma->id_idioma ?>"><?= $idioma->idioma ?></option>
+                        <?php }
+
+                         ?> 
+                  </select>
+              </div>
+                <div class="form-group">
+                 <label><h5>Selecciona religion:</h5></label>
+                 <select name= "religion" class= "form-control" id="religion">
+                   <option value="Todos">Todos</option>
+                       <?php foreach ($religiones as $religion) {
+                       ?>
+                       <option value="<?= $religion->id_religion ?>"><?= $religion->religion ?></option>
+                       <?php }
+
+                        ?> 
+                 </select>
+              </div>
+
+              <div class="form-group">
+                 <label><h5>Selecciona idioma:</h5></label>
+                 <select name= "religion" class= "form-control" id="religion">
+                   <option value="Todos">Todos</option>
+                       <?php foreach ($religiones as $religion) {
+                       ?>
+                       <option value="<?= $religion->id_religion ?>"><?= $religion->religion ?></option>
+                       <?php }
+
+                        ?> 
+                 </select>
+              </div>
+              
+              <div class="form-group">
+                 <label><h5>Rango puntaje PSU:</h5></label>
+                 <select name= "religion" class= "form-control" id="religion">
+                   <option value="Todos">Todos</option>
+                       <?php foreach ($religiones as $religion) {
+                       ?>
+                       <option value="<?= $religion->id_religion ?>"><?= $religion->religion ?></option>
+                       <?php }
+
+                        ?> 
+                 </select>
+              </div>
+
+              <div class="form-group">
+                 <label><h5>Ranking Nacional:</h5></label>
+                 <select name= "religion" class= "form-control" id="religion">
+                   <option value="Todos">Todos</option>
+                       <?php foreach ($religiones as $religion) {
+                       ?>
+                       <option value="<?= $religion->id_religion ?>"><?= $religion->religion ?></option>
+                       <?php }
+
+                        ?> 
+                 </select>
+              </div>
+              
+              <div class="form-group">
+                 <label><h5>Rango matricula:</h5></label>
+                 <select name= "religion" class= "form-control" id="religion">
+                   <option value="Todos">Todos</option>
+                       <?php foreach ($religiones as $religion) {
+                       ?>
+                       <option value="<?= $religion->id_religion ?>"><?= $religion->religion ?></option>
+                       <?php }
+
+                        ?> 
+                 </select>
+              </div>
+             </div>
+           </div>
+         </div>
+         <form action= "<?= base_url('colegio/show'); ?>" method="get" target="_blank" >
        <div class="form-group">
          <label><h4>Selecciona el colegio:</h4></label>
          <!-- se llena el combobox con los colegios con la posicion de la base de datos y hace la funcion "como llegar"--> 
@@ -353,71 +538,7 @@
         </div>
 
       </form>
-        <h3>Filtrar</h3>
-          
-       <div class="form-group">
-          <label><h5>Selecciona comuna:</h5></label>
-          <select name= "comuna" class= "form-control" id="comuna">
-            <option value="Todos">Todos</option>
-                <?php foreach ($comunas as $comuna) {
-                ?>
-                <option value="<?= $comuna->id_comuna ?>"><?= $comuna->nombre ?></option>
-                <?php }
-
-                 ?> 
-          </select>
        </div>
-
-         <div class="form-group">
-          <label><h5>Tipo dependencia:</h5></label>
-          <select name= "dependencia" class= "form-control" id="dependencia">
-            <option value="Todos">Todos</option>
-                <?php foreach ($dependencia as $dependencia) {
-                ?>
-                <option value="<?= $dependencia->id_dependencia ?>"><?= $dependencia->dependencia ?></option>
-                <?php }
-
-                 ?> 
-          </select>
-       </div>
-
-
-
-         <div class="form-group">
-          <label><h5>Selecciona religion:</h5></label>
-          <select name= "religion" class= "form-control" id="religion">
-            <option value="Todos">Todos</option>
-                <?php foreach ($religiones as $religion) {
-                ?>
-                <option value="<?= $religion->id_religion ?>"><?= $religion->religion ?></option>
-                <?php }
-
-                 ?> 
-          </select>
-       </div>
-
-      <div class="form-group">
-          <label><h5>Tipo idioma:</h5></label>
-          <select name= "idioma" class= "form-control" id="idioma">
-            <option value="Todos">Todos</option>
-                <?php foreach ($idiomas as $idioma) {
-                ?>
-                <option value="<?= $idioma->id_idioma ?>"><?= $idioma->idioma ?></option>
-                <?php }
-
-                 ?> 
-          </select>
-      </div>
-
-       <div class="form-group">
-        <p>
-          <label for="amount"> <h5>Colegios a la redonda (Especifique en metros):</h5></label>
-          <input type="text" id="amount" class="form-control">
-        </p>
-       
-       </div>
-
-      
        
         <br>
         <br>
