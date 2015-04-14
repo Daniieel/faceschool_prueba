@@ -3,7 +3,7 @@
 		<div id="da-slider" class="da-slider text-center">
 			<div class="da-slide">
 				<h2>FaceSchool</h2>
-				<p><strong>Busca tu colegio preferido.</strong></p>
+				<p><strong>Encuentra t&uacute mejor opci&oacuten de Colegio.</strong></p>
 				<h3 class="da-link">
 					<div class="col-md-10 h_search">
 						<form>
@@ -19,30 +19,31 @@
 <div class="main_bg"><!-- start main -->
 	<div class="container">
 		<div class="main row">
-			<div class="col-md-3 images_1_of_4 text-center">
-				<span class="bg"><i class="fa fa-globe"></i></span>
-				<h4><a>Procesos Actuales</a></h4>
-				<p class="para">Pudimos determinar que los procesos actuales para poder matricular a nuestros hijos llegan a ser bastante engorroso. 	</p>
-				<!--<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>-->
-			</div>
+			
 			<div class="col-md-3 images_1_of_4 bg1 text-center">
 				<span class="bg"><i class="fa fa-laptop"></i></span>
-				<h4><a>FUENTES DE COMUNICACION.</a></h4>
-				<p class="para">La informacion que se encuentra en internet sobre algun establecimiento pocas veces es actualizada.</p>
+				<h4><a>Persona</a></h4>
+				<p class="para">Lee y opina sobre los colegios.Califica y comenta sobre ellos aportando informaci&oacute;n ver&iacute;dica y de calidad.</p>
 				<!--<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>-->
 			</div>
 			<div class="col-md-3 images_1_of_4 bg1 text-center">
-				<span class="bg"><i class="fa fa-clock-o"></i></span>
-				<h4><a>Tiempo</a></h4>
-				<p class="para">El tiempo es valioso, por lo tanto no tener una respuesta de forma inmediata puede llegar a ser lo peor, sobre todo si se trata del futuro de nuestros hijos.</p>
-				<!--<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>-->
-			</div>		
-			<div class="col-md-3 images_1_of_4 bg1 text-center">
 				<span class="bg"><i class="fa fa-male"></i> </span>
-				<h4><a>Personas</a></h4>
-				<p class="para">Descubrimos que los tutores no saben el lugar e informacion de los colegios</p>
+				<h4><a>T&uacute; mejor opci&oacute;n</a></h4>
+				<p class="para">Encuentra cu&aacute;l es el mejor establecimiento educacional en base a tus necesidades.Contribuye a que otros tomen la mejor opci&oacute;n.</p>
 				<!--<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>-->
 			</div>	
+			<<div class="col-md-3 images_1_of_4 bg1 text-center">
+				<span class="bg"><i class="fa fa-clock-o"></i></span>
+				<h4><a>Tiempo</a></h4>
+				<p class="para">Sabemos cuanto tarda elegir el correcto colegio para nuestros hijos, es por eso que te invitamos a ocupar esta sencilla y r&aacute;pida  herramienta.</p>
+				<!--<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>-->
+			</div>
+			<div class="col-md-3 images_1_of_4 text-center">
+				<span class="bg"><i class="fa fa-globe"></i></span>
+				<h4><a>Educaci&Oacute;n</a></h4>
+				<p class="para">Construyamos la red educativa mas grande de Chile para que la educaci&oacute;n tome el valor social que se merece.</p>
+				<!--<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>-->
+			</div>
 		</div>
 	</div>
 </div><!-- end main -->

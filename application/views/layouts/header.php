@@ -114,7 +114,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		        <li><a href="<?= base_url() ?>mapa">Mapa</a></li>
 		        <!--<li><a href="<?= base_url() ?>informacion">Informacion</a></li>-->
 		        <!--<li><a href="<?= base_url() ?>libro_clases">Libro de Clases</a></li>-->
-		        <li><a href="<?= base_url() ?>contacto">Contactanos</a></li>
+		        <li><a href="<?= base_url() ?>contacto">Cont&aacute;ctanos</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		    <!-- start soc_icons -->

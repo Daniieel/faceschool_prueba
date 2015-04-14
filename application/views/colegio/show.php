@@ -35,8 +35,18 @@
 		<div class="col-md-9 col-md-offset-1">
 			<p  class="para"><h2 >Informacion del Colegio</h2></p>
 			<p></p>
+			
+			
 
 			<table width="200" border="5" class = "table table-striped" >
+			<tr>
+			<th><h5 >Imagen Referencial:</h5></th>
+		
+			<td><a href=<?= $colegio->foto?>><img src=<?= $colegio->foto?>
+
+    		alt="" WIDTH="300" HEIGHT="300" border="1"></a></td>
+
+			</tr>
 			<tr>
 			<th><h5 style="margin-left:3em margin-right:3em;">Nombre</h5></th>
 			<td><h5><?= $colegio->nombre ?></h5></td>
@@ -81,6 +91,55 @@
 			</tr>-->
 			<th><h5 >Grupo Socioeconomico</h5></th>
 			 <td><h5><?= $colegio->grupo_socioeco ?></h5></td>
+
+			</tr>
+
+			</tr>
+			<th><h5 >Ranking Nacional</h5></th>
+			 <td><h5><?= $colegio->ranking_nac ?></h5></td>
+
+			</tr>
+
+			</tr>
+			<th><h5 >Metodo de Enseñanza</h5></th>
+			 <td><h5><?= $colegio->met_ense?></h5></td>
+
+			</tr>
+
+
+			</tr>
+			<th><h5 >Actividades Extraprogramaticas</h5></th>
+			 <td><h5><?= $colegio->act_extr ?></h5></td>
+
+			</tr>
+
+			</tr>
+			<th><h5 >Cantidad de alumnos promedio por sala</h5></th>
+			 <td><h5><?= $colegio->cant_alu ?></h5></td>
+
+			</tr>
+
+			</tr>
+			<th><h5 >Cantidad de profesores</h5></th>
+			 <td><h5><?= $colegio->cant_prof ?></h5></td>
+
+			</tr>
+
+			</tr>
+			<th><h5 >Horas de ingles impartidas</h5></th>
+			 <td><h5><?= $colegio->hrs_ingles ?></h5></td>
+
+			</tr>
+			
+			</tr>
+			<th><h5 >Convenio Universidades Extranjeras</h5></th>
+			 <td><h5><?= $colegio->conv_extr ?></h5></td>
+
+			</tr>
+
+			</tr>
+			<th><h5 >Logros Deportivos</h5></th>
+			 <td><h5><?= $colegio->logr_dep ?></h5></td>
 
 			</tr>
 

@@ -38,6 +38,7 @@ class Colegio_model extends CI_Model {
 			"SELECT
 				  a.id_colegio 
 				, a.nombre
+				, a.foto
 				, l.nombre as region
 				, l.id_region as id_region
 				, k.nombre as provincia
@@ -48,6 +49,14 @@ class Colegio_model extends CI_Model {
 				, a.telefono
 				, a.pagina_web
 				, a.contacto
+				, a.ranking_nac
+				, a.met_ense
+				, a.conv_extr
+				, a.act_extr
+				, a.hrs_ingles
+				, a.logr_dep
+				, a.cant_alu
+				, a.cant_prof
 				, a.matricula
 				, a.mensualidad
 				, b.dependencia
