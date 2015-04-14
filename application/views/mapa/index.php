@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12" style="margin-bottom:30px;">
 
-      <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+       <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
       
       <script src="http://j.maxmind.com/app/geoip.js"></script>
       <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
@@ -13,6 +13,7 @@
       <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
       <link rel="stylesheet" href="/resources/demos/style.css">
       <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
 
       
       <script>
@@ -332,7 +333,7 @@
     
         <h3>Filtrar</h3>
           
-       <!-- <div class="form-group">
+        <div class="form-group">
           <label><h5>Selecciona comuna:</h5></label>
           <select name= "comuna" class= "form-control" id="comuna">
             <option value="Todos">Todos</option>
@@ -343,7 +344,7 @@
 
                  ?> 
           </select>
-       </div> -->
+       </div> 
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
          <div class="panel panel-default">
@@ -392,9 +393,7 @@
                          ?> 
                   </select>
                </div>
-               <link rel="stylesheet" href="htt://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-                 <script src="htt://code.jquery.com/jquery-1.10.2.js"></script>
-                 <script src="htt://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+               
                 
                  <script>
                  $(function() {
@@ -434,18 +433,7 @@
            </div>
            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
              <div class="panel-body" style="color:black">
-               <div class="form-group">
-                  <label><h5>Tipo idioma:</h5></label>
-                  <select name= "idioma" class= "form-control" id="idioma">
-                    <option value="Todos">Todos</option>
-                        <?php foreach ($idiomas as $idioma) {
-                        ?>
-                        <option value="<?= $idioma->id_idioma ?>"><?= $idioma->idioma ?></option>
-                        <?php }
-
-                         ?> 
-                  </select>
-              </div>
+               
                 <div class="form-group">
                  <label><h5>Selecciona religion:</h5></label>
                  <select name= "religion" class= "form-control" id="religion">
@@ -463,9 +451,9 @@
                  <label><h5>Selecciona idioma:</h5></label>
                  <select name= "religion" class= "form-control" id="religion">
                    <option value="Todos">Todos</option>
-                       <?php foreach ($religiones as $religion) {
+                       <?php foreach ($idiomas  as $idioma) {
                        ?>
-                       <option value="<?= $religion->id_religion ?>"><?= $religion->religion ?></option>
+                       <option value="<?= $idioma->id_idioma ?>"><?= $idioma->idioma ?></option>
                        <?php }
 
                         ?> 
@@ -474,41 +462,17 @@
               
               <div class="form-group">
                  <label><h5>Rango puntaje PSU:</h5></label>
-                 <select name= "religion" class= "form-control" id="religion">
-                   <option value="Todos">Todos</option>
-                       <?php foreach ($religiones as $religion) {
-                       ?>
-                       <option value="<?= $religion->id_religion ?>"><?= $religion->religion ?></option>
-                       <?php }
-
-                        ?> 
-                 </select>
+                 <option value="Todos">Todos</option>
               </div>
 
               <div class="form-group">
                  <label><h5>Ranking Nacional:</h5></label>
-                 <select name= "religion" class= "form-control" id="religion">
-                   <option value="Todos">Todos</option>
-                       <?php foreach ($religiones as $religion) {
-                       ?>
-                       <option value="<?= $religion->id_religion ?>"><?= $religion->religion ?></option>
-                       <?php }
-
-                        ?> 
-                 </select>
+                 <option value="Todos">Todos</option>
               </div>
               
               <div class="form-group">
                  <label><h5>Rango matricula:</h5></label>
-                 <select name= "religion" class= "form-control" id="religion">
-                   <option value="Todos">Todos</option>
-                       <?php foreach ($religiones as $religion) {
-                       ?>
-                       <option value="<?= $religion->id_religion ?>"><?= $religion->religion ?></option>
-                       <?php }
-
-                        ?> 
-                 </select>
+                 <option value="Todos">Todos</option>
               </div>
              </div>
            </div>

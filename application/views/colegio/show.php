@@ -33,7 +33,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-9 col-md-offset-1">
-			<p  class="para"><h2 >Informacion del Colegio</h2></p>
+			<p  class="para"><h2 >Informaci&oacute;n del Colegio</h2></p>
 			<p></p>
 			
 			
@@ -48,32 +48,32 @@
 
 			</tr>
 			<tr>
-			<th><h5 style="margin-left:3em margin-right:3em;">Nombre</h5></th>
+			<th><h5 style="margin-left:3em margin-right:3em;">Nombre:</h5></th>
 			<td><h5><?= $colegio->nombre ?></h5></td>
 
 			</tr>
 
 
 			<tr>
-			<th><h5 >Direccion</h5></th>
+			<th><h5 >Direcci&oacute;n:</h5></th>
 			<td><h5><?= $colegio->direccion ?></h5></td>
 
 
 			</tr>
 
 			<tr>
-			<th><h5 >Telefono</h5></th>
+			<th><h5 >Tel&eacute;fono</h5></th>
 			 <td><h5><?= $colegio->telefono ?></h5></td>
 
 			</tr>
 			<tr>
-			<th><h5 >Pagina Web </h5></th>
+			<th><h5 >P&aacute;gina Web: </h5></th>
 
 			<td><a target="_blank"  href="http://<?= $colegio->pagina_web ?>" class="fa-btn btn-1 btn-1e"><?= $colegio->pagina_web ?></a></td>
 			</tr>
 
 			<tr>
-			<th><h5 >Tipo de Dependencia</h5></th>
+			<th><h5 >Tipo de Dependencia:</h5></th>
 			<td><h5><?= $colegio->dependencia ?></h5></td>
 
 			</tr>
@@ -89,62 +89,62 @@
 			 <td><h5><?= $colegio->idioma ?> <?= $colegio->idioma2 ?> <?= $colegio->idioma3 ?> </h5></td>
 
 			</tr>-->
-			<th><h5 >Grupo Socioeconomico</h5></th>
+			<th><h5 >Grupo Socioecon&oacute;mico:</h5></th>
 			 <td><h5><?= $colegio->grupo_socioeco ?></h5></td>
 
 			</tr>
 
 			</tr>
-			<th><h5 >Ranking Nacional</h5></th>
+			<th><h5 >Ranking Nacional:</h5></th>
 			 <td><h5><?= $colegio->ranking_nac ?></h5></td>
 
 			</tr>
 
 			</tr>
-			<th><h5 >Metodo de Enseñanza</h5></th>
+			<th><h5 >M&eacute;todo de Enseñanza:</h5></th>
 			 <td><h5><?= $colegio->met_ense?></h5></td>
 
 			</tr>
 
 
 			</tr>
-			<th><h5 >Actividades Extraprogramaticas</h5></th>
+			<th><h5 >Actividades Extraprogram&aacute;ticas:</h5></th>
 			 <td><h5><?= $colegio->act_extr ?></h5></td>
 
 			</tr>
 
 			</tr>
-			<th><h5 >Cantidad de alumnos promedio por sala</h5></th>
+			<th><h5 >Promedio de alumnos por sala:</h5></th>
 			 <td><h5><?= $colegio->cant_alu ?></h5></td>
 
 			</tr>
 
 			</tr>
-			<th><h5 >Cantidad de profesores</h5></th>
+			<th><h5 >Cantidad de profesores:</h5></th>
 			 <td><h5><?= $colegio->cant_prof ?></h5></td>
 
 			</tr>
 
 			</tr>
-			<th><h5 >Horas de ingles impartidas</h5></th>
+			<th><h5 >Horas de ingl&eacute;s impartidas:</h5></th>
 			 <td><h5><?= $colegio->hrs_ingles ?></h5></td>
 
 			</tr>
 			
 			</tr>
-			<th><h5 >Convenio Universidades Extranjeras</h5></th>
+			<th><h5 >Convenio Universidades Extranjeras:</h5></th>
 			 <td><h5><?= $colegio->conv_extr ?></h5></td>
 
 			</tr>
 
 			</tr>
-			<th><h5 >Logros Deportivos</h5></th>
+			<th><h5 >Logros Deportivos:</h5></th>
 			 <td><h5><?= $colegio->logr_dep ?></h5></td>
 
 			</tr>
 
 			</tr>
-			<th><h5 >Contacto</h5></th>
+			<th><h5 >Contacto:</h5></th>
 			 <td><h5><?= $colegio->contacto ?></h5></td>
 
 			</tr>
@@ -183,14 +183,14 @@
 				      
 
 				        <tr>
-				        <th><h5 >Lenguaje Maximo</h5></th>
+				        <th><h5 >Lenguaje m&aacute;ximo</h5></th>
 						<td><h5><?= $colegio->lenguaje_maximo_2012 ?></h5></td>
 				        <td><h5><?= $colegio->lenguaje_maximo_2013 ?></h5></td>
 
 				        </tr>
 
 				        <tr>
-				        <th><h5 >Lenguaje Minimo</h5></th>
+				        <th><h5 >Lenguaje m&iacute;nimo</h5></th>
 				        <td><h5><?= $colegio->lenguaje_minimo_2012 ?></h5></td>
 				        <td><h5><?= $colegio->lenguaje_minimo_2013 ?></h5></td>
 
@@ -198,7 +198,7 @@
 
 				        <tr>
 				          
-				          <td><h5>matematicas promedio</h5></td>
+				          <td><h5>Matem&aacute;ticas promedio</h5></td>
 				          
 				          <td><h5><?= $colegio->matematicas_promedio_2012 ?></h5></td>
 				          <td><h5><?= $colegio->matematicas_promedio_2013 ?></h5></td>
@@ -209,14 +209,14 @@
 				      
 
 				        <tr>
-				        <th><h5 >matematicas Maximo</h5></th>
+				        <th><h5 >Matem&aacute;ticas m&aacute;ximo</h5></th>
 						<td><h5><?= $colegio->matematicas_maximo_2012 ?></h5></td>
 				        <td><h5><?= $colegio->matematicas_maximo_2013 ?></h5></td>
 
 				        </tr>
 
 				        <tr>
-				        <th><h5 >matematicas Minimo</h5></th>
+				        <th><h5 >Matem&aacute;ticas m&iacute;nimo</h5></th>
 				        <td><h5><?= $colegio->matematicas_minimo_2012 ?></h5></td>
 				        <td><h5><?= $colegio->matematicas_minimo_2013 ?></h5></td>
 
@@ -257,7 +257,7 @@
 			      
 					        <tr>
 					          
-					          <td><h5>Simce 2 Basico Comprension Lectora</h5></td>
+					          <td><h5>Simce 2 B&aacute;sico Comprensi&oacute;n Lectora</h5></td>
 					          
 					          
 					          <td><h5><?= $colegio->comprension_lectora_2bas_2013 ?></h5></td>
@@ -268,14 +268,14 @@
 					      
 
 					        <tr>
-					        <th><h5 >Simce 4 Basico Comprension Lectora</h5></th>
+					        <th><h5 >Simce 4 B&aacute;sico Comprensio&oacute;n Lectora</h5></th>
 							
 					        <td><h5><?= $colegio->comprension_lectora_4bas_2013 ?></h5></td>
 
 					        </tr>
 
 					        <tr>
-					        <th><h5 >Simce 4 Basico Matematicas</h5></th>
+					        <th><h5 >Simce 4 B&aacute;sico Matem&aacute;ticas</h5></th>
 					        
 					        <td><h5><?= $colegio->matematicas_4bas_2013 ?></h5></td>
 
@@ -283,7 +283,7 @@
 
 					        <tr>
 					          
-					          <td><h5>Simce 4 Basico Ciencias Naturales</h5></td>
+					          <td><h5>Simce 4 B&aacute;sico Ciencias Naturales</h5></td>
 					          
 					          <td><h5><?= $colegio->ciencias_naturales_4bas_2013 ?></h5></td>
 
@@ -293,56 +293,56 @@
 					      
 
 					        <tr>
-					        <th><h5 >Simce 6 Basico Comprension Lectora</h5></th>
+					        <th><h5 >Simce 6 B&aacute;sico Comprensi&oacute;n Lectora</h5></th>
 							
 					        <td><h5><?= $colegio->compresion_lectora_6bas_2013 ?></h5></td>
 
 					        </tr>
 
 					        <tr>
-					        <th><h5 >Simce 6 Basico Matematicas</h5></th>
+					        <th><h5 >Simce 6 B&aacute;sico Matem&aacute;ticas</h5></th>
 					        
 					        <td><h5><?= $colegio->matematicas_6bas_2013 ?></h5></td>
 
 					        </tr>
 
 							<tr>
-					        <th><h5 >Simce 6 Basico Escritura</h5></th>
+					        <th><h5 >Simce 6 B&aacute;sico Escritura</h5></th>
 					        
 					        <td><h5><?= $colegio->escritura_6bas_2013 ?></h5></td>
 
 					        </tr>
 
 					        <tr>
-					        <th><h5 >Simce 8 Basico Comprension Lectora</h5></th>
+					        <th><h5 >Simce 8 B&aacute;sico Comprensi&oacute;n Lectora</h5></th>
 							
 					        <td><h5><?= $colegio->comprension_lectora_8bas_2013 ?></h5></td>
 
 					        </tr>
 
 					        <tr>
-					        <th><h5 >Simce 8 Basico Matematicas</h5></th>
+					        <th><h5 >Simce 8 B&aacute;sico Matem&aacute;ticas</h5></th>
 					        
 					        <td><h5><?= $colegio->matematicas_8bas_2013 ?></h5></td>
 
 					        </tr>
 
 							<tr>
-					        <th><h5 >Simce 8 Basico Ciencias Naturales</h5></th>
+					        <th><h5 >Simce 8 B&aacute;sico Ciencias Naturales</h5></th>
 					        
 					        <td><h5><?= $colegio->ciencias_naturales_8bas_2013 ?></h5></td>
 
 					        </tr>
 
 					        <tr>
-					        <th><h5 >Simce 2 Medio Comprension Lectora</h5></th>
+					        <th><h5 >Simce 2 Medio Comprensi&oacute;n Lectora</h5></th>
 							
 					        <td><h5><?= $colegio->comprension_lectora_2med_2013 ?></h5></td>
 
 					        </tr>
 
 					        <tr>
-					        <th><h5 >Simce 2 Medio Matematicas</h5></th>
+					        <th><h5 >Simce 2 Medio Matem&aacute;ticas</h5></th>
 					        
 					        <td><h5><?= $colegio->matematicas_2med_2013 ?></h5></td>
 
