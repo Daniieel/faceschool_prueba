@@ -4,15 +4,14 @@
 
        <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
       
-      <script src="http://j.maxmind.com/app/geoip.js"></script>
-      <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-      <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+      
+  
       <script type="text/javascript" title="Geo" ></script>
-      <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+      <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-      <link rel="stylesheet" href="/resources/demos/style.css">
-      <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+   
+     
 
 
       
@@ -227,14 +226,14 @@
         });
         $('#comuna, #dependencia, #religion, #idioma').change(function() { //boton que cambia todo
             
-
+          
           //borro todos los makers (los colegios en el mapa)
            for (var i = 0; i < markers.length; i++) {
                     markers[i].setMap(null);
             }
-           
+            //alert($("#comuna").val()+$("#dependencia").val()+$("#religion").val()+$("#idioma").val());
            $.getJSON("<?= base_url('mapa/filtro') ?>", {comuna:$("#comuna").val(), dependencia:$("#dependencia").val(), religion:$("#religion").val(), idioma:$("#idioma").val()}, function(data) {
-              
+             
               var colegio = $('#colegio') //combobox
               $("option", colegio).remove(); //borro todos los elementos del colegio
               var option = '';
@@ -449,7 +448,7 @@
 
               <div class="form-group">
                  <label><h5>Selecciona idioma:</h5></label>
-                 <select name= "religion" class= "form-control" id="religion">
+                 <select name= "idioma" class= "form-control" id="idioma">
                    <option value="Todos">Todos</option>
                        <?php foreach ($idiomas  as $idioma) {
                        ?>

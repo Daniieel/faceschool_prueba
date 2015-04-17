@@ -227,6 +227,7 @@ class Colegio_model extends CI_Model {
 	}
 
 	function filtro($comuna, $dependencia, $religion, $idioma){
+
 		$query = "SELECT a.id_colegio, a.id_comuna, a.nombre, a.direccion, 
 			a.telefono, a.pagina_web, a.contacto, a.matricula, a.mensualidad, 
 			a.id_dependencia, a.grupo_socioeco, a.id_religion, a.id_idioma, a.latitud, 
@@ -236,39 +237,50 @@ class Colegio_model extends CI_Model {
 			LEFT JOIN dependencia c ON a.id_dependencia = c.id_dependencia
 			LEFT JOIN religion d on a.id_religion = d.id_religion
 			LEFT JOIN idioma e on a.id_idioma = e.id_idioma ";
-		$band = false;
+		$band = 0;
+		
 		//comuna
-		if ($comuna!= "Todos" and $band== false) {
+		if ($comuna!= "Todos" and $band== 0) {
 			$query = $query."WHERE b.id_comuna='$comuna' ";
-			$band = true;
-		}elseif($comuna!= "Todos" and $band== true){
+			$band = 1;
+
+		}elseif($comuna!= "Todos" and $band== 1){
 			$query = $query."and b.id_comuna='$comuna' ";
 		}
-
 		//dependencia
-		 if ($dependencia!= "Todos" and $band== false) {
-			$query = $query."WHERE c.id_dependencia='$dependencia' ";
-		 	$band = true;
-		 }elseif($dependencia!= "Todos" and $band== true){
-		 	$query = $query."and c.id_dependencia='$dependencia' ";
-		 }
+		if ($dependencia) {
+			if ($dependencia!= "Todos" and $band == 0) {
+				$query = $query."WHERE c.id_dependencia='$dependencia' ";
+			 	$band = 1;
+			 }elseif($dependencia!= "Todos" and $band== 1){
+			 	$query = $query."and c.id_dependencia='$dependencia' ";
+			 }	
+		}
+		
 
 		//religion
-		if ($religion!= "Todos" and $band== false) {
-		 	$query = $query."WHERE d.id_religion='$religion' ";
-		 	$band = true;
-		 }elseif($religion!= "Todos" and $band== true){
-		 	$query = $query."and d.id_religion='$religion' ";
-		 }
+		if ($religion) {
+			if ($religion!= "Todos" and $band== 0) {
+			 	$query = $query."WHERE d.id_religion='$religion' ";
+			 	$band = 1;
+			 }elseif($religion!= "Todos" and $band== 1){
+			 	$query = $query."and d.id_religion='$religion' ";
+			 }
+		}
+		
 
 		//idioma
-		 if ($idioma!= "Todos" and $band== false) {
-		 	$query = $query."WHERE e.id_idioma='$idioma' ";
-		 	$band = true;
-		 }elseif($idioma!= "Todos" and $band== true){
-		 	$query = $query."and e.id_idioma='$idioma' ";
+		 if ($idioma) {
+		 	if ($idioma!= "Todos" and $band== 0) {
+		 		$query = $query."WHERE e.id_idioma='$idioma' ";
+		 		$band = 1;
+		 	}elseif($idioma!= "Todos" and $band== 1){
+		 		$query = $query."and e.id_idioma='$idioma' ";
+		 	}
 		 }
+		#echo $query;
 		$consulta = $this->db->query($query);
+		
 		return $consulta->result();
 	}
 
