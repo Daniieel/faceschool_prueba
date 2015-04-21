@@ -224,16 +224,18 @@
              $("#como_llegar").removeAttr("disabled");
           }
         });
-        $('#comuna, #dependencia, #religion, #idioma').change(function() { //boton que cambia todo
+
+        $('#comuna, #dependencia, #religion, #idioma, #mensualidad').change(function() { //boton que cambia todo
             
-          
+            
           //borro todos los makers (los colegios en el mapa)
            for (var i = 0; i < markers.length; i++) {
                     markers[i].setMap(null);
             }
-          // alert($("#comuna").val()+$("#dependencia").val()+$("#religion").val()+$("#idioma").val());
-           $.getJSON("<?= base_url('mapa/filtro') ?>", {comuna:$("#comuna").val(), dependencia:$("#dependencia").val(), religion:$("#religion").val(), idioma:$("#idioma").val()}, function(data) {
-             
+
+          //alert($("#comuna").val()+$("#dependencia").val()+$("#religion").val()+$("#idioma").val()+$("#mensualidad").val() );
+           $.getJSON("<?= base_url('mapa/filtro') ?>", {comuna:$("#comuna").val(), dependencia:$("#dependencia").val(), religion:$("#religion").val(), idioma:$("#idioma").val(), mensualidad: $('#mensualidad').val()}, function(data) {
+
               var colegio = $('#colegio') //combobox
               $("option", colegio).remove(); //borro todos los elementos del colegio
               var option = '';
@@ -271,9 +273,10 @@
         $('#recomendador').change(function() { //boton que cambia todo
          
         });
-
-        $('#comuna, #dependencia, #religion, #idioma').change(function() { //boton que cambia todo
-          $.getJSON("<?= base_url('mapa/recomendador') ?>", {comuna:$("#comuna").val(), dependencia:$("#dependencia").val(), religion:$("#religion").val(), idioma:$("#idioma").val()}, function(data) {
+          
+        $('#comuna, #dependencia, #religion, #idioma','#mensualidad').change(function() { //boton que cambia todo
+          
+          $.getJSON("<?= base_url('mapa/recomendador') ?>", {comuna:$("#comuna").val(), dependencia:$("#dependencia").val(), religion:$("#religion").val(), idioma:$("#idioma").val(), mensualidad: $("#mensualidad").val()}, function(data) {
               
               var colegio = $('#recomendador') //combobox
               $("option", colegio).remove(); //borro todos los elementos del colegio
@@ -370,14 +373,15 @@
                </div>
                <div class="form-group">
                   <label><h5 style="color:black;">Mensualidad:</h5></label>
-                  <select name= "dependencia" class= "form-control" id="dependencia">
-                    <option value="Todos">Todos</option>
-                        <?php foreach ($dependencia as $dependencia) {
-                        ?>
-                        <option value="<?= $dependencia->id_dependencia ?>"><?= $dependencia->dependencia ?></option>
-                        <?php }
+                  <select name= "mensualidad" class= "form-control" id="mensualidad">
+                    <option value="Todos,Todos">Todos</option>
+                    <option value="0,0">Gratuito</option>
+                    <option value="1,50000">Entre $1 y $50.000 </option>
+                    <option value="50001,100000">Entre $50.001 y $100.000 </option>
+                    <option value="100001,200000">Entre $100.001 y $200.000 </option>
+                    <option value="200001,300000">Entre $200.001 y $300.000 </option>
+                    
 
-                         ?> 
                   </select>
                </div>
                 <div class="form-group">
