@@ -231,7 +231,7 @@
            for (var i = 0; i < markers.length; i++) {
                     markers[i].setMap(null);
             }
-            //alert($("#comuna").val()+$("#dependencia").val()+$("#religion").val()+$("#idioma").val());
+          // alert($("#comuna").val()+$("#dependencia").val()+$("#religion").val()+$("#idioma").val());
            $.getJSON("<?= base_url('mapa/filtro') ?>", {comuna:$("#comuna").val(), dependencia:$("#dependencia").val(), religion:$("#religion").val(), idioma:$("#idioma").val()}, function(data) {
              
               var colegio = $('#colegio') //combobox
@@ -327,7 +327,7 @@
 
 
 
-      <h1 class= "read" align="" style="margin-top:60px; margin-bottom:30px;"><strong>Encuentra</strong> todos los <strong>colegios</strong> cercanos a tu <strong>ubicación</strong></h1>
+      <h1 class= "read" align="" style="margin-top:60px; margin-bottom:30px;"><strong>Encuentra</strong> todos los <strong>colegios</strong> cercanos a tu <strong>ubicaci&oacute;n</strong></h1>
       <div class="col-md-4" style="background:rgb(79, 78, 78); color:white;">
     
         <h3>Filtrar</h3>
