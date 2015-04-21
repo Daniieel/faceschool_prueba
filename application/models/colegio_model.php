@@ -57,9 +57,11 @@ class Colegio_model extends CI_Model {
 				, a.logr_dep
 				, a.cant_alu
 				, a.cant_prof
-				, a.matricula
+				, a.matricula_entre
+				, a.matricula_hasta
 				, a.mensualidad_entre
 				, a.mensualidad_hasta
+				, a.metros_contru
 				, b.dependencia
 				, a.id_dependencia
 				, a.grupo_socioeco
@@ -227,12 +229,12 @@ class Colegio_model extends CI_Model {
 		return $query->result();
 	}
 
-	function filtro($comuna, $dependencia, $religion, $idioma, $mensualidad_entre, $mensualidad_hasta){
+	function filtro($comuna, $dependencia, $religion, $idioma, $mensualidad_entre, $mensualidad_hasta, $matricula_entre, $matricula_hasta,$metros_contru,$ranking_nac){
 
 		$query = "SELECT a.id_colegio, a.id_comuna, a.nombre, a.direccion, 
-			a.telefono, a.pagina_web, a.contacto, a.matricula, a.mensualidad_entre, a.mensualidad_hasta, 
-			a.id_dependencia, a.grupo_socioeco, a.id_religion, a.id_idioma, a.latitud, 
-			a.longitud 
+			a.telefono, a.pagina_web, a.contacto, a.mensualidad_entre, a.mensualidad_hasta, 
+			a.matricula_entre, a.matricula_hasta, a.id_dependencia, a.grupo_socioeco, a.id_religion, a.id_idioma, a.latitud, 
+			a.longitud, a.metros_contru, a.ranking_nac
 			FROM colegio a 
 			LEFT JOIN comuna b ON a.id_comuna = b.id_comuna
 			LEFT JOIN dependencia c ON a.id_dependencia = c.id_dependencia
@@ -244,9 +246,11 @@ class Colegio_model extends CI_Model {
 		if ($comuna!= "Todos" and $band== 0) {
 			$query = $query."WHERE b.id_comuna='$comuna' ";
 			$band = 1;
+			
 
 		}elseif($comuna!= "Todos" and $band== 1){
 			$query = $query."and b.id_comuna='$comuna' ";
+
 		}
 		//dependencia
 		if ($dependencia) {
@@ -288,8 +292,42 @@ class Colegio_model extends CI_Model {
 			 		$query = $query." AND a.mensualidad_entre >= '$mensualidad_entre' AND a.mensualidad_hasta <= '$mensualidad_hasta'  ";
 			 	}
 		 	}
+
+		 //matricula
+		 	if ( ($matricula_entre != null and $matricula_hasta != null) and  ($matricula_entre != "Todos"))   {
+		 		if ($band == 0) {
+		 		$query = $query." WHERE a.matricula_entre >= '$matricula_entre' AND a.matricula_hasta <= '$matricula_hasta' ";
+		 		$band = 1;
+			 	}elseif ($band == 1) {
+			 		$query = $query." AND a.matricula_entre >= '$matricula_entre' AND a.matricula_hasta <= '$matricula_hasta'  ";
+
+			 	}
+
+		 	}
+			 	//metros construidos
+			 if ($metros_contru) {
+			 	if ($metros_contru!= "Todos" and $band== 0) {
+			 		$query = $query."WHERE a.metros_contru='$metros_contru' ";
+			 		$band = 1;
+			 	}elseif($metros_contru!= "Todos" and $band== 1){
+			 		$query = $query."and a.metros_contru='$metros_contru' ";
+			 	}
+			 }
+			 	//ranking
+			 if ($ranking_nac) {
+			 	if ($ranking_nac!= "Todos" and $band== 0) {
+			 		$query = $query."WHERE a.ranking_nac='$ranking_nac' ";
+			 		$band = 1;
+			 		
+			 	}elseif($ranking_nac!= "Todos" and $band== 1){
+			 		$query = $query."and a.ranking_nac='$ranking_nac' ";
+
+			 	}
+			 }
+
+
 		 	
-		#echo $query;
+		echo $query;
 		$consulta = $this->db->query($query);
 		
 		return $consulta->result();

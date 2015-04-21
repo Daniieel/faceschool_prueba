@@ -225,7 +225,7 @@
           }
         });
 
-        $('#comuna, #dependencia, #religion, #idioma, #mensualidad').change(function() { //boton que cambia todo
+        $('#comuna, #dependencia, #religion, #idioma, #mensualidad, #matricula, #metros, #ranking_nac').change(function() { //boton que cambia todo
             
             
           //borro todos los makers (los colegios en el mapa)
@@ -233,8 +233,8 @@
                     markers[i].setMap(null);
             }
 
-          //alert($("#comuna").val()+$("#dependencia").val()+$("#religion").val()+$("#idioma").val()+$("#mensualidad").val() );
-           $.getJSON("<?= base_url('mapa/filtro') ?>", {comuna:$("#comuna").val(), dependencia:$("#dependencia").val(), religion:$("#religion").val(), idioma:$("#idioma").val(), mensualidad: $('#mensualidad').val()}, function(data) {
+          alert($("#comuna").val()+$("#dependencia").val()+$("#religion").val()+$("#idioma").val()+$("#mensualidad").val()+$("#matricula").val()+$("#metros").val()+$("#ranking_nac").val() );
+           $.getJSON("<?= base_url('mapa/filtro') ?>", {comuna:$("#comuna").val(), dependencia:$("#dependencia").val(), religion:$("#religion").val(), idioma:$("#idioma").val(), mensualidad: $('#mensualidad').val(), matricula:$("#matricula").val(), metros:$("#metros").val(), ranking_nac:$("#ranking_nac").val()}, function(data) {
 
               var colegio = $('#colegio') //combobox
               $("option", colegio).remove(); //borro todos los elementos del colegio
@@ -386,14 +386,17 @@
                </div>
                 <div class="form-group">
                   <label><h5 style="color:black;">Metros construidos:</h5></label>
-                  <select name= "dependencia" class= "form-control" id="dependencia">
+                  <select name= "metros" class= "form-control" id="metros">
                     <option value="Todos">Todos</option>
-                        <?php foreach ($dependencia as $dependencia) {
-                        ?>
-                        <option value="<?= $dependencia->id_dependencia ?>"><?= $dependencia->dependencia ?></option>
-                        <?php }
-
-                         ?> 
+                    <option value="100">100mt2</option>
+                    <option value="150">150mt2</option>
+                    <option value="200">200mt2</option>
+                    <option value="250">250mts</option>
+                    <option value="300">300mts</option>
+                    <option value="350">350mts</option>
+                    <option value="400">400mts</option>
+                    <option value="450">450mts</option>
+                    <option value="500">500mts</option>
                   </select>
                </div>
                
@@ -470,13 +473,45 @@
 
               <div class="form-group">
                  <label><h5>Ranking Nacional:</h5></label>
-                 <option value="Todos">Todos</option>
+                 <select name= "ranking_nac" class= "form-control" id="ranking_nac">
+                    <option value="Todos">Todos</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+
+                    
+                  </select>
               </div>
               
               <div class="form-group">
-                 <label><h5>Rango matricula:</h5></label>
-                 <option value="Todos">Todos</option>
-              </div>
+                  <label><h5 style="color:black;">Rango matricula:</h5></label>
+                  <select name= "matricula" class= "form-control" id="matricula">
+                    <option value="Todos,Todos">Todos</option>
+                    <option value="0,0">Gratuita</option>
+                    <option value="1,10000">Entre $1 y $10.000 </option>
+                    <option value="10001,50000">Entre $10.001 y $50.000 </option>
+                    <option value="50001,100000">Entre $50.001 y $100.000 </option>
+                    <option value="100001,200000">Entre $100.001 y $200.000 </option>
+                    
+
+                  </select>
+               </div>
              </div>
            </div>
          </div>
