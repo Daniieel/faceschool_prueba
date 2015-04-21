@@ -58,7 +58,8 @@ class Colegio_model extends CI_Model {
 				, a.cant_alu
 				, a.cant_prof
 				, a.matricula
-				, a.mensualidad
+				, a.mensualidad_entre
+				, a.mensualidad_hasta
 				, b.dependencia
 				, a.id_dependencia
 				, a.grupo_socioeco
@@ -226,10 +227,10 @@ class Colegio_model extends CI_Model {
 		return $query->result();
 	}
 
-	function filtro($comuna, $dependencia, $religion, $idioma){
+	function filtro($comuna, $dependencia, $religion, $idioma, $mensualidad_entre, $mensualidad_hasta){
 
 		$query = "SELECT a.id_colegio, a.id_comuna, a.nombre, a.direccion, 
-			a.telefono, a.pagina_web, a.contacto, a.matricula, a.mensualidad, 
+			a.telefono, a.pagina_web, a.contacto, a.matricula, a.mensualidad_entre, a.mensualidad_hasta, 
 			a.id_dependencia, a.grupo_socioeco, a.id_religion, a.id_idioma, a.latitud, 
 			a.longitud 
 			FROM colegio a 
@@ -278,6 +279,16 @@ class Colegio_model extends CI_Model {
 		 		$query = $query."and e.id_idioma='$idioma' ";
 		 	}
 		 }
+		 //mensualidad
+		 	if ( ($mensualidad_entre != null and $mensualidad_hasta != null) and  ($mensualidad_entre != "Todos"))   {
+		 		if ($band == 0) {
+		 		$query = $query." WHERE a.mensualidad_entre >= '$mensualidad_entre' AND a.mensualidad_hasta <= '$mensualidad_hasta' ";
+		 		$band = 1;
+			 	}elseif ($band == 1) {
+			 		$query = $query." AND a.mensualidad_entre >= '$mensualidad_entre' AND a.mensualidad_hasta <= '$mensualidad_hasta'  ";
+			 	}
+		 	}
+		 	
 		#echo $query;
 		$consulta = $this->db->query($query);
 		

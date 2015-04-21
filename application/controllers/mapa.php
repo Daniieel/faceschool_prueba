@@ -53,10 +53,18 @@ class Mapa extends CI_Controller {
 		$dependencia =$this->input->get("dependencia");
 		$religion =$this->input->get("religion");
 		$idioma =$this->input->get("idioma");
+		if ($this->input->get("mensualidad") != "") {
+			$mensualidad_entre = explode(",", $this->input->get("mensualidad"))[0];
+			$mensualidad_hasta = explode(",", $this->input->get("mensualidad"))[1];
+		}else{
+			$mensualidad_entre = null;
+			$mensualidad_hasta = null;
+		}
+		
 		// $region =$this->input->get("region");
 
 		$this->load->model("colegio_model","uum"); //cargo la base de datos
-		$colegios= $this->uum->filtro($comuna, $dependencia, $religion, $idioma);
+		$colegios= $this->uum->filtro($comuna, $dependencia, $religion, $idioma,$mensualidad_entre,$mensualidad_hasta);
 		echo json_encode($colegios);
 	}
 
